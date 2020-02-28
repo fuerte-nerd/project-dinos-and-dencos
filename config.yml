@@ -14,7 +14,7 @@ collections:
     fields:
       - { name: featured_image, label: Image, widget: image }
       - { name: date, label: Date, widget: datetime }
-      - { name: tags, label: Tags, widget: list, default: ["article"]}
+      - { name: tags, label: Tags, widget: list, default: ["article"] }
       - { name: author, label: Author }
       - { name: title_en, label: "Title (English)" }
       - { name: intro_en, label: "Introduction (English)" }
