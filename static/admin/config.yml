@@ -16,21 +16,45 @@ collections:
       - { name: date, label: Date, widget: datetime }
       - { name: tags, label: Tags, widget: list, default: ["article"] }
       - { name: author, label: Author }
-      - { name: title_en, label: "Title (English)" }
-      - { name: intro_en, label: "Introduction (English)" }
-      - { name: body_en, label: "Body (English)", widget: markdown }
-      - { name: title_es, label: "Título (Español)" }
-      - { name: intro_es, label: "Introducción (Español)" }
-      - { name: body_es, label: "Cuerpo (Español)", widget: markdown }
-      - { name: title_de, label: "Titel (Deutsch)" }
-      - { name: intro_de, label: "Einführung (Deutsch)" }
-      - { name: body_de, label: "Textkörper (Deutsch)", widget: markdown }
-      - { name: title_fr, label: "Titre (Français)" }
-      - { name: intro_fr, label: "Introduction (Français)" }
-      - { name: body_fr, label: "Corps (Français)", widget: markdown }
-      - { name: title_it, label: "Titolo (Italiano)" }
-      - { name: intro_it, label: "Introduzione (Italiano)" }
-      - { name: body_it, label: "Corpo (Italiano)", widget: markdown }
-      - { name: title_nl, label: "Titel (Nederlands)" }
-      - { name: intro_nl, label: "Invoering (Nederlands)" }
-      - { name: body_nl, label: "Hoofdtekst (Nederlands)", widget: markdown }
+      - name: "content_en"
+        label: English
+        widget: object
+        fields:
+          - { name: title_en, label: "Title" }
+          - { name: intro_en, label: "Introduction" }
+          - { name: body_en, label: "Body", widget: markdown }
+      - name: "content_es"
+        label: Español
+        widget: object
+        fields:
+          - { name: title_es, label: "Título" }
+          - { name: intro_es, label: "Introducción" }
+          - { name: body_es, label: "Cuerpo", widget: markdown }
+      - name: "content_de"
+        label: Deutsch
+        widget: object
+        fields:
+          - { name: title_de, label: "Titel" }
+          - { name: intro_de, label: "Einführung" }
+          - { name: body_de, label: "Textkörper", widget: markdown }
+      - name: "content_fr"
+        label: Français
+        widget: object
+        fields:
+          - { name: title_fr, label: "Titre" }
+          - { name: intro_fr, label: "Introduction" }
+          - { name: body_fr, label: "Corps", widget: markdown }
+      - name: "content_it"
+        label: Italiano
+        widget: object
+        fields:
+          - { name: title_it, label: "Titolo" }
+          - { name: intro_it, label: "Introduzione" }
+          - { name: body_it, label: "Corpo", widget: markdown }
+      - name: "content_nl"
+        label: Nederlands
+        widget: object
+        fields:
+          - { name: title_nl, label: "Titel" }
+          - { name: intro_nl, label: "Invoering" }
+          - { name: body_nl, label: "Hoofdtekst", widget: markdown }
