@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Fuerteventura Dog Rescue`,
+    description: `Taking care of the abandoned and mistreated dogs from the La Oliva area of Fuerteventura since 2013.`,
+    author: `Fuertenerd`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -11,11 +11,12 @@ module.exports = {
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Fuerteventura Dog Rescue`,
+        short_name: `FDR`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
