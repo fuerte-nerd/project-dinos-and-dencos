@@ -18,17 +18,214 @@ $navbar-nav-link-padding-x: 1.25rem;
 
 $btn-padding-y-lg: 1rem;
 $btn-padding-x-lg: 1rem;
-$navbar-padding-y:  0rem;
+$navbar-padding-y: 0rem;
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
 @import "../../node_modules/animate.css/animate";
 
+$trans-amount: 0.9;
+
+.bg {
+  &-primary-trans {
+    background: rgba($primary, $trans-amount);
+  }
+  &-dark-trans {
+    background: rgba($dark, $trans-amount);
+  }
+  &-light-trans {
+    background: rgba($light, $trans-amount);
+  }
+}
+
+$font-base: 19.5px;
+
+.ani {
+  transition: all 0.2s;
+}
+
 //Social colours
 $facebook: #3b5999;
 $instagram: #e4405f;
 
-body{
-    background: linear-gradient(to bottom right, $body-bg, lighten($body-bg, 5%));
-    background-attachment: fixed;
+html {
+  font-size: $font-base;
+}
+
+body {
+  background: linear-gradient(to bottom right, $body-bg, lighten($body-bg, 5%));
+  background-attachment: fixed;
+}
+
+.content-separator {
+  margin-top: 6rem;
+  display: block;
+}
+
+.nav-link {
+  font-family: $headings-font-family;
+  font-weight: bold;
+}
+
+.nav-shrink {
+  width: 3rem !important;
+}
+
+.social {
+  font-size: 2rem;
+  background: white;
+  margin: 0;
+  width: 3.75rem;
+  height: 3.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 0.15rem solid $light;
+  box-shadow: 0 0.2rem 0.3rem rgba($dark, 0.5);
+
+  &-sm {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 0.8rem;
   }
+  &:active {
+    box-shadow: 0 0.1rem 0.2rem rgba($dark, 0.5);
+  }
+
+  &-facebook {
+    background: $facebook;
+    &:hover {
+      background: darken($facebook, 10%);
+    }
+  }
+
+  &-instagram {
+    background: $instagram;
+
+    &:hover {
+      background: darken($instagram, 10%);
+    }
+  }
+}
+
+.flag-icon-selected:hover {
+  transform: translateY(-0.2rem);
+}
+
+.hero-gradient-overlay {
+  background: linear-gradient(
+    to bottom right,
+    rgba($body-bg, 0.9),
+    rgba(lighten($body-bg, 5%), 0.9)
+  );
+}
+
+.dogs:hover {
+  & .card:not(:hover) {
+    transform: scale(0.975);
+    opacity: 0.4;
+  }
+
+  & .card:hover {
+    transform: scale(1);
+  }
+}
+
+$brand-colors: (
+  facebook: #3b5998,
+  twitter: #1da1f2,
+  googleplus: #dd4b39,
+  linkedin: #0077b5,
+  reddit: #ff4500,
+  whatsapp: #128c7e,
+);
+
+.post-social {
+  display: flex;
+  justify-content: center;
+  .button {
+    // margin: 0.5rem 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 0.05rem solid $light;
+    &-small {
+      width: 2.2rem;
+      height: 2.2rem;
+      & i {
+        font-size: 0.85rem !important;
+      }
+    }
+    @each $class, $color in $brand-colors {
+      &.#{$class} {
+        background-color: $color !important;
+        color: $light;
+        &:hover {
+          background-color: darken($color, 10%) !important;
+          // border-color: $color;
+          // color: #fff;
+        }
+      }
+    }
+    .icon i {
+      font-size: 1rem;
+    }
+  }
+}
+
+.dog {
+  &-description {
+    line-height: 2rem;
+  }
+  &-gallery {
+    &-gallery:hover .dog-image:not(:hover) {
+      opacity: 0.3;
+      transform: scale(0.95);
+    }
+    & img {
+      transition: all 0.2s;
+      &:hover {
+        transform: translateY(-0.5rem);
+      }
+    }
+  }
+}
+
+.articles{
+  &:hover{
+    & .article:not(:hover){
+      opacity: .3;
+      transform: scale(.975);
+    }
+  }
+}
+
+.flags i:not(:last-of-type) {
+  margin-right: .3rem;
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: $font-base - 1 !important;
+  }
+}
+
+@media (max-width: 992px) {
+  html {
+    font-size: $font-base - 2 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: $font-base - 3 !important;
+  }
+}
+@media (max-width: 576px) {
+  html {
+    font-size: $font-base - 4 !important;
+  }
+}
