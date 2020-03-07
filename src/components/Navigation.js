@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import { TransitionPortal } from "gatsby-plugin-transition-link"
+import { toggleNav, setNavState } from "../state/actions"
 import Link from "./Link"
 
 import { connect } from "react-redux"
@@ -23,8 +24,16 @@ function Navigation(props) {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggle = () => {
-    setIsOpen(!isOpen)
+    props.dispatch(toggleNav())
   }
+
+  useEffect(() => {
+    setIsOpen(props.navIsOpen)
+  }, [props.navIsOpen])
+
+  useEffect(() => {
+    props.dispatch(setNavState(false))
+  }, [])
 
   const [responsiveClasses, setResponsiveClasses] = useState({
     nav: "",
@@ -93,12 +102,8 @@ function Navigation(props) {
           onClick={toggle}
           className={`bg-primary ani ${responsiveClasses.togglerIcon}`}
         />
-        <Collapse
-          isOpen={isOpen}
-          className={`ani ${responsiveClasses.collapse}`}
-          navbar
-        >
-          <Nav className="ml-auto" navbar>
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className={`ani ${responsiveClasses.collapse} ml-auto`} navbar>
             <NavItem>
               <Link to="/" classes="nav-link">
                 Home
@@ -198,6 +203,7 @@ function Navigation(props) {
 
 const mapStateToProps = state => ({
   lang: state.language.lang,
+  navIsOpen: state.navigation.navIsOpen,
 })
 
 export default connect(mapStateToProps)(Navigation)

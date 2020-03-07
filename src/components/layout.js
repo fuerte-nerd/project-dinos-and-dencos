@@ -10,7 +10,7 @@ import { connect } from "react-redux"
 
 import detectBrowserLanguage from "detect-browser-language"
 
-import { setLanguage } from "../state/actions"
+import { setLanguage, toggleNav } from "../state/actions"
 
 import Head from "./Head"
 import PropTypes from "prop-types"
@@ -45,14 +45,22 @@ const Layout = props => {
     }
   }, [])
 
+  const checkNav = () => {
+    if (props.navIsOpen) {
+      props.dispatch(toggleNav())
+    }
+  }
+
   return (
     <>
       <Head title={props.title} />
       {/* <TransitionPortal> */}
       <Navigation />
       {/* </TransitionPortal> */}
-      <main className="animated fadeIn faster">{props.children}</main>
-      <Footer show={props.showFooter} />
+      <div onClick={checkNav} role="button" tabIndex="0">
+        <main className="animated fadeIn faster">{props.children}</main>
+        <Footer show={props.showFooter} />
+      </div>
     </>
   )
 }
@@ -63,5 +71,6 @@ Layout.propTypes = {
 
 const mapStateToProps = state => ({
   lang: state.language.lang,
+  navIsOpen: state.navigation.navIsOpen,
 })
 export default connect(mapStateToProps)(Layout)

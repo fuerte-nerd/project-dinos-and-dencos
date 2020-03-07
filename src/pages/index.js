@@ -43,7 +43,7 @@ const IndexPage = () => {
                   className="btn btn-primary btn-lg font-weight-bold"
                 >
                   {" "}
-                  <i className="mr-3 fas fa-dog"></i>Meet the dogs!
+                  <i className="animated tada infinite slow mr-3 fas fa-dog"></i>Meet the dogs!
                 </AniLink>
               </div>
             </div>

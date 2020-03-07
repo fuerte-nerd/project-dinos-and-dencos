@@ -1,4 +1,6 @@
-import React from "react"
+import React, { useState } from "react"
+
+import { Tooltip } from "reactstrap"
 
 import Layout from "../components/layout"
 import Spacer from "../components/ContentSpacer"
@@ -9,9 +11,51 @@ import FollowUp from "../components/FollowUp"
 import img from "../images/rafael-profile.jpg"
 
 export default function Dog() {
+  const [tooltips, setTooltips] = useState({
+    ppp: false,
+    sterile: false,
+  })
+
+  const toggle = {
+    ppp() {
+      setTooltips({
+        ...tooltips,
+        ppp: !tooltips.ppp,
+      })
+    },
+    sterile() {
+      setTooltips({
+        ...tooltips,
+        sterile: !tooltips.sterile,
+      })
+    },
+  }
+
   return (
     <Layout showFooter={true}>
       <Spacer />
+      <Tooltip
+        placement="top"
+        isOpen={tooltips.ppp}
+        target="ppp"
+        toggle={toggle.ppp}
+      >
+        <small>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis
+          autem quibusdam perferendis quia, impedit voluptatem!
+        </small>
+      </Tooltip>
+      <Tooltip
+        placement="top"
+        isOpen={tooltips.sterile}
+        target="sterile"
+        toggle={toggle.sterile}
+      >
+        <small>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis
+          autem quibusdam perferendis quia, impedit voluptatem!
+        </small>
+      </Tooltip>
       <div className="container">
         <div className="row d-flex align-items-center">
           <div className="col-lg-6">
@@ -68,14 +112,18 @@ export default function Dog() {
                     <tr>
                       <th>
                         Licence required?{" "}
-                        <small class="font-italic">(What is this?)</small>
+                        <small class="font-italic" id="ppp">
+                          (More info)
+                        </small>
                       </th>
                       <td class="text-center">No</td>
                     </tr>
                     <tr>
                       <th>
                         Sterilised?{" "}
-                        <small class="font-italic">(More info)</small>
+                        <small class="font-italic" id="sterile">
+                          (More info)
+                        </small>
                       </th>
                       <td class="text-center">No</td>
                     </tr>
@@ -109,13 +157,21 @@ export default function Dog() {
         </div>
       </div>
       <div className="container">
-          <div className="dog-description py-3 text-justify">
-              <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt velit consequatur voluptate, libero, magni doloribus minima temporibus modi quae tempore quo beatae possimus! Ut laudantium quae tempora obcaecati. Atque consectetur laboriosam aliquam repudiandae. Necessitatibus ipsam laudantium, corporis esse perspiciatis rem. Tempore, maiores sit. Earum fugit aspernatur veritatis dolorum placeat magnam, iusto, provident consequatur veniam laudantium blanditiis perferendis, quidem doloremque aperiam sapiente. Rem officiis inventore quis minus est vero aut praesentium?
-              </p>
-          </div>
-          <PhotoGallery />
-          <FollowUp />
+        <div className="dog-description py-3 text-justify">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+            velit consequatur voluptate, libero, magni doloribus minima
+            temporibus modi quae tempore quo beatae possimus! Ut laudantium quae
+            tempora obcaecati. Atque consectetur laboriosam aliquam repudiandae.
+            Necessitatibus ipsam laudantium, corporis esse perspiciatis rem.
+            Tempore, maiores sit. Earum fugit aspernatur veritatis dolorum
+            placeat magnam, iusto, provident consequatur veniam laudantium
+            blanditiis perferendis, quidem doloremque aperiam sapiente. Rem
+            officiis inventore quis minus est vero aut praesentium?
+          </p>
+        </div>
+        <PhotoGallery />
+        <FollowUp />
       </div>
     </Layout>
   )
