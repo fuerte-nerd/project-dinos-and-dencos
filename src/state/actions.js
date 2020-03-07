@@ -1,4 +1,4 @@
-import { SET_LANGUAGE } from "./types"
+import { SET_LANGUAGE, TOGGLE_LANGUAGE_MODAL } from "./types"
 
 export const setLanguage = lang => {
   localStorage.setItem("fdr_lang", lang)
@@ -7,3 +7,7 @@ export const setLanguage = lang => {
     payload: lang,
   }
 }
+
+export const toggleLanguageModal = ()=>({
+  type: TOGGLE_LANGUAGE_MODAL,
+})

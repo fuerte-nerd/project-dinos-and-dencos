@@ -1,15 +1,20 @@
 /* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 
-import React, { useState } from "react"
+import React from "react"
+
+import { toggleLanguageModal } from "../state/actions"
+
 import { Button, Modal, ModalHeader, ModalBody } from "reactstrap"
 import { connect } from "react-redux"
 
 import LanguageOption from "./LanguageOption"
 
 const LanguageModal = props => {
-  const [modal, setModal] = useState(false)
 
-  const toggle = () => setModal(!modal)
+  const toggle = ()=>{
+    props.dispatch(toggleLanguageModal())
+  }
+
   return (
     <div>
       <Button
@@ -18,7 +23,7 @@ const LanguageModal = props => {
       >
         <span class={`flag-icon flag-icon-selected flag-icon-${props.lang}`}></span>
       </Button>
-      <Modal isOpen={modal} toggle={toggle} className="text-dark">
+      <Modal isOpen={props.langModalIsOpen} toggle={toggle} className="text-dark">
         <ModalHeader toggle={toggle}>Change language</ModalHeader>
         <ModalBody>
           <LanguageOption language="Español" flag="es" lang="es" />
@@ -32,7 +37,8 @@ const LanguageModal = props => {
   )
 }
 const mapStateToProps = state => ({
-  lang: state.language.lang
+  lang: state.language.lang,
+  langModalIsOpen: state.language.langModalIsOpen
 })
 
 export default connect(mapStateToProps)(LanguageModal)

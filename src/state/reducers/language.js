@@ -1,7 +1,8 @@
-import { SET_LANGUAGE } from '../types'
+import { SET_LANGUAGE, TOGGLE_LANGUAGE_MODAL } from '../types'
 
 const initialState = {
-    lang: ''
+    lang: '',
+    langModalIsOpen: false
 }
 
 export default (state = initialState, action)=>{
@@ -10,6 +11,11 @@ export default (state = initialState, action)=>{
             return {
                 ...state,
                 lang: action.payload
+            }
+            case TOGGLE_LANGUAGE_MODAL:
+            return {
+                ...state,
+                langModalIsOpen: !state.langModalIsOpen
             }
         default:
             return state

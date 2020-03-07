@@ -1,5 +1,5 @@
 import React from "react"
-import { setLanguage } from "../state/actions"
+import { setLanguage, toggleLanguageModal } from "../state/actions"
 import { connect } from 'react-redux'
 
 import { Button } from "reactstrap"
@@ -8,6 +8,7 @@ function LanguageOption(props) {
 
   const handleClick = ()=>{
     props.dispatch(setLanguage(props.flag))
+    props.dispatch(toggleLanguageModal())
   }
 
   return (
