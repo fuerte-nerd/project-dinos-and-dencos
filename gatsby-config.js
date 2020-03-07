@@ -13,6 +13,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-transition-link`,
+    `gatsby-plugin-react-leaflet`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
