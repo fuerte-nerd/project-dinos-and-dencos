@@ -13,14 +13,7 @@ export default function LeafletMap() {
   })
   return typeof window !== "undefined" ? (
     <>
-      <Helmet>
-        <link
-          rel="stylesheet"
-          href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-          crossorigin=""
-        />
-      </Helmet>
+     
       <Map
         center={[28.609654, -13.92936]}
         zoom={16}
