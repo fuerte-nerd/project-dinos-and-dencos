@@ -21,7 +21,7 @@ collections:
               - { name: deutsch, label: Deutsch, widget: string }
               - { name: italiano, label: Italiano, widget: string }
               - { name: français, label: Français, widget: string }
-           - name: "subheading"
+          - name: "subheading"
             label: "Subheading"
             widget: object
             fields:
