@@ -47,5 +47,23 @@ button_text:
   de: Mehr Informationen
   it: Maggiori informazioni
   fr: Plus d'informations
+age:
+  en: Age
+  es: Edad
+  fr: 'Âge '
+  de: Alter
+  it: Età
+breed:
+  en: Breed
+  it: Razza
+  de: Rasse
+  fr: Race
+  es: Raza
+sex:
+  en: Sex
+  es: Sexo
+  de: Geschlecht
+  it: Sesso
+  fr: Sexe
 ---
 
