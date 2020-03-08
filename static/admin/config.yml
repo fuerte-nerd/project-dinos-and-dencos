@@ -4,6 +4,28 @@ backend:
 media_folder: static/assets
 public_folder: assets
 collections:
+  - name: components
+    label: Components
+    editor:
+      preview: false
+    files:
+      - label: "Social Media"
+        name: "social_media"
+        file: "content/social_media.md"
+        fields:
+          - label: "'Find us' text"
+            name: "find_us_text"
+            widget: object
+            fields:
+              - { name: en, label: English, widget: string }
+              - { name: es, label: Español, widget: string }
+              - { name: de, label: Deutsch, widget: string }
+              - { name: it, label: Italiano, widget: string }
+              - { name: fr, label: Français, widget: string }
+          - { label: "Facebook username", name: "facebook_username", widget: string }
+          - { label: "Instagram username", name: "instagram_username", widget: string }
+
+
   - name: pages
     label: Pages
     editor:
