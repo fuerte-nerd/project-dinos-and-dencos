@@ -333,10 +333,8 @@ collections:
       - name: images
         label: "Images"
         description: "Add photos of the dog here"
-        widget: image
-        media_library:
-          config:
-            multiple: true
+        widget: list
+        field: {label: "Image", name: image, widget: image}
       - { name: breed, label: Breed, widget: string}
       - { name: date_of_birth, label: "Date of Birth", widget: datetime }
       - { name: date_entered, label: "Date entered", widget: datetime }
