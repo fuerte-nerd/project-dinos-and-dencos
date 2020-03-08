@@ -1,4 +1,7 @@
 import React from "react"
+import { connect } from "react-redux"
+
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Spacer from "../components/ContentSpacer"
@@ -6,8 +9,7 @@ import Dogs from "../components/Dogs"
 
 import TempImage from "../images/rafael-profile.jpg"
 
-export default function TheDogs() {
-
+function TheDogs(props) {
   const dogData = [
     {
       name: "Rafael",
@@ -100,25 +102,28 @@ export default function TheDogs() {
       sterile: false,
     },
   ]
+
+  const {
+    heading,
+    subheading,
+    listing_note,
+  } = props.data.page_data.childMarkdownRemark.frontmatter
   return (
     <Layout title="The Dogs" showFooter={true}>
       <Spacer />
       <div>
         <div className="jumbotron bg-primary text-center mb-3 py-5 shadow">
           <div className="container-fluid text-light">
-            <h1>Meet The Dogs!</h1>
+            <h1>{heading[props.lang]}</h1>
             <p class="lead">
-              We have lots of beautiful dogs waiting for their home. Come and
-              meet them! They can't wait to meet you!
+              {subheading[props.lang]}
             </p>
           </div>
         </div>
         <div className="container">
           <div className="text-center">
             <small class="font-italic">
-              <span class="font-weight-bold">NOTE:</span> We have listed the
-              dogs from the longest time they have been in our care to the
-              shortest, so that they get the fairest chance of being seen.
+              {listing_note[props.lang]}
             </small>
           </div>
           <Dogs data={dogData} />
@@ -127,3 +132,41 @@ export default function TheDogs() {
     </Layout>
   )
 }
+
+export const query = graphql`
+  query {
+    page_data: file(name: { eq: "the_dogs" }) {
+      childMarkdownRemark {
+        frontmatter {
+          listing_note {
+            en
+            it
+            de
+            es
+            fr
+          }
+          heading {
+            de
+            en
+            it
+            es
+            fr
+          }
+          subheading {
+            en
+            de
+            it
+            es
+            fr
+          }
+        }
+      }
+    }
+  }
+`
+
+const mapStateToProps = state => ({
+  lang: state.language.lang,
+})
+
+export default connect(mapStateToProps)(TheDogs)

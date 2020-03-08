@@ -24,6 +24,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
   const indexTemplate = path.resolve(`src/templates/index.js`)
+  const theDogsTemplate = path.resolve(`src/templates/the-dogs.js`)
 
   const indexBgQuery = await graphql(`
     {
@@ -48,5 +49,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         indexBgQuery.data.file.childMarkdownRemark.frontmatter.background_image
       ),
     },
+  })
+  createPage({
+    path: "/the-dogs",
+    component: theDogsTemplate
   })
 }

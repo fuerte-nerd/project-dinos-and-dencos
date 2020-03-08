@@ -1,34 +1,60 @@
 import React from "react"
+import { connect } from "react-redux"
+
+import { useStaticQuery, graphql } from "gatsby"
 import Link from "./Link"
 import moment from "moment"
 
-export default function DogCard({ data }) {
+function DogCard(props) {
 
-    const tempLangData = {
-        sex: {
-            en: {
-                M: 'Male',
-                F: 'Female'
+  const {data} = props
+  const tempLangData = {
+    sex: {
+      en: {
+        M: "Male",
+        F: "Female",
+      },
+    },
+  }
+
+  moment.relativeTimeRounding(Math.floor)
+
+  const dataQL = useStaticQuery(graphql`
+    query {
+      page_data: file(name: { eq: "the_dogs" }) {
+        childMarkdownRemark {
+          frontmatter {
+            button_text {
+              en
+              it
+              de
+              es
+              fr
             }
+          }
         }
+      }
     }
+  `)
 
-    moment.relativeTimeRounding(Math.floor)
-    
+  const { button_text } = dataQL.page_data.childMarkdownRemark.frontmatter
+
   return (
     <div class="col-lg-6 col-xl-4">
       <div class="card dog ani text-dark my-2">
-        <img
-          class="card-img-top"
-          src={data.image}
-          alt="Card image cap"
-        />
-        <div class="time-in-care position-absolute bg-light-trans rounded" style={{
-            top: '.25rem',
-            left: '.25rem'
-        }}>
+        <img class="card-img-top" src={data.image} alt="Card image cap" />
+        <div
+          class="time-in-care position-absolute bg-light-trans rounded"
+          style={{
+            top: ".25rem",
+            left: ".25rem",
+          }}
+        >
           <span class="small p-1">
-            <span class="font-weight-bold">{moment(data.date_entered).toNow(true)}</span> in care
+            <span class="font-weight-bold">
+              {moment(data.date_entered).toNow(true)}
+            </span>{" "}
+            in care
           </span>
         </div>
         <div class="card-body bg-primary text-light">
@@ -46,8 +72,7 @@ export default function DogCard({ data }) {
             </thead>
             <tbody>
               <tr>
-                <td>{
-                    moment(data.dob).toNow(true)}</td>
+                <td>{moment(data.dob).toNow(true)}</td>
                 <td>{tempLangData.sex.en[data.sex]}</td>
                 <td>{data.breed}</td>
               </tr>
@@ -55,12 +80,19 @@ export default function DogCard({ data }) {
           </table>
           <Link
             to={`dogs/${data.slug}`}
-            classes="btn btn-lg btn-block btn-success stretched-link"
+            classes="btn btn-block btn-success stretched-link"
           >
-            <i class="mr-4 fas fa-info-circle"></i>Find out more!
+            <i class="mr-2 fas fa-info-circle"></i>
+            {button_text[props.lang]}
           </Link>
         </div>
       </div>
     </div>
   )
 }
+
+const mapStateToProps = state => ({
+  lang: state.language.lang,
+})
+
+export default connect(mapStateToProps)(DogCard)

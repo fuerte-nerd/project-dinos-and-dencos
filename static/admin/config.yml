@@ -208,6 +208,33 @@ collections:
               - { name: de, label: Deutsch, widget: string }
               - { name: it, label: Italiano, widget: string }
               - { name: fr, label: Français, widget: string }
+          - name: "age"
+            label: "'Age' text"
+            widget: object
+            fields:
+              - { name: en, label: English, widget: string }
+              - { name: es, label: Español, widget: string }
+              - { name: de, label: Deutsch, widget: string }
+              - { name: it, label: Italiano, widget: string }
+              - { name: fr, label: Français, widget: string }
+          - name: "breed"
+            label: "'Breed' text"
+            widget: object
+            fields:
+              - { name: en, label: English, widget: string }
+              - { name: es, label: Español, widget: string }
+              - { name: de, label: Deutsch, widget: string }
+              - { name: it, label: Italiano, widget: string }
+              - { name: fr, label: Français, widget: string }
+          - name: "sex"
+            label: "'Sex' text"
+            widget: object
+            fields:
+              - { name: en, label: English, widget: string }
+              - { name: es, label: Español, widget: string }
+              - { name: de, label: Deutsch, widget: string }
+              - { name: it, label: Italiano, widget: string }
+              - { name: fr, label: Français, widget: string }
   - name: articles
     label: Articles
     folder: articles
