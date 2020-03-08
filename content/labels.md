@@ -48,7 +48,7 @@ donate:
   es: Donar
   it: Donare
 volunteer:
-  fr: ' Volontaire'
+  fr: Volontaire
   it: Volontariato
   de: Freiwilliger
   es: Voluntario
