@@ -50,7 +50,7 @@ button_text:
 age:
   en: Age
   es: Edad
-  fr: 'Âge '
+  fr: Âge
   de: Alter
   it: Età
 breed:
