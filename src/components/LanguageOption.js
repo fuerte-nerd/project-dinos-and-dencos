@@ -7,7 +7,7 @@ import { Button } from "reactstrap"
 function LanguageOption(props) {
 
   const handleClick = ()=>{
-    props.dispatch(setLanguage(props.flag))
+    props.dispatch(setLanguage(props.lang, props.flag))
     props.dispatch(toggleLanguageModal())
   }
 

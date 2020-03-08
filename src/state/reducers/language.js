@@ -10,7 +10,8 @@ export default (state = initialState, action)=>{
         case SET_LANGUAGE:
             return {
                 ...state,
-                lang: action.payload
+                lang: action.payload.lang,
+                flag: action.payload.flag
             }
             case TOGGLE_LANGUAGE_MODAL:
             return {

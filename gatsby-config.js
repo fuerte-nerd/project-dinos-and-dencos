@@ -5,8 +5,21 @@ module.exports = {
     author: `Fuertenerd`,
   },
   plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `site-images`,
+        path: `${__dirname}/static/assets`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `content`,
+        path: `${__dirname}/content`,
+      },
+    },
     `gatsby-plugin-react-helmet`,
-    
     `gatsby-plugin-netlify-cms`,
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,

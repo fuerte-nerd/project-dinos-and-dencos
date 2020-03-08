@@ -21,7 +21,7 @@ const LanguageModal = props => {
         className="py-0 px-1 mb-1 bg-transparent border-0 flag-icon-selected ani"
         onClick={toggle}
       >
-        <span class={`flag-icon flag-icon-selected flag-icon-${props.lang}`}></span>
+        <span class={`flag-icon flag-icon-selected flag-icon-${props.flag}`}></span>
       </Button>
       <Modal isOpen={props.langModalIsOpen} toggle={toggle} className="text-dark">
         <ModalHeader toggle={toggle}>Change language</ModalHeader>
@@ -38,6 +38,7 @@ const LanguageModal = props => {
 }
 const mapStateToProps = state => ({
   lang: state.language.lang,
+  flag: state.language.flag,
   langModalIsOpen: state.language.langModalIsOpen
 })
 

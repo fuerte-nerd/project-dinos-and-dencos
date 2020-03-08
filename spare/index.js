@@ -1,7 +1,7 @@
 import React from "react"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
-import Layout from "../components/layout"
+import Layout from "../src/components/layout"
 
 import logo from "../images/logo.png"
 import bg from "../images/bg1.jpg"

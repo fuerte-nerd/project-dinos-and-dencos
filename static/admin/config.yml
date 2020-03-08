@@ -18,29 +18,29 @@ collections:
             label: "Heading"
             widget: object
             fields:
-              - { name: english, label: English, widget: string }
-              - { name: español, label: Español, widget: string }
-              - { name: deutsch, label: Deutsch, widget: string }
-              - { name: italiano, label: Italiano, widget: string }
-              - { name: français, label: Français, widget: string }
+              - { name: en, label: English, widget: string }
+              - { name: es, label: Español, widget: string }
+              - { name: de, label: Deutsch, widget: string }
+              - { name: it, label: Italiano, widget: string }
+              - { name: fr, label: Français, widget: string }
           - name: "subheading"
             label: "Subheading"
             widget: object
             fields:
-              - { name: english, label: English, widget: string }
-              - { name: español, label: Español, widget: string }
-              - { name: deutsch, label: Deutsch, widget: string }
-              - { name: italiano, label: Italiano, widget: string }
-              - { name: français, label: Français, widget: string }
+              - { name: en, label: English, widget: string }
+              - { name: es, label: Español, widget: string }
+              - { name: de, label: Deutsch, widget: string }
+              - { name: it, label: Italiano, widget: string }
+              - { name: fr, label: Français, widget: string }
           - name: "button_text"
             label: "Buton text"
             widget: object
             fields:
-              - { name: english, label: English, widget: string }
-              - { name: español, label: Español, widget: string }
-              - { name: deutsch, label: Deutsch, widget: string }
-              - { name: italiano, label: Italiano, widget: string }
-              - { name: français, label: Français, widget: string }
+              - { name: en, label: English, widget: string }
+              - { name: es, label: Español, widget: string }
+              - { name: de, label: Deutsch, widget: string }
+              - { name: it, label: Italiano, widget: string }
+              - { name: fr, label: Français, widget: string }
   - name: articles
     label: Articles
     folder: articles
