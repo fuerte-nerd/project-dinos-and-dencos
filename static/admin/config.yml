@@ -37,6 +37,28 @@ collections:
               - { name: de, label: Deutsch, widget: string }
               - { name: it, label: Italiano, widget: string }
               - { name: fr, label: Français, widget: string }
+      - label: "Footer"
+        name: "footer"
+        file: "content/footer.md"
+        fields:
+          - label: "'Registered charity' text"
+            name: "registered_charity_text"
+            widget: object
+            fields:
+              - { name: en, label: English, widget: string }
+              - { name: es, label: Español, widget: string }
+              - { name: de, label: Deutsch, widget: string }
+              - { name: it, label: Italiano, widget: string }
+              - { name: fr, label: Français, widget: string }
+          - label: "'Website by' text"
+            name: "website_by_text"
+            widget: object
+            fields:
+              - { name: en, label: English, widget: string }
+              - { name: es, label: Español, widget: string }
+              - { name: de, label: Deutsch, widget: string }
+              - { name: it, label: Italiano, widget: string }
+              - { name: fr, label: Français, widget: string }
   - name: pages
     label: Pages
     editor:

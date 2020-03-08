@@ -58,13 +58,20 @@ function DogCard(props) {
               es
               fr
             }
+            in_care {
+              en
+              it
+              de
+              es
+              fr
+            }
           }
         }
       }
     }
   `)
 
-  const { button_text, age, breed, sex } = dataQL.page_data.childMarkdownRemark.frontmatter
+  const { button_text, age, breed, sex, in_care } = dataQL.page_data.childMarkdownRemark.frontmatter
 
   return (
     <div class="col-lg-6 col-xl-4">
@@ -81,7 +88,7 @@ function DogCard(props) {
             <span class="font-weight-bold">
               {moment(data.date_entered).toNow(true)}
             </span>{" "}
-            in care
+            {in_care[props.lang]}
           </span>
         </div>
         <div class="card-body bg-primary text-light">
