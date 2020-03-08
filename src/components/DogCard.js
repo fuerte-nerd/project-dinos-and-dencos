@@ -2,6 +2,7 @@ import React from "react"
 import { connect } from "react-redux"
 
 import { useStaticQuery, graphql } from "gatsby"
+import Img from 'gatsby-image'
 import Link from "./Link"
 import moment from "moment"
 import 'moment/locale/es'
@@ -37,21 +38,21 @@ function DogCard(props) {
               es
               fr
             }
-            age {
+            age_text {
               en
               it
               de
               es
               fr
             }
-            breed {
+            breed_text {
               en
               it
               de
               es
               fr
             }
-            sex {
+            sex_text {
               en
               it
               de
@@ -68,15 +69,38 @@ function DogCard(props) {
           }
         }
       }
+      images: allImageSharp {
+        edges {
+          node {
+            id
+            fluid {
+              ...GatsbyImageSharpFluid
+              originalName
+            }
+          }
+        }
+      }
     }
   `)
 
-  const { button_text, age, breed, sex, in_care } = dataQL.page_data.childMarkdownRemark.frontmatter
+  const imageToGatsbify = dataQL.images.edges.filter((img)=>{
+    if(img.node.fluid.originalName === data.main_image.match(/(?<=\/).*/g)[0]){
+      return img
+    }
+  })[0]
+
+  console.log(imageToGatsbify)
+
+  const { button_text, age_text, breed_text, sex_text, in_care } = dataQL.page_data.childMarkdownRemark.frontmatter
+
+  console.log(dataQL)
+  console.log(props)
 
   return (
     <div class="col-lg-6 col-xl-4">
       <div class="card dog ani text-dark my-2">
-        <img class="card-img-top" src={data.image} alt="Card image cap" />
+        <Img className="card-img-top" fluid={imageToGatsbify.node.fluid} />
+        {/* <img class="card-img-top" src={data.image} alt="Card image cap" /> */}
         <div
           class="time-in-care position-absolute bg-light-trans rounded"
           style={{
@@ -99,14 +123,14 @@ function DogCard(props) {
           <table class="table table-sm table-light table-striped text-dark text-center small mb-0">
             <thead>
               <tr>
-                <th>{age[props.lang]}</th>
-                <th>{sex[props.lang]}</th>
-                <th>{breed[props.lang]}</th>
+                <th>{age_text[props.lang]}</th>
+                <th>{sex_text[props.lang]}</th>
+                <th>{breed_text[props.lang]}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>{moment(data.dob).toNow(true)}</td>
+                <td>{moment(data.date_of_birth).toNow(true)}</td>
                 <td>{tempLangData.sex.en[data.sex]}</td>
                 <td>{data.breed}</td>
               </tr>

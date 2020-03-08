@@ -50,8 +50,31 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       ),
     },
   })
+  const dogImagesQuery = await graphql(`
+    {
+      allFile(filter: {sourceInstanceName: {eq: "dogs"}}) {
+        edges {
+          node {
+            childMarkdownRemark {
+              frontmatter {
+                main_image
+              }
+            }
+            id
+          }
+        }
+      }
+    }
+  `)
+  if (dogImagesQuery.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
   createPage({
     path: "/the-dogs",
-    component: theDogsTemplate
+    component: theDogsTemplate,
+    context: {
+      test: JSON.stringify(dogImagesQuery.data.allFile.edges)
+    }
   })
 }

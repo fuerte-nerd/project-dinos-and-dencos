@@ -10,98 +10,13 @@ import Dogs from "../components/Dogs"
 import TempImage from "../images/rafael-profile.jpg"
 
 function TheDogs(props) {
-  const dogData = [
-    {
-      name: "Rafael",
-      slug: "rafael-20200306",
-      dob: new Date(2017, 5, 1),
-      date_entered: new Date(2020, 1, 20),
-      image: TempImage,
-      sex: "M",
-      breed: "Bardino",
-      location: "shelter",
-      dogs: 1,
-      cats: 1,
-      family: 1,
-      ppp: false,
-      sterile: false,
-    },
-    {
-      name: "Chispa",
-      slug: "chispa-20200306",
-      dob: new Date(2015, 5, 1),
-      date_entered: new Date(2019, 1, 20),
-      image: TempImage,
-      sex: "F",
-      breed: "Bardina",
-      location: "shelter",
-      dogs: 1,
-      cats: 1,
-      family: 1,
-      ppp: false,
-      sterile: false,
-    },
-    {
-      name: "Robert",
-      slug: "robert-20200306",
-      dob: new Date(2018, 1, 1),
-      date_entered: new Date(2018, 1, 20),
-      image: TempImage,
-      sex: "M",
-      breed: "Yorkie",
-      location: "shelter",
-      dogs: 1,
-      cats: 1,
-      family: 1,
-      ppp: false,
-      sterile: false,
-    },
-    {
-      name: "Rafael",
-      slug: "rafael-20200306",
-      dob: new Date(2017, 5, 1),
-      date_entered: new Date(2020, 1, 20),
-      image: TempImage,
-      sex: "M",
-      breed: "Bardino",
-      location: "shelter",
-      dogs: 1,
-      cats: 1,
-      family: 1,
-      ppp: false,
-      sterile: false,
-    },
-    {
-      name: "Chispa",
-      slug: "chispa-20200306",
-      dob: new Date(2015, 5, 1),
-      date_entered: new Date(2019, 1, 20),
-      image: TempImage,
-      sex: "F",
-      breed: "Bardina",
-      location: "shelter",
-      dogs: 1,
-      cats: 1,
-      family: 1,
-      ppp: false,
-      sterile: false,
-    },
-    {
-      name: "Robert",
-      slug: "robert-20200306",
-      dob: new Date(2018, 1, 1),
-      date_entered: new Date(2018, 1, 20),
-      image: TempImage,
-      sex: "M",
-      breed: "Yorkie",
-      location: "shelter",
-      dogs: 1,
-      cats: 1,
-      family: 1,
-      ppp: false,
-      sterile: false,
-    },
-  ]
+
+  const dogs = props.data.dogs.edges
+
+  const dogsArr = dogs.map((dog)=>{
+    return dog.node.childMarkdownRemark.frontmatter
+  })
+  console.log(JSON.parse(props.pageContext.test))
 
   const {
     heading,
@@ -126,7 +41,7 @@ function TheDogs(props) {
               {listing_note[props.lang]}
             </small>
           </div>
-          <Dogs data={dogData} />
+          <Dogs data={dogsArr} />
         </div>
       </div>
     </Layout>
@@ -158,6 +73,29 @@ export const query = graphql`
             it
             es
             fr
+          }
+        }
+      }
+    }
+    dogs: allFile(filter: {sourceInstanceName: {eq: "dogs"}}) {
+      edges {
+        node {
+          childMarkdownRemark {
+            frontmatter {
+              name
+              main_image
+              breed
+              date_of_birth
+              date_entered
+              sex
+              location
+              dog_friendly
+              cat_friendly
+              family_friendly
+              ppp
+              sterilised
+              images
+            }
           }
         }
       }

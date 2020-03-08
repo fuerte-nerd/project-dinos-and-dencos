@@ -22,7 +22,7 @@ const IndexPage = props => {
     facebook_username,
     instagram_username,
   } = props.data.social_media.childMarkdownRemark.frontmatter
-
+console.log(props)
   return (
     <Layout title="Home" showFooter={false}>
       <BackgroundImage

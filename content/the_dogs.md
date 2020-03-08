@@ -47,19 +47,19 @@ button_text:
   de: Mehr Informationen
   it: Maggiori informazioni
   fr: Plus d'informations
-age:
+age_text:
   en: Age
   es: Edad
   fr: Âge
   de: Alter
   it: Età
-breed:
+breed_text:
   en: Breed
   it: Razza
   de: Rasse
   fr: Race
   es: Raza
-sex:
+sex_text:
   en: Sex
   es: Sexo
   de: Geschlecht
