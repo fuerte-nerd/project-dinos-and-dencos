@@ -322,6 +322,7 @@ collections:
           - { name: body_nl, label: "Hoofdtekst", widget: markdown }
   - name: dogs
     label: Dogs
+    identifier_field: name
     folder: dogs
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
