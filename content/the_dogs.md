@@ -65,5 +65,11 @@ sex:
   de: Geschlecht
   it: Sesso
   fr: Sexe
+in_care:
+  fr: en soins
+  en: in care
+  es: en el cuidado
+  de: in Pflege
+  it: in cura
 ---
 
