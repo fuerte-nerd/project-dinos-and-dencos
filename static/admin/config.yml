@@ -320,3 +320,70 @@ collections:
           - { name: title_nl, label: "Titel" }
           - { name: intro_nl, label: "Invoering" }
           - { name: body_nl, label: "Hoofdtekst", widget: markdown }
+  - name: dogs
+    label: Dogs
+    folder: dogs
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { name: name, label: Name, widget: string}
+      - { name: main_image, label: "Main Image", widget: image }
+      - name: gallery
+        label: "Gallery"
+        description: "Add photos of the dog here"
+        widget: list
+        field: {label: Images, name: image, widget: image}
+      - { name: breed, label: Breed, widget: string}
+      - { name: date_of_birth, label: "Date of Birth", widget: datetime }
+      - { name: date_entered, label: "Date entered", widget: datetime }
+      - { name: sex, label: Sex, widget: select, options: ["M", "F"]}
+      - name: location
+        label: "Current Location"
+        widget: select
+        options: 
+          - { label: "Shelter", value: "0" }
+          - { label: "Foster", value: "1" }
+          - { label: "Preadoption", value: "2" }
+          - { label: "Other", value: "3" }
+      - name: dog_friendly
+        label: "Dog friendly?"
+        widget: boolean
+        default: true
+      - name: cat_friendly
+        label: "Cat friendly?"
+        widget: boolean
+        default: true
+      - name: family_friendly
+        label: "Family friendly?"
+        widget: boolean
+        default: true
+      - name: ppp
+        label: "PPP?"
+        widget: boolean
+        default: false
+      - name: sterilised
+        label: "Sterilised?"
+        widget: boolean
+        default: true
+      - name: headline
+        description: "Please enter a 1 or 2 sentence headline"
+        label: "Headline"
+        widget: object
+        fields:
+          - { name: en, label: English, widget: string }
+          - { name: es, label: Español, widget: string }
+          - { name: de, label: Deutsch, widget: string }
+          - { name: it, label: Italiano, widget: string }
+          - { name: fr, label: Français, widget: string }
+      - name: description
+        label: "Description"
+        description: "Please enter 1 or 2 paragraphs to describe the dog"
+        widget: object
+        fields:
+          - { name: en, label: English, widget: markdown }
+          - { name: es, label: Español, widget: markdown }
+          - { name: de, label: Deutsch, widget: markdown }
+          - { name: it, label: Italiano, widget: markdown }
+          - { name: fr, label: Français, widget: markdown }

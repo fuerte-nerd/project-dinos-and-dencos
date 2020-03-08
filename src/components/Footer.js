@@ -1,11 +1,43 @@
 import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
+import { connect } from "react-redux"
+
 import Helmet from "react-helmet"
 
 import logo from "../images/logo.png"
 
 import LeafletMap from "./LeafletMap"
 
-export default function Footer(props) {
+function Footer(props) {
+  const { lang } = props
+
+  const data = useStaticQuery(graphql`
+    query {
+      data: file(name: { eq: "footer" }) {
+        childMarkdownRemark {
+          frontmatter {
+            registered_charity_text {
+              en
+              it
+              de
+              es
+              fr
+            }
+            website_by_text {
+              en
+              it
+              de
+              es
+              fr
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const { registered_charity_text, website_by_text } = data.data.childMarkdownRemark.frontmatter
+
   return props.show ? (
     <footer class="bg-dark py-3">
       <div class="container">
@@ -25,7 +57,7 @@ export default function Footer(props) {
             <div class="pt-2 py-lg-0">
               <a href="mailto:info@fuerteventuradogrescue.org">
                 <i class="fas fa-envelope d-block d-lg-inline-block"></i>
-                <span class="ml-3">info@pfuerteventuradogrescue.org</span>
+                <span class="ml-3">info@fuerteventuradogrescue.org</span>
               </a>
             </div>
           </div>
@@ -42,13 +74,19 @@ export default function Footer(props) {
           </div>
         </div>
         <small class="text-center d-block mt-4">
-          Registered Charity in the Canary Islands since April 2013
+          {registered_charity_text[lang]}
         </small>
         <small class="text-center d-block">G1/S1/19399-13/F</small>
         <small class="text-center d-block text-muted mt-1">
-          Website by <a href="mailto:fuertenerd@gmail.com">Fuertenerd</a>
+          {`${website_by_text[lang]} `} <a href="mailto:fuertenerd@gmail.com">Fuertenerd</a>
         </small>
       </div>
     </footer>
   ) : null
 }
+
+const mapStateToProps = state => ({
+  lang: state.language.lang,
+})
+
+export default connect(mapStateToProps)(Footer)
