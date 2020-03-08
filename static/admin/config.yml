@@ -24,8 +24,19 @@ collections:
               - { name: fr, label: Français, widget: string }
           - { label: "Facebook username", name: "facebook_username", widget: string }
           - { label: "Instagram username", name: "instagram_username", widget: string }
-
-
+      - label: "Language Selector"
+        name: "language_selector"
+        file: "content/language_selector.md"
+        fields:
+          - label: "'Change language' text"
+            name: "change_language_text"
+            widget: object
+            fields:
+              - { name: en, label: English, widget: string }
+              - { name: es, label: Español, widget: string }
+              - { name: de, label: Deutsch, widget: string }
+              - { name: it, label: Italiano, widget: string }
+              - { name: fr, label: Français, widget: string }
   - name: pages
     label: Pages
     editor:

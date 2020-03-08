@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import { TransitionPortal } from "gatsby-plugin-transition-link"
 import { toggleNav, setNavState } from "../state/actions"
 import Link from "./Link"
@@ -21,6 +22,29 @@ import LanguageModal from "./LanguageModal"
 import logo from "../images/logo.png"
 
 function Navigation(props) {
+  const data = useStaticQuery(graphql`
+    query {
+      social_media: file(
+        name: { eq: "social_media" }
+        sourceInstanceName: { eq: "content" }
+      ) {
+        childMarkdownRemark {
+          frontmatter {
+            facebook_username
+            instagram_username
+            find_us_text {
+              en
+              es
+              de
+              it
+              fr
+            }
+          }
+        }
+      }
+    }
+  `)
+
   const [isOpen, setIsOpen] = useState(false)
 
   const toggle = () => {
@@ -84,6 +108,13 @@ function Navigation(props) {
       window.removeEventListener("resize", checkWindowState)
     }
   }, [])
+
+  const {
+    find_us_text,
+    facebook_username,
+    instagram_username,
+  } = data.social_media.childMarkdownRemark.frontmatter
+
 
   return (
     <div>
@@ -169,17 +200,17 @@ function Navigation(props) {
               className={`${responsiveClasses.navLink} d-lg-none p-3 border-top border-bottom`}
             >
               <small className="d-block font-weight-bold mb-2">
-                Find us on...
+                {find_us_text[props.lang]}
               </small>
               <div class="d-flex justify-content-center">
                 <a
-                  href="#"
+                  href={`https://www.facebook.com/${facebook_username}`}
                   class="btn rounded-circle social social-sm social-facebook"
                 >
                   <i class="fab fa-facebook-f"></i>
                 </a>
                 <a
-                  href="#"
+                  href={`https://www.instagram.com/${instagram_username}`}
                   class="btn ml-2 rounded-circle social social-sm social-instagram"
                 >
                   <i class="fab fa-instagram"></i>

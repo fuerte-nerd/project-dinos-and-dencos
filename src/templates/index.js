@@ -17,6 +17,12 @@ const IndexPage = props => {
     button_text,
   } = props.data.text.childMarkdownRemark.frontmatter
 
+  const {
+    find_us_text,
+    facebook_username,
+    instagram_username,
+  } = props.data.social_media.childMarkdownRemark.frontmatter
+
   return (
     <Layout title="Home" showFooter={false}>
       <BackgroundImage
@@ -59,17 +65,17 @@ const IndexPage = props => {
             <div className="col-xs-12 col-md-3 text-center text-md-right">
               <div className="p-4 animated fadeIn fast delay-2s">
                 <small className="d-block font-weight-bold mb-2">
-                  Find us on...
+                  {find_us_text[props.lang]}
                 </small>
                 <div className="d-flex justify-content-center justify-content-md-end">
                   <a
-                    href="#"
+                    href={`https://www.facebook.com/${facebook_username}`}
                     className="btn rounded-circle social social-facebook"
                   >
                     <i className="fab fa-facebook-f"></i>
                   </a>
                   <a
-                    href="#"
+                    href={`https://www.instagram.com/${instagram_username}`}
                     className="btn ml-2 rounded-circle social social-instagram"
                   >
                     <i className="fab fa-instagram"></i>
@@ -85,7 +91,7 @@ const IndexPage = props => {
 }
 
 export const query = graphql`
-  query($background_image: String!){
+  query($background_image: String!) {
     text: file(name: { eq: "home" }) {
       childMarkdownRemark {
         frontmatter {
@@ -115,20 +121,34 @@ export const query = graphql`
     }
     image: file(relativePath: { eq: $background_image }) {
       childImageSharp {
-        fluid(
-          maxWidth: 2500
-        ) {
+        fluid(maxWidth: 2500) {
           ...GatsbyImageSharpFluid
         }
       }
-    }  
+    }
+    social_media: file(
+      name: { eq: "social_media" }
+      sourceInstanceName: { eq: "content" }
+    ) {
+      childMarkdownRemark {
+        frontmatter {
+          facebook_username
+          instagram_username
+          find_us_text {
+            en
+            es
+            de
+            it
+            fr
+          }
+        }
+      }
+    }
   }
 `
 const mapStateToProps = state => ({
   lang: state.language.lang,
 })
 export default connect(mapStateToProps)(IndexPage)
-
-
 
 // ($background_image: String!)
