@@ -6,6 +6,6 @@ find_us_text:
   it: Trovaci su...
   fr: Retrouvez-nous sur...
 facebook_username: Fuerteventura-Dog-Rescue-628498397166915
-instagram_username: fuertaventuradogrescue
+instagram_username: fuerteventuradogrescue
 ---
 
