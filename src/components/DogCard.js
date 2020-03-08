@@ -4,6 +4,10 @@ import { connect } from "react-redux"
 import { useStaticQuery, graphql } from "gatsby"
 import Link from "./Link"
 import moment from "moment"
+import 'moment/locale/es'
+import 'moment/locale/de'
+import 'moment/locale/it'
+import 'moment/locale/fr'
 
 function DogCard(props) {
 
@@ -19,6 +23,8 @@ function DogCard(props) {
 
   moment.relativeTimeRounding(Math.floor)
 
+  moment.locale(props.lang)
+
   const dataQL = useStaticQuery(graphql`
     query {
       page_data: file(name: { eq: "the_dogs" }) {
@@ -31,13 +37,34 @@ function DogCard(props) {
               es
               fr
             }
+            age {
+              en
+              it
+              de
+              es
+              fr
+            }
+            breed {
+              en
+              it
+              de
+              es
+              fr
+            }
+            sex {
+              en
+              it
+              de
+              es
+              fr
+            }
           }
         }
       }
     }
   `)
 
-  const { button_text } = dataQL.page_data.childMarkdownRemark.frontmatter
+  const { button_text, age, breed, sex } = dataQL.page_data.childMarkdownRemark.frontmatter
 
   return (
     <div class="col-lg-6 col-xl-4">
@@ -65,9 +92,9 @@ function DogCard(props) {
           <table class="table table-sm table-light table-striped text-dark text-center small mb-0">
             <thead>
               <tr>
-                <th>Age</th>
-                <th>Sex</th>
-                <th>Breed</th>
+                <th>{age[props.lang]}</th>
+                <th>{sex[props.lang]}</th>
+                <th>{breed[props.lang]}</th>
               </tr>
             </thead>
             <tbody>
