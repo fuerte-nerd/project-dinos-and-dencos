@@ -1,18 +1,18 @@
 ---
-name: Raphael
-main_image: assets/rafael-profile.jpg
+name: Candy
+main_image: assets/chispa-chopped.jpg
 images:
   - assets/rafael-profile.jpg
   - assets/chispa-chopped.jpg
 breed: Bardino
-date_of_birth: 2018-04-28T14:13:23.979Z
-date_entered: 2019-12-12T15:13:24.106Z
-sex: M
+date_of_birth: 2017-01-01T15:13:23.979Z
+date_entered: 2019-11-01T15:13:24.106Z
+sex: F
 location: '0'
 dog_friendly: '0'
 cat_friendly: '0'
 family_friendly: '0'
-ppp: false
+ppp: true
 sterilised: true
 headline:
   en: >-
