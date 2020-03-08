@@ -42,6 +42,22 @@ function Navigation(props) {
           }
         }
       }
+      language_selector: file(
+        name: { eq: "language_selector" }
+        sourceInstanceName: { eq: "content" }
+      ) {
+        childMarkdownRemark {
+          frontmatter {
+            change_language_text {
+              en
+              es
+              de
+              it
+              fr
+            }
+          }
+        }
+      }
     }
   `)
 
@@ -115,6 +131,9 @@ function Navigation(props) {
     instagram_username,
   } = data.social_media.childMarkdownRemark.frontmatter
 
+  const {
+    change_language_text,
+  } = data.language_selector.childMarkdownRemark.frontmatter
 
   return (
     <div>
@@ -220,7 +239,7 @@ function Navigation(props) {
             <small
               className={`${responsiveClasses.navLink} d-block d-lg-none mt-3 font-weight-bold`}
             >
-              Change language
+              {change_language_text[props.lang]}
             </small>
             <li className="nav-item mt-lg-0 d-flex align-items-center justify-content-center">
               <LanguageModal />

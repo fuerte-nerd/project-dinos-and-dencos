@@ -42,6 +42,100 @@ collections:
     editor:
       preview: false
     files:
+      - label: "Labels"
+        name: "labels"
+        file: "content/labels.md"
+        fields:
+          - name: "home"
+            label: "'Home' page"
+            widget: object
+            fields:
+              - { name: en, label: English, widget: string }
+              - { name: es, label: Español, widget: string }
+              - { name: de, label: Deutsch, widget: string }
+              - { name: it, label: Italiano, widget: string }
+              - { name: fr, label: Français, widget: string }
+          - name: "the_dogs"
+            label: "'The Dogs' page"
+            widget: object
+            fields:
+              - { name: en, label: English, widget: string }
+              - { name: es, label: Español, widget: string }
+              - { name: de, label: Deutsch, widget: string }
+              - { name: it, label: Italiano, widget: string }
+              - { name: fr, label: Français, widget: string }
+          - name: "articles"
+            label: "'Articles' page"
+            widget: object
+            fields:
+              - { name: en, label: English, widget: string }
+              - { name: es, label: Español, widget: string }
+              - { name: de, label: Deutsch, widget: string }
+              - { name: it, label: Italiano, widget: string }
+              - { name: fr, label: Français, widget: string }
+          - name: "about"
+            label: "'About' page"
+            widget: object
+            fields:
+              - { name: en, label: English, widget: string }
+              - { name: es, label: Español, widget: string }
+              - { name: de, label: Deutsch, widget: string }
+              - { name: it, label: Italiano, widget: string }
+              - { name: fr, label: Français, widget: string }
+          - name: "help_us"
+            label: "'Help us' label (in navigation)"
+            widget: object
+            fields:
+              - { name: en, label: English, widget: string }
+              - { name: es, label: Español, widget: string }
+              - { name: de, label: Deutsch, widget: string }
+              - { name: it, label: Italiano, widget: string }
+              - { name: fr, label: Français, widget: string }
+          - name: "adopt"
+            label: "'Adopt' page"
+            widget: object
+            fields:
+              - { name: en, label: English, widget: string }
+              - { name: es, label: Español, widget: string }
+              - { name: de, label: Deutsch, widget: string }
+              - { name: it, label: Italiano, widget: string }
+              - { name: fr, label: Français, widget: string }
+          - name: "foster"
+            label: "'Foster' page"
+            widget: object
+            fields:
+              - { name: en, label: English, widget: string }
+              - { name: es, label: Español, widget: string }
+              - { name: de, label: Deutsch, widget: string }
+              - { name: it, label: Italiano, widget: string }
+              - { name: fr, label: Français, widget: string }
+          - name: "donate"
+            label: "'Donate' page"
+            widget: object
+            fields:
+              - { name: en, label: English, widget: string }
+              - { name: es, label: Español, widget: string }
+              - { name: de, label: Deutsch, widget: string }
+              - { name: it, label: Italiano, widget: string }
+              - { name: fr, label: Français, widget: string }
+          - name: "volunteer"
+            label: "'Volunteer' page"
+            widget: object
+            fields:
+              - { name: en, label: English, widget: string }
+              - { name: es, label: Español, widget: string }
+              - { name: de, label: Deutsch, widget: string }
+              - { name: it, label: Italiano, widget: string }
+              - { name: fr, label: Français, widget: string }
+          - name: "contact"
+            label: "'Contact' page"
+            widget: object
+            fields:
+              - { name: en, label: English, widget: string }
+              - { name: es, label: Español, widget: string }
+              - { name: de, label: Deutsch, widget: string }
+              - { name: it, label: Italiano, widget: string }
+              - { name: fr, label: Français, widget: string }
       - label: "Home"
         name: "home"
         file: "content/home.md"
