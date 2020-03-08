@@ -58,6 +58,85 @@ function Navigation(props) {
           }
         }
       }
+      labels: file(
+        name: { eq: "labels" }
+        sourceInstanceName: { eq: "content" }
+      ) {
+        childMarkdownRemark {
+          frontmatter {
+            home {
+              en
+              es
+              de
+              it
+              fr
+            }
+            the_dogs {
+              en
+              es
+              de
+              it
+              fr
+            }
+            articles {
+              en
+              es
+              de
+              it
+              fr
+            }
+            about {
+              en
+              es
+              de
+              it
+              fr
+            }
+            help_us {
+              en
+              es
+              de
+              it
+              fr
+            }
+            adopt {
+              en
+              es
+              de
+              it
+              fr
+            }
+            foster {
+              en
+              es
+              de
+              it
+              fr
+            }
+            donate {
+              en
+              es
+              de
+              it
+              fr
+            }
+            volunteer {
+              en
+              es
+              de
+              it
+              fr
+            }
+            contact {
+              en
+              es
+              de
+              it
+              fr
+            }
+          }
+        }
+      }
     }
   `)
 
@@ -126,6 +205,19 @@ function Navigation(props) {
   }, [])
 
   const {
+    home,
+    the_dogs,
+    articles,
+    about,
+    help_us,
+    adopt,
+    foster,
+    donate,
+    volunteer,
+    contact,
+  } = data.labels.childMarkdownRemark.frontmatter
+
+  const {
     find_us_text,
     facebook_username,
     instagram_username,
@@ -156,48 +248,48 @@ function Navigation(props) {
           <Nav className={`ani ${responsiveClasses.collapse} ml-auto`} navbar>
             <NavItem>
               <Link to="/" classes="nav-link">
-                Home
+                {home[props.lang]}
               </Link>
             </NavItem>
             <NavItem>
               <Link to="the-dogs" classes="nav-link">
-                The Dogs
+                {the_dogs[props.lang]}
               </Link>
             </NavItem>
             <NavItem>
               <Link to="/articles" classes="nav-link">
-                Articles
+                {articles[props.lang]}
               </Link>
             </NavItem>
             <NavItem>
               <Link to="/about" classes="nav-link">
-                About
+                {about[props.lang]}
               </Link>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
-                Help us
+                {help_us[props.lang]}
               </DropdownToggle>
               <DropdownMenu right>
                 <Link
                   to="/adopt"
                   classes="dropdown-item d-flex justify-content-between align-items-center"
                 >
-                  <span>Adopt</span>
+                  <span>{adopt[props.lang]}</span>
                   <i class="fas fa-paw" />
                 </Link>
                 <Link
                   to="/foster"
                   classes="dropdown-item d-flex justify-content-between align-items-center"
                 >
-                  <span>Foster</span>
+                  <span>{foster[props.lang]}</span>
                   <i class="fas fa-bone"></i>
                 </Link>
                 <Link
                   to="/donate"
                   classes="dropdown-item d-flex justify-content-between align-items-center"
                 >
-                  <span>Donate</span>
+                  <span>{donate[props.lang]}</span>
                   <i class="fas fa-donate"></i>
                 </Link>
 
@@ -205,14 +297,14 @@ function Navigation(props) {
                   to="/volunteer"
                   classes="dropdown-item d-flex justify-content-between align-items-center"
                 >
-                  <span>Volunteer</span>
+                  <span>{volunteer[props.lang]}</span>
                   <i class="fas fa-hands-helping"></i>
                 </Link>
               </DropdownMenu>
             </UncontrolledDropdown>
             <NavItem>
               <Link to="/contact" classes="nav-link">
-                Contact
+                {contact[props.lang]}
               </Link>
             </NavItem>
             <div
