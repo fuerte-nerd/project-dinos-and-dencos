@@ -330,11 +330,11 @@ collections:
     fields:
       - { name: name, label: Name, widget: string}
       - { name: main_image, label: "Main Image", widget: image }
-      - name: gallery
-        label: "Gallery"
+      - name: images
+        label: "Images"
         description: "Add photos of the dog here"
         widget: list
-        field: {label: Images, name: image, widget: image}
+        field: {label: "Image", name: image, widget: image}
       - { name: breed, label: Breed, widget: string}
       - { name: date_of_birth, label: "Date of Birth", widget: datetime }
       - { name: date_entered, label: "Date entered", widget: datetime }
@@ -348,17 +348,35 @@ collections:
           - { label: "Preadoption", value: "2" }
           - { label: "Other", value: "3" }
       - name: dog_friendly
-        label: "Dog friendly?"
-        widget: boolean
-        default: true
+        label: "Dog-friendly?"
+        widget: select
+        options: 
+          - { label: "Yes", value: "0" }
+          - { label: "No", value: "1" }
+          - { label: "TBC", value: "2" }
+        default:
+          label: "TBC"
+          value: "2"
       - name: cat_friendly
-        label: "Cat friendly?"
-        widget: boolean
-        default: true
+        label: "Cat-friendly?"
+        widget: select
+        options: 
+          - { label: "Yes", value: "0" }
+          - { label: "No", value: "1" }
+          - { label: "TBC", value: "2" }
+        default:
+          label: "TBC"
+          value: "2"
       - name: family_friendly
-        label: "Family friendly?"
-        widget: boolean
-        default: true
+        label: "Family-friendly?"
+        widget: select
+        options: 
+          - { label: "Yes", value: "0" }
+          - { label: "No", value: "1" }
+          - { label: "TBC", value: "2" }
+        default:
+          label: "TBC"
+          value: "2"
       - name: ppp
         label: "PPP?"
         widget: boolean
