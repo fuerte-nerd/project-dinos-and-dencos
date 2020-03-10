@@ -1,4 +1,18 @@
 const path = require("path")
+const { createFilePath } = require("gatsby-source-filesystem")
+
+exports.onCreateNode = async ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+
+  if (node.internal.type === `MarkdownRemark`) {
+    const value = createFilePath({ node, getNode })
+    createNodeField({
+      name: `slug`,
+      node,
+      value,
+    })
+  }
+}
 
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   if (stage === "build-html") {
@@ -25,6 +39,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const indexTemplate = path.resolve(`src/templates/index.js`)
   const theDogsTemplate = path.resolve(`src/templates/the-dogs.js`)
+  const dogTemplate = path.resolve(`src/templates/dogTemplate.js`)
 
   const indexBgQuery = await graphql(`
     {
@@ -52,7 +67,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   })
   const dogImagesQuery = await graphql(`
     {
-      allFile(filter: {sourceInstanceName: {eq: "dogs"}}) {
+      allFile(filter: { sourceInstanceName: { eq: "dogs" } }) {
         edges {
           node {
             childMarkdownRemark {
@@ -74,7 +89,37 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     path: "/the-dogs",
     component: theDogsTemplate,
     context: {
-      test: JSON.stringify(dogImagesQuery.data.allFile.edges)
+      test: JSON.stringify(dogImagesQuery.data.allFile.edges),
+    },
+  })
+
+  const dogsQuery = await graphql(`
+    query {
+      allFile(filter: { sourceInstanceName: { eq: "dogs" } }) {
+        edges {
+          node {
+            id
+            childMarkdownRemark {
+              fields {
+                slug
+              }
+            }
+          }
+        }
+      }
     }
+  `)
+  if (dogsQuery.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+  dogsQuery.data.allFile.edges.forEach(({node})=>{
+    createPage({
+      path: node.childMarkdownRemark.fields.slug,
+      component: dogTemplate,
+      context: {
+        id: node.id
+      }
+    })
   })
 }

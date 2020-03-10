@@ -77,7 +77,7 @@ export const query = graphql`
         }
       }
     }
-    dogs: allFile(filter: {sourceInstanceName: {eq: "dogs"}}) {
+    dogs: allFile(filter: {sourceInstanceName: {eq: "dogs"}}, sort: {order: ASC, fields: childMarkdownRemark___frontmatter___date_entered}) {
       edges {
         node {
           childMarkdownRemark {

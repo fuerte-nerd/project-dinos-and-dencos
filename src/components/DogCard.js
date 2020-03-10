@@ -13,11 +13,27 @@ import 'moment/locale/fr'
 function DogCard(props) {
 
   const {data} = props
-  const tempLangData = {
+  const sexData = {
     sex: {
       en: {
         M: "Male",
         F: "Female",
+      },
+      es: {
+        M: "Macho",
+        F: "Hembra"
+      },
+      de: {
+        M: "Männlicher",
+        F: "Hündin"
+      },
+      it: {
+        M: "Maschio",
+        F: "Femmina"
+      },
+      fr: {
+        M: "Mâle",
+        F: "Femelle"
       },
     },
   }
@@ -73,7 +89,7 @@ function DogCard(props) {
         edges {
           node {
             id
-            fluid {
+            fluid (maxWidth: 1000, maxHeight: 1000, cropFocus: ENTROPY) {
               ...GatsbyImageSharpFluid
               originalName
             }
@@ -89,12 +105,7 @@ function DogCard(props) {
     }
   })[0]
 
-  console.log(imageToGatsbify)
-
   const { button_text, age_text, breed_text, sex_text, in_care } = dataQL.page_data.childMarkdownRemark.frontmatter
-
-  console.log(dataQL)
-  console.log(props)
 
   return (
     <div class="col-lg-6 col-xl-4">
@@ -131,7 +142,7 @@ function DogCard(props) {
             <tbody>
               <tr>
                 <td>{moment(data.date_of_birth).toNow(true)}</td>
-                <td>{tempLangData.sex.en[data.sex]}</td>
+                <td>{sexData.sex[props.lang][data.sex]}</td>
                 <td>{data.breed}</td>
               </tr>
             </tbody>
