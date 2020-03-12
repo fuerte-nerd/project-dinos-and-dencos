@@ -3,7 +3,7 @@ $secondary: #52bbb4;
 $light: lighten($primary, 41%);
 $success: #24994b;
 
-$body-bg: darken($secondary, 15%);
+$body-bg: darken($secondary, 10%);
 $body-color: $light;
 
 $font-family-sans-serif: "Spartan";
@@ -122,8 +122,8 @@ body {
 
 .dogs:hover {
   & .card:not(:hover) {
-    transform: scale(0.975);
-    opacity: 0.4;
+    transform: scale(0.985);
+    opacity: 0.8;
   }
 
   & .card:hover {
@@ -182,10 +182,10 @@ $brand-colors: (
   }
   &-gallery {
     &-gallery:hover .dog-image:not(:hover) {
-      opacity: 0.3;
-      transform: scale(0.95);
+      opacity: 0.8;
+      transform: scale(0.985);
     }
-    & img {
+    & .dog-image {
       transition: all 0.2s;
       &:hover {
         transform: translateY(-0.5rem);

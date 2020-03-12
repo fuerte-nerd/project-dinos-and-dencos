@@ -71,7 +71,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         edges {
           node {
             childMarkdownRemark {
-              frontmatter {
+             	fields {
+		slug
+}
+		 frontmatter {
                 main_image
               }
             }

@@ -14,9 +14,8 @@ function TheDogs(props) {
   const dogs = props.data.dogs.edges
 
   const dogsArr = dogs.map((dog)=>{
-    return dog.node.childMarkdownRemark.frontmatter
+    return dog.node.childMarkdownRemark
   })
-  console.log(JSON.parse(props.pageContext.test))
 
   const {
     heading,
@@ -81,6 +80,9 @@ export const query = graphql`
       edges {
         node {
           childMarkdownRemark {
+		fields {
+		slug
+}
             frontmatter {
               name
               main_image

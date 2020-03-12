@@ -1,7 +1,10 @@
 import React, { useState } from "react"
 import { graphql } from "gatsby"
 import { connect } from "react-redux"
+import Img from 'gatsby-image'
 import { Tooltip } from "reactstrap"
+
+import LangConsts from "../components/LanguageConstants"
 
 import Layout from "../components/layout"
 import Spacer from "../components/ContentSpacer"
@@ -28,11 +31,27 @@ function DogTemplate(props) {
     sterilised,
     headline,
     description,
+    images
   } = props.data.content.childMarkdownRemark.frontmatter
 
   moment.relativeTimeRounding(Math.floor)
 
   moment.locale(props.lang)
+
+  const mainImage = props.data.main_image.edges.filter((img)=>{
+    if(img.node.fluid.originalName === props.data.content.childMarkdownRemark.frontmatter.main_image.match(/(?<=\/).*/g)[0]){
+      return img
+    }
+  })[0]
+
+  const galleryImages = []
+  props.data.gallery_thumbs.edges.map((img)=>{
+    images.forEach((i)=>{
+      if(img.node.fluid.originalName === i.match(/(?<=\/).*/g)[0]){
+        galleryImages.push(img)
+      }
+    })
+    })
 
   const [tooltips, setTooltips] = useState({
     ppp: false,
@@ -52,6 +71,33 @@ function DogTemplate(props) {
         sterile: !tooltips.sterile,
       })
     },
+  }
+
+  const getLocation = (code)=>{
+    switch(parseInt(code)){
+      case 0:
+        return LangConsts.location.shelter[props.lang]
+        break;
+      case 1:
+        return LangConsts.location.foster[props.lang]
+        break;
+      case 2:
+        return LangConsts.location.other[props.lang]
+    }
+  }
+
+  const getYesNo = (code) =>{
+    switch(parseInt(code)){
+      case 0:
+        return LangConsts.yes[props.lang];
+        break;
+      case 1:
+        return LangConsts.no[props.lang];
+        break;
+      case 2:
+        return LangConsts.tbc[props.lang];
+        break;
+    }
   }
 
   return (
@@ -83,14 +129,10 @@ function DogTemplate(props) {
       <div className="container">
         <div className="row d-flex align-items-center">
           <div className="col-lg-6">
-            <img
-              src={Temp}
-              alt="Rafael"
-              className="w-100 rounded border animated delay-1s fadeIn"
-            />
+            <Img fluid={mainImage.node.fluid} className="w-100 rounded border" />
           </div>
           <div className="col-lg-6">
-            <div className="card bg-light animated my-3 my-lg-0 shadow fadeIn delay-1s fast">
+            <div className="card bg-light my-3 my-lg-0 shadow">
               <div className="card-body p-0">
                 <h1 className="card-title bg-primary py-3 font-weight-bold text-light text-center mb-0 rounded-top">
                   {name}
@@ -105,7 +147,7 @@ function DogTemplate(props) {
                     </tr>
                     <tr>
                       <th>Sex</th>
-                      <td class="text-center">{sex}</td>
+                      <td class="text-center">{sex === 'M' ? LangConsts.sex.M[props.lang] : LangConsts.sex.F[props.lang]}</td>
                     </tr>
                     <tr>
                       <th>Breed</th>
@@ -113,7 +155,7 @@ function DogTemplate(props) {
                     </tr>
                     <tr>
                       <th>Location</th>
-                      <td class="text-center">{location}</td>
+                      <td class="text-center">{getLocation(location)}</td>
                     </tr>
                     <tr>
                       <th>Time in care</th>
@@ -123,15 +165,15 @@ function DogTemplate(props) {
                     </tr>
                     <tr>
                       <th>Dog-friendly?</th>
-                      <td class="text-center">{dog_friendly}</td>
+                      <td class="text-center">{getYesNo(dog_friendly)}</td>
                     </tr>
                     <tr>
                       <th>Cat-friendly?</th>
-                      <td class="text-center">{cat_friendly}</td>
+                      <td class="text-center">{getYesNo(cat_friendly)}</td>
                     </tr>
                     <tr>
                       <th>Family-friendly?</th>
-                      <td class="text-center">{family_friendly}</td>
+                      <td class="text-center">{getYesNo(family_friendly)}</td>
                     </tr>
                     <tr>
                       <th>
@@ -140,7 +182,7 @@ function DogTemplate(props) {
                           (More info)
                         </small>
                       </th>
-                      <td class="text-center">{ppp}</td>
+                      <td class="text-center">{ppp ? LangConsts.yes[props.lang] : LangConsts.no[props.lang]}</td>
                     </tr>
                     <tr>
                       <th>
@@ -149,7 +191,7 @@ function DogTemplate(props) {
                           (More info)
                         </small>
                       </th>
-                      <td class="text-center">{sterilised}</td>
+                      <td class="text-center">{sterilised ? LangConsts.yes[props.lang] : LangConsts.no[props.lang]}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -157,13 +199,13 @@ function DogTemplate(props) {
             </div>
           </div>
         </div>
-        <div className="p-2 mt-3 animated fadeIn delay-1s">
+        <div className="p-2 mt-3">
           <div className="text-center">
             <div className="mb-2">
               <p className="font-weight-bold mb-0">Share</p>
               <p>
                 <small>
-                  Please help us to find a home by sharing this page
+                  Please help us to find this dog a home by sharing this page
                   with your friends! Thank you
                 </small>
               </p>
@@ -183,7 +225,7 @@ function DogTemplate(props) {
         <div className="dog-description py-3 text-justify" dangerouslySetInnerHTML={{__html: description[props.lang]}}>
           
         </div>
-        <PhotoGallery />
+        <PhotoGallery pics={galleryImages} />
         <FollowUp />
       </div>
     </Layout>
@@ -203,6 +245,8 @@ export const dogQuery = graphql`
           dog_friendly
           cat_friendly
           family_friendly
+          images
+          main_image
           ppp
           sterilised
           headline {
@@ -218,6 +262,31 @@ export const dogQuery = graphql`
             de
             fr
             it
+          }
+        }
+      }
+    }
+    main_image: allImageSharp {
+      edges {
+        node {
+          id
+          fluid (maxWidth: 1000, maxHeight: 1000, cropFocus: ENTROPY) {
+            ...GatsbyImageSharpFluid
+            originalName
+          }
+        }
+      }
+    }
+    gallery_thumbs: allImageSharp {
+      edges {
+        node {
+          id
+          fluid (maxWidth: 500, maxHeight: 500, cropFocus: CENTER) {
+            ...GatsbyImageSharpFluid
+            originalName
+          }
+          original{
+            src
           }
         }
       }

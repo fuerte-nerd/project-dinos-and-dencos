@@ -3,6 +3,8 @@ import { connect } from "react-redux"
 
 import { useStaticQuery, graphql } from "gatsby"
 import Img from 'gatsby-image'
+
+import langConsts from "./LanguageConstants"
 import Link from "./Link"
 import moment from "moment"
 import 'moment/locale/es'
@@ -13,31 +15,7 @@ import 'moment/locale/fr'
 function DogCard(props) {
 
   const {data} = props
-  const sexData = {
-    sex: {
-      en: {
-        M: "Male",
-        F: "Female",
-      },
-      es: {
-        M: "Macho",
-        F: "Hembra"
-      },
-      de: {
-        M: "Männlicher",
-        F: "Hündin"
-      },
-      it: {
-        M: "Maschio",
-        F: "Femmina"
-      },
-      fr: {
-        M: "Mâle",
-        F: "Femelle"
-      },
-    },
-  }
-
+  
   moment.relativeTimeRounding(Math.floor)
 
   moment.locale(props.lang)
@@ -100,7 +78,7 @@ function DogCard(props) {
   `)
 
   const imageToGatsbify = dataQL.images.edges.filter((img)=>{
-    if(img.node.fluid.originalName === data.main_image.match(/(?<=\/).*/g)[0]){
+    if(img.node.fluid.originalName === data.frontmatter.main_image.match(/(?<=\/).*/g)[0]){
       return img
     }
   })[0]
@@ -121,13 +99,13 @@ function DogCard(props) {
         >
           <span class="small p-1">
             <span class="font-weight-bold">
-              {moment(data.date_entered).toNow(true)}
+              {moment(data.frontmatter.date_entered).toNow(true)}
             </span>{" "}
             {in_care[props.lang]}
           </span>
         </div>
         <div class="card-body bg-primary text-light">
-          <h3 class="card-title text-center font-weight-bold">{data.name}</h3>
+          <h3 class="card-title text-center font-weight-bold">{data.frontmatter.name}</h3>
         </div>
 
         <div class="card-body p-0">
@@ -141,14 +119,14 @@ function DogCard(props) {
             </thead>
             <tbody>
               <tr>
-                <td>{moment(data.date_of_birth).toNow(true)}</td>
-                <td>{sexData.sex[props.lang][data.sex]}</td>
-                <td>{data.breed}</td>
+                <td>{moment(data.frontmatter.date_of_birth).toNow(true)}</td>
+                <td>{langConsts.sex[data.frontmatter.sex][props.lang]}</td>
+                <td>{data.frontmatter.breed}</td>
               </tr>
             </tbody>
           </table>
           <Link
-            to={`dogs/${data.slug}`}
+            to={data.fields.slug}
             classes="btn btn-block btn-success stretched-link"
           >
             <i class="mr-2 fas fa-info-circle"></i>

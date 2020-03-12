@@ -1,7 +1,7 @@
 import { SET_LANGUAGE, TOGGLE_LANGUAGE_MODAL } from '../types'
 
 const initialState = {
-    lang: '',
+    lang: 'en',
     langModalIsOpen: false
 }
 
