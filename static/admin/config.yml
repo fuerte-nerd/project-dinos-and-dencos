@@ -313,7 +313,7 @@ collections:
           - { name: title_it, label: "Titolo" }
           - { name: intro_it, label: "Introduzione" }
           - { name: body_it, label: "Corpo", widget: markdown }
- - name: dogs
+  - name: dogs
     label: Dogs
     identifier_field: name
     folder: dogs
