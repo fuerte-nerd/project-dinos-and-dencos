@@ -40,7 +40,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const indexTemplate = path.resolve(`src/templates/index.js`)
   const theDogsTemplate = path.resolve(`src/templates/the-dogs.js`)
   const dogTemplate = path.resolve(`src/templates/dogTemplate.js`)
-
+  const articlesTemplate = path.resolve("src/templates/articles.js")
   const indexBgQuery = await graphql(`
     {
       file(sourceInstanceName: { eq: "content" }, name: { eq: "home" }) {
@@ -71,10 +71,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         edges {
           node {
             childMarkdownRemark {
-             	fields {
-		slug
-}
-		 frontmatter {
+              fields {
+                slug
+              }
+              frontmatter {
                 main_image
               }
             }
@@ -116,13 +116,18 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     reporter.panicOnBuild(`Error while running GraphQL query.`)
     return
   }
-  dogsQuery.data.allFile.edges.forEach(({node})=>{
+  dogsQuery.data.allFile.edges.forEach(({ node }) => {
     createPage({
       path: node.childMarkdownRemark.fields.slug,
       component: dogTemplate,
       context: {
-        id: node.id
-      }
+        id: node.id,
+      },
     })
+  })
+  createPage({
+    path: "/articles",
+    component: articlesTemplate,
+    context: {},
   })
 }

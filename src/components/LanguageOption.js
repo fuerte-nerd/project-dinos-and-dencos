@@ -1,12 +1,11 @@
 import React from "react"
 import { setLanguage, toggleLanguageModal } from "../state/actions"
-import { connect } from 'react-redux'
+import { connect } from "react-redux"
 
 import { Button } from "reactstrap"
 
 function LanguageOption(props) {
-
-  const handleClick = ()=>{
+  const handleClick = () => {
     props.dispatch(setLanguage(props.lang, props.flag))
     props.dispatch(toggleLanguageModal())
   }
@@ -20,8 +19,9 @@ function LanguageOption(props) {
       onClick={handleClick}
     >
       <span className="">{props.language}</span>
-      <span class={`flag-icon flag-icon-${props.flag}`}></span>
+      <span className={`flag-icon flag-icon-${props.flag}`}></span>
     </Button>
   )
 }
 export default connect()(LanguageOption)
+

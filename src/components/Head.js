@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function Head({ description, lang, meta, title }) {
+function Head({ description, lang, meta, title, og }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -19,13 +19,12 @@ function Head({ description, lang, meta, title }) {
             title
             description
             author
+            siteUrl
           }
         }
       }
     `
   )
-
-  const metaDescription = description || site.siteMetadata.description
 
   return (
     <>
@@ -38,15 +37,23 @@ function Head({ description, lang, meta, title }) {
         meta={[
           {
             name: `description`,
-            content: metaDescription,
+            content: og.description,
           },
           {
             property: `og:title`,
             content: title,
           },
           {
+            property: `og:url`,
+            content: og.url,
+          },
+          {
             property: `og:description`,
-            content: metaDescription,
+            content: og.description,
+          },
+          {
+            property: `og:image`,
+            content: site.siteMetadata.siteUrl + og.image,
           },
           {
             property: `og:type`,
@@ -54,19 +61,7 @@ function Head({ description, lang, meta, title }) {
           },
           {
             name: `twitter:card`,
-            content: `summary`,
-          },
-          {
-            name: `twitter:creator`,
-            content: site.siteMetadata.author,
-          },
-          {
-            name: `twitter:title`,
-            content: title,
-          },
-          {
-            name: `twitter:description`,
-            content: metaDescription,
+            content: `summary_large_image`,
           },
         ].concat(meta)}
       />

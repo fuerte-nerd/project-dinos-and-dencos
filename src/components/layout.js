@@ -14,26 +14,14 @@ import { setLanguage, toggleNav } from "../state/actions"
 
 import Head from "./Head"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
-import { TransitionPortal } from "gatsby-plugin-transition-link"
 
 import Navigation from "./Navigation"
+import Spacer from "./ContentSpacer"
 import Footer from "./Footer"
 
 import "./styles.scss"
 
 const Layout = props => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   useEffect(() => {
     //check for localstorage
     if (localStorage.getItem("fdr_lang")) {
@@ -43,6 +31,7 @@ const Layout = props => {
 
       props.dispatch(setLanguage(browserLanguage))
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const checkNav = () => {
@@ -53,11 +42,10 @@ const Layout = props => {
 
   return (
     <>
-      <Head title={props.title} />
-      {/* <TransitionPortal> */}
+      <Head title={props.title} og={props.og} />
       <Navigation />
-      {/* </TransitionPortal> */}
       <div onClick={checkNav} role="button" tabIndex="0">
+        {props.spacer ? <Spacer /> : null}
         <main className="animated fadeIn faster">{props.children}</main>
         <Footer show={props.showFooter} />
       </div>

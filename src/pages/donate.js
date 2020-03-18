@@ -30,7 +30,7 @@ export default function Donate() {
           quisquam ratione libero?
         </p>
         <a
-          href="#"
+          href="http://www.paypal.com"
           class="btn btn-lg btn-primary font-weight-bold d-inline-flex align-items-center"
         >
           Donate now via PayPal<i class="fab fa-paypal ml-3"></i>
@@ -84,7 +84,7 @@ export default function Donate() {
               If you would like to make a donation...
             </p>
             <a
-              href="#"
+              href="http://www.paypal.com"
               class="btn btn-lg font-weight-bold btn-primary d-lg-inline-flex d-block align-items-center"
             >
               Donate now via PayPal<i class="ml-3 fab fa-paypal"></i>

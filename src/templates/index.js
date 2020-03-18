@@ -1,14 +1,17 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { connect } from "react-redux"
+
 import BackgroundImage from "gatsby-background-image"
 
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+import { Container, Row, Col } from "reactstrap"
+
+import LangConsts from "../components/LanguageConstants"
 
 import Layout from "../components/layout"
+import Link from "../components/Link"
 
 import logo from "../images/logo.png"
-import bg from "../images/bg1.jpg"
 
 const IndexPage = props => {
   const {
@@ -18,13 +21,24 @@ const IndexPage = props => {
   } = props.data.text.childMarkdownRemark.frontmatter
 
   const {
-    find_us_text,
     facebook_username,
     instagram_username,
   } = props.data.social_media.childMarkdownRemark.frontmatter
-console.log(props)
+
   return (
-    <Layout title="Home" showFooter={false}>
+    <Layout
+      title="Home"
+      description="Cuidando de los perros abandonados y maltratados de la zona de La Oliva en Fuerteventura desde 2013. | Taking care of the abandoned and mistreated dogs from the La Oliva area of Fuerteventura since 2013."
+      og={{
+        title: "Fuerteventura Dog Rescue",
+        description:
+          "Cuidando de los perros abandonados y maltratados de la zona de La Oliva en Fuerteventura desde 2013. | Taking care of the abandoned and mistreated dogs from the La Oliva area of Fuerteventura since 2013.",
+        image: props.data.og_image.childImageSharp.fixed.src,
+        url: "http://www.fuerteventuradogrescue.org",
+      }}
+      showFooter={false}
+      spacer={false}
+    >
       <BackgroundImage
         className="min-vh-100 d-flex align-items-center align-items-md-end justify-content-start p-0 m-0"
         fluid={props.data.image.childImageSharp.fluid}
@@ -34,38 +48,44 @@ console.log(props)
         }}
       >
         <div className="h-100 w-100 position-absolute m-0 animated fadeInDownBig fast delay-1s hero-gradient-overlay" />
-        <div className="container-fluid">
-          <div className="row d-flex align-items-end">
-            <div className="col-xs-12 col-md-9">
+        <Container fluid>
+          <Row className="d-flex align-items-end">
+            <Col md={9}>
               <div className="hero-content-wrapper">
-                <div className="p-4 text-center text-md-left animated fadeIn fast delay-2s">
+                <div className="p-2 p-lg-4 text-center text-md-left animated fadeIn fast delay-2s">
                   <img
                     src={logo}
                     alt="FDR logo"
+                    className="hide-on-landscape-mobile"
                     style={{
                       width: "10.5rem",
                     }}
                   />
-                  <h2 className="mt-2 h1 font-weight-bold">
+                  <h2
+                    className="mt-2 h1 display-4"
+                    style={{ lineHeight: "3.5rem" }}
+                  >
                     {heading[props.lang]}
                   </h2>
                   <p className="lead">{subheading[props.lang]}</p>
-                  <AniLink
-                    fade
-                    to="/the-dogs"
-                    className="btn btn-primary btn-lg font-weight-bold"
+                  <Link
+                    to="the-dogs"
+                    classes="btn btn-primary btn-lg font-weight-bold"
                   >
                     {" "}
                     <i className="animated tada infinite slow mr-3 fas fa-dog"></i>
                     {button_text[props.lang]}
-                  </AniLink>
+                  </Link>
                 </div>
               </div>
-            </div>
-            <div className="col-xs-12 col-md-3 text-center text-md-right">
-              <div className="p-4 animated fadeIn fast delay-2s">
+            </Col>
+            <Col
+              md={3}
+              className="text-center text-md-right hide-on-landscape-mobile"
+            >
+              <div className="p-0 p-lg-4 mt-2 mt-lg-0 animated fadeIn fast delay-2s">
                 <small className="d-block font-weight-bold mb-2">
-                  {find_us_text[props.lang]}
+                  {LangConsts.find_us[props.lang]}
                 </small>
                 <div className="d-flex justify-content-center justify-content-md-end">
                   <a
@@ -82,9 +102,9 @@ console.log(props)
                   </a>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
+            </Col>
+          </Row>
+        </Container>
       </BackgroundImage>
     </Layout>
   )
@@ -126,6 +146,13 @@ export const query = graphql`
         }
       }
     }
+    og_image: file(relativePath: { eq: $background_image }) {
+      childImageSharp {
+        fixed(width: 1200, height: 630) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
     social_media: file(
       name: { eq: "social_media" }
       sourceInstanceName: { eq: "content" }
@@ -134,13 +161,6 @@ export const query = graphql`
         frontmatter {
           facebook_username
           instagram_username
-          find_us_text {
-            en
-            es
-            de
-            it
-            fr
-          }
         }
       }
     }
@@ -150,5 +170,3 @@ const mapStateToProps = state => ({
   lang: state.language.lang,
 })
 export default connect(mapStateToProps)(IndexPage)
-
-// ($background_image: String!)

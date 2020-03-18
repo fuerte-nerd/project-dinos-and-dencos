@@ -1,6 +1,5 @@
 import React from "react"
 
-import Helmet from "react-helmet"
 import { Map, Marker, TileLayer } from "react-leaflet"
 import { Icon } from "leaflet"
 import logoPin from "../images/logopin.png"

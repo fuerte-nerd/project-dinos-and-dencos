@@ -1,67 +1,43 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
 import { connect } from "react-redux"
 
 import Helmet from "react-helmet"
 
+import { Container, Row, Col } from "reactstrap"
+
 import logo from "../images/logo.png"
+
+import LangConsts from "./LanguageConstants"
 
 import LeafletMap from "./LeafletMap"
 
 function Footer(props) {
   const { lang } = props
 
-  const data = useStaticQuery(graphql`
-    query {
-      data: file(name: { eq: "footer" }) {
-        childMarkdownRemark {
-          frontmatter {
-            registered_charity_text {
-              en
-              it
-              de
-              es
-              fr
-            }
-            website_by_text {
-              en
-              it
-              de
-              es
-              fr
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  const { registered_charity_text, website_by_text } = data.data.childMarkdownRemark.frontmatter
-
   return props.show ? (
     <footer class="bg-dark py-3">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 text-center text-lg-left pb-3 pb-lg-0">
+      <Container>
+        <Row>
+          <Col lg={6} className="text-center text-lg-left pb-3 pb-lg-0">
             <img src={logo} width="150" alt="FDR Logo" />
-            <p class=" pt-3 pb-0 pb-lg-3">
-              <span class="d-block font-weight-bold">
+            <p className="pt-3 pb-0 pb-lg-3">
+              <span className="d-block font-weight-bold">
                 Fuerteventura Dog Rescue
               </span>
-              <span class="d-block">Calle Juan Cabrera Méndez</span>
-              <span class="d-block">La Oliva</span>
-              <span class="d-block">36540</span>
-              <span class="d-block">Fuerteventura</span>
+              <span className="d-block">Calle Juan Cabrera Méndez</span>
+              <span className="d-block">La Oliva</span>
+              <span className="d-block">36540</span>
+              <span className="d-block">Fuerteventura</span>
             </p>
 
-            <div class="pt-2 py-lg-0">
+            <div className="pt-2 py-lg-0">
               <a href="mailto:info@fuerteventuradogrescue.org">
                 <i class="fas fa-envelope d-block d-lg-inline-block"></i>
                 <span class="ml-3">info@fuerteventuradogrescue.org</span>
               </a>
             </div>
-          </div>
-          <div class="col-lg-6">
+          </Col>
+          <Col lg={6}>
             <Helmet>
               <link
                 rel="stylesheet"
@@ -71,16 +47,17 @@ function Footer(props) {
               />
             </Helmet>
             <LeafletMap />
-          </div>
-        </div>
+          </Col>
+        </Row>
         <small class="text-center d-block mt-4">
-          {registered_charity_text[lang]}
+          {LangConsts.registered_charity[lang]}
         </small>
         <small class="text-center d-block">G1/S1/19399-13/F</small>
         <small class="text-center d-block text-muted mt-1">
-          {`${website_by_text[lang]} `} <a href="mailto:fuertenerd@gmail.com">Fuertenerd</a>
+          {`${LangConsts.website_by[lang]} `}{" "}
+          <a href="mailto:fuertenerd@gmail.com">Fuertenerd</a>
         </small>
-      </div>
+      </Container>
     </footer>
   ) : null
 }

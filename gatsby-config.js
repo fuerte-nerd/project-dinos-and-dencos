@@ -3,6 +3,7 @@ module.exports = {
     title: `Fuerteventura Dog Rescue`,
     description: `Taking care of the abandoned and mistreated dogs from the La Oliva area of Fuerteventura since 2013.`,
     author: `Fuertenerd`,
+    siteUrl: `https://fuerteventuradogrescue.org`
   },
   plugins: [
     {

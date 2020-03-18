@@ -3,17 +3,15 @@ import { connect } from "react-redux"
 
 import { graphql } from "gatsby"
 
+import { Jumbotron, Container } from "reactstrap"
+
 import Layout from "../components/layout"
-import Spacer from "../components/ContentSpacer"
 import Dogs from "../components/Dogs"
 
-import TempImage from "../images/rafael-profile.jpg"
-
 function TheDogs(props) {
-
   const dogs = props.data.dogs.edges
 
-  const dogsArr = dogs.map((dog)=>{
+  const dogsArr = dogs.map(dog => {
     return dog.node.childMarkdownRemark
   })
 
@@ -22,27 +20,27 @@ function TheDogs(props) {
     subheading,
     listing_note,
   } = props.data.page_data.childMarkdownRemark.frontmatter
+
+  const { the_dogs } = props.data.labels.childMarkdownRemark.frontmatter
   return (
-    <Layout title="The Dogs" showFooter={true}>
-      <Spacer />
-      <div>
-        <div className="jumbotron bg-primary text-center mb-3 py-5 shadow">
-          <div className="container-fluid text-light">
-            <h1>{heading[props.lang]}</h1>
-            <p class="lead">
-              {subheading[props.lang]}
-            </p>
-          </div>
-        </div>
-        <div className="container">
-          <div className="text-center">
-            <small class="font-italic">
-              {listing_note[props.lang]}
-            </small>
-          </div>
-          <Dogs data={dogsArr} />
-        </div>
-      </div>
+    <Layout
+      title={the_dogs[props.lang]}
+      showFooter={true}
+      spacer={true}
+      og={{
+        description: subheading[props.lang],
+      }}
+    >
+      <Jumbotron fluid className="bg-primary text-center mb-3 py-5 shadow">
+        <Container fluid className="text-light">
+          <h1>{heading[props.lang]}</h1>
+          <p class="lead">{subheading[props.lang]}</p>
+        </Container>
+      </Jumbotron>
+      <Container className="text-center">
+        <small class="font-italic">{listing_note[props.lang]}</small>
+        <Dogs data={dogsArr} />
+      </Container>
     </Layout>
   )
 }
@@ -76,13 +74,32 @@ export const query = graphql`
         }
       }
     }
-    dogs: allFile(filter: {sourceInstanceName: {eq: "dogs"}}, sort: {order: ASC, fields: childMarkdownRemark___frontmatter___date_entered}) {
+    labels: file(name: { eq: "labels" }) {
+      childMarkdownRemark {
+        frontmatter {
+          the_dogs {
+            en
+            it
+            de
+            es
+            fr
+          }
+        }
+      }
+    }
+    dogs: allFile(
+      filter: { sourceInstanceName: { eq: "dogs" } }
+      sort: {
+        order: ASC
+        fields: childMarkdownRemark___frontmatter___date_entered
+      }
+    ) {
       edges {
         node {
           childMarkdownRemark {
-		fields {
-		slug
-}
+            fields {
+              slug
+            }
             frontmatter {
               name
               main_image

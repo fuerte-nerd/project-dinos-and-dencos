@@ -1,10 +1,8 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useEffect } from "react"
+import { connect } from "react-redux"
 import { useStaticQuery, graphql } from "gatsby"
-import { TransitionPortal } from "gatsby-plugin-transition-link"
 import { toggleNav, setNavState } from "../state/actions"
 import Link from "./Link"
-
-import { connect } from "react-redux"
 
 import {
   Collapse,
@@ -18,6 +16,8 @@ import {
 } from "reactstrap"
 
 import LanguageModal from "./LanguageModal"
+
+import LangConsts from "./LanguageConstants"
 
 import logo from "../images/logo.png"
 
@@ -152,6 +152,7 @@ function Navigation(props) {
 
   useEffect(() => {
     props.dispatch(setNavState(false))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const [responsiveClasses, setResponsiveClasses] = useState({
@@ -161,6 +162,7 @@ function Navigation(props) {
     navBrandLogo: "",
     togglerIcon: "",
     navLink: "",
+    dropdown: "",
   })
 
   useEffect(() => {
@@ -174,6 +176,7 @@ function Navigation(props) {
           navBrandLogo: "nav-shrink",
           togglerIcon: "",
           navLink: "text-dark ",
+          dropdown: "small",
         }
         if (window.innerWidth < 992) {
           newData.collapse = "small p-2 text-center"
@@ -189,6 +192,7 @@ function Navigation(props) {
         }
         if (window.innerWidth < 992) {
           newData.collapse = "bg-dark small p-2 text-center"
+          newData.dropdown = "small"
         }
       }
 
@@ -198,10 +202,13 @@ function Navigation(props) {
     window.addEventListener("resize", checkWindowState)
     checkWindowState()
 
+    props.dispatch(setNavState(false))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     return () => {
       window.removeEventListener("scroll", checkWindowState)
       window.removeEventListener("resize", checkWindowState)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const {
@@ -222,10 +229,6 @@ function Navigation(props) {
     facebook_username,
     instagram_username,
   } = data.social_media.childMarkdownRemark.frontmatter
-
-  const {
-    change_language_text,
-  } = data.language_selector.childMarkdownRemark.frontmatter
 
   return (
     <div>
@@ -273,21 +276,21 @@ function Navigation(props) {
               <DropdownMenu right>
                 <Link
                   to="/adopt"
-                  classes="dropdown-item d-flex justify-content-between align-items-center"
+                  classes={`${responsiveClasses.dropdown} dropdown-item d-flex justify-content-between align-items-center`}
                 >
                   <span>{adopt[props.lang]}</span>
                   <i class="fas fa-paw" />
                 </Link>
                 <Link
                   to="/foster"
-                  classes="dropdown-item d-flex justify-content-between align-items-center"
+                  classes={`${responsiveClasses.dropdown} dropdown-item d-flex justify-content-between align-items-center`}
                 >
                   <span>{foster[props.lang]}</span>
                   <i class="fas fa-bone"></i>
                 </Link>
                 <Link
                   to="/donate"
-                  classes="dropdown-item d-flex justify-content-between align-items-center"
+                  classes={`${responsiveClasses.dropdown} dropdown-item d-flex justify-content-between align-items-center`}
                 >
                   <span>{donate[props.lang]}</span>
                   <i class="fas fa-donate"></i>
@@ -295,7 +298,7 @@ function Navigation(props) {
 
                 <Link
                   to="/volunteer"
-                  classes="dropdown-item d-flex justify-content-between align-items-center"
+                  classes={`${responsiveClasses.dropdown} dropdown-item d-flex justify-content-between align-items-center`}
                 >
                   <span>{volunteer[props.lang]}</span>
                   <i class="fas fa-hands-helping"></i>
@@ -316,13 +319,14 @@ function Navigation(props) {
               <div class="d-flex justify-content-center">
                 <a
                   href={`https://www.facebook.com/${facebook_username}`}
-                  class="btn rounded-circle social social-sm social-facebook"
+                  className="rounded-circle social social-sm social-facebook"
                 >
                   <i class="fab fa-facebook-f"></i>
                 </a>
                 <a
                   href={`https://www.instagram.com/${instagram_username}`}
-                  class="btn ml-2 rounded-circle social social-sm social-instagram"
+                  color={null}
+                  class="ml-2 rounded-circle social social-sm social-instagram"
                 >
                   <i class="fab fa-instagram"></i>
                 </a>
@@ -331,7 +335,7 @@ function Navigation(props) {
             <small
               className={`${responsiveClasses.navLink} d-block d-lg-none mt-3 font-weight-bold`}
             >
-              {change_language_text[props.lang]}
+              {LangConsts.change_language_text[props.lang]}
             </small>
             <li className="nav-item mt-lg-0 d-flex align-items-center justify-content-center">
               <LanguageModal />

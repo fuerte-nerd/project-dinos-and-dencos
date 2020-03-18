@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Encode+Sans+Expanded|Fredoka+One&display=swap");
+
 $primary: #f07937;
 $secondary: #52bbb4;
 $light: lighten($primary, 41%);
@@ -6,8 +8,8 @@ $success: #24994b;
 $body-bg: darken($secondary, 10%);
 $body-color: $light;
 
-$font-family-sans-serif: "Spartan";
-$headings-font-family: "Comfortaa";
+$headings-font-family: "Fredoka One", sans-serif;;
+$font-family-sans-serif: "Encode Sans Expanded";
 
 $link-hover-decoration: none;
 
@@ -18,6 +20,7 @@ $navbar-nav-link-padding-x: 1.25rem;
 
 $btn-padding-y-lg: 1rem;
 $btn-padding-x-lg: 1rem;
+
 $navbar-padding-y: 0rem;
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
@@ -62,9 +65,8 @@ body {
   display: block;
 }
 
-.nav-link {
+.nav-link, .dropdown-item {
   font-family: $headings-font-family;
-  font-weight: bold;
 }
 
 .nav-shrink {
@@ -205,6 +207,17 @@ $brand-colors: (
 
 .flags i:not(:last-of-type) {
   margin-right: .3rem;
+}
+
+@media only screen and (orientation: landscape) and (max-width: 992px) {
+  .hide-on-landscape-mobile {
+    display: none;
+  }
+  .navbar .navbar-collapse {
+    max-height: 90vh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
 }
 
 @media (max-width: 1200px) {

@@ -33,7 +33,7 @@ export default function Contact() {
             The most efficient way to contact us is via Facebook Messenger...
           </p>
           <a
-            href="#"
+            href="http://www.messenger.com"
             class="btn btn-lg font-weight-bold btn-primary d-block d-lg-inline-block align-items-center"
           >
             <div class="d-flex align-items-center justify-content-center">
@@ -65,18 +65,10 @@ export default function Contact() {
                 />
               </div>
               <div class="col-md-6 mt-3">
-                <input
-                  type="email"
-                  class="form-control"
-                  placeholder="Email"
-                />
+                <input type="email" class="form-control" placeholder="Email" />
               </div>
               <div class="col-md-6 mt-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Phone"
-                />
+                <input type="text" class="form-control" placeholder="Phone" />
               </div>
             </div>
             <div class="row">

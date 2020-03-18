@@ -57,17 +57,26 @@ export default function Article() {
               </div>
               <div class="pt-3">
                 <div class="post-social justify-content-start">
-                  <a href="#" class="button button-small facebook mr-2">
+                  <a
+                    href="http://www.facebook.com"
+                    class="button button-small facebook mr-2"
+                  >
                     <span class="icon">
                       <i class="fab fa-facebook-f"></i>
                     </span>
                   </a>
-                  <a href="#" class="button button-small twitter mr-2">
+                  <a
+                    href="http://www.twitter.com"
+                    class="button button-small twitter mr-2"
+                  >
                     <span class="icon">
                       <i class="fab fa-twitter"></i>
                     </span>
                   </a>
-                  <a href="#" class="button button-small whatsapp">
+                  <a
+                    href="http://www.whatsapp.com"
+                    class="button button-small whatsapp"
+                  >
                     <span class="icon">
                       <i class="fab fa-whatsapp"></i>
                     </span>
@@ -81,9 +90,8 @@ export default function Article() {
         <div class="bg-light text-dark text-center p-4">
           <p class="lead container mb-0">{data.intro}</p>
         </div>
-        <div
-          class="article-content container py-4 extend-line-height">
-            <div dangerouslySetInnerHTML={{__html: data.post}} />
+        <div class="article-content container py-4 extend-line-height">
+          <div dangerouslySetInnerHTML={{ __html: data.post }} />
           <div class="text-center">
             <button class="btn btn-outline-light btn-lg">
               Read/Write Comments<i class="ml-3 far fa-comments"></i>

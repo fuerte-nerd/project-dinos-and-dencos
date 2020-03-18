@@ -1,15 +1,19 @@
 import React from "react"
-
+import LangConsts from "./LanguageConstants"
 import moment from "moment"
+import Link from "./Link"
+import { Card, CardBody, Row, Col, CardTitle } from "reactstrap"
 
 export default function MainArticleCard({ data }) {
   return (
-    <div className="article ani card text-dark">
-      <div className="card-body">
-        <div className="row">
-          <div className="col-lg-6">
+    <Card className="article ani card text-dark">
+      <CardBody className="card-body">
+        <Row className="row">
+          <Col lg={6}>
             <p className="text-muted font-weight-bold small">Most recent</p>
-            <h2 className="card-title font-weight-bold mb-0">{data.title}</h2>
+            <CardTitle className="font-weight-bold mb-0">
+              {data.title}
+            </CardTitle>
             <div className="flags small">
               {data.languages.map(i => {
                 return <i className={`flag-icon flag-icon-${i}`}></i>
@@ -23,27 +27,27 @@ export default function MainArticleCard({ data }) {
             </p>
             <img
               src={data.featured_image}
-              alt="Temp Image"
+              alt="Temp"
               className="w-100 rounded d-lg-none mb-3 mb-lg-0"
             />
             <p className="text-justify">{data.excerpt}</p>
-          </div>
+          </Col>
 
-          <div className="col-lg-6">
+          <Col lg={6}>
             <img
               src={data.featured_image}
-              alt="Temp image"
+              alt="Temp1"
               className="w-100 rounded d-none d-lg-inline-block"
             />
-          </div>
-        </div>
-        <a
-          href={`/articles/${data.slug}`}
-          className="btn btn-success d-block stretched-link mt-lg-1 font-weight-bold"
+          </Col>
+        </Row>
+        <Link
+          to={`/articles/${data.slug}`}
+          classes="btn btn-success d-block stretched-link mt-lg-1 font-weight-bold"
         >
           <i className="fas fa-book-open mr-3"></i>Read more
-        </a>
-      </div>
-    </div>
+        </Link>
+      </CardBody>
+    </Card>
   )
 }
