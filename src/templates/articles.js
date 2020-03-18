@@ -5,6 +5,7 @@ import tempImage from "../images/article.jpg"
 import Layout from "../components/layout"
 import MainArticleCard from "../components/MainArticleCard"
 import ArticleCard from "../components/ArticleCard"
+import LangConsts from "../components/LanguageConstants"
 
 const Articles = props => {
   const tempData = {
@@ -57,7 +58,7 @@ const Articles = props => {
     >
       <Container>
         <h1>Articles</h1>
-        <p className="lead"
+        <p className="lead">
           From shelter updates to useful dog-owner tip, you wll find it all
           here!
         </p>

@@ -1,53 +1,56 @@
 import React from "react"
-import LangConsts from "./LanguageConstants"
+import { connect } from "react-redux"
 import moment from "moment"
 import Link from "./Link"
 import { Card, CardBody, Row, Col, CardTitle } from "reactstrap"
+import LangConsts from "./LanguageConstants"
 
-export default function MainArticleCard({ data }) {
+function MainArticleCard(props) {
   return (
-    <Card className="article ani card text-dark">
-      <CardBody className="card-body">
-        <Row className="row">
+    <Card className="article ani text-dark">
+      <CardBody>
+        <Row>
           <Col lg={6}>
-            <p className="text-muted font-weight-bold small">Most recent</p>
-            <CardTitle className="font-weight-bold mb-0">
-              {data.title}
-            </CardTitle>
+            <p className="text-muted font-weight-bold small">
+              {LangConsts.most_recent[props.lang]}
+            </p>
+            <CardTitle className="h2 mb-0">{props.data.title}</CardTitle>
             <div className="flags small">
-              {data.languages.map(i => {
+              {props.data.languages.map(i => {
                 return <i className={`flag-icon flag-icon-${i}`}></i>
               })}
             </div>
             <p className="d-inline-block mb-2 small bg-primary p-1 rounded text-light">
-              <small>
-                Posted {moment(data.date).format("d MMMM YYYY")} by{" "}
-                {data.author}
-              </small>
+              <small>{moment(props.data.date).format("d MMMM YYYY")}</small>
             </p>
             <img
-              src={data.featured_image}
+              src={props.data.featured_image}
               alt="Temp"
               className="w-100 rounded d-lg-none mb-3 mb-lg-0"
             />
-            <p className="text-justify">{data.excerpt}</p>
+            <p className="text-justify">{props.data.excerpt}</p>
           </Col>
 
           <Col lg={6}>
             <img
-              src={data.featured_image}
+              src={props.data.featured_image}
               alt="Temp1"
               className="w-100 rounded d-none d-lg-inline-block"
             />
           </Col>
         </Row>
         <Link
-          to={`/articles/${data.slug}`}
+          to={`/articles/${props.data.slug}`}
           classes="btn btn-success d-block stretched-link mt-lg-1 font-weight-bold"
         >
-          <i className="fas fa-book-open mr-3"></i>Read more
+          <i className="fas fa-book-open mr-3"></i>
+          {LangConsts.read_more[props.lang]}
         </Link>
       </CardBody>
     </Card>
   )
 }
+const mapStateToProps = state => ({
+  lang: state.language.lang,
+})
+export default connect(mapStateToProps)(MainArticleCard)

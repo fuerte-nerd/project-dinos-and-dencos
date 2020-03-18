@@ -8,7 +8,7 @@ $success: #24994b;
 $body-bg: darken($secondary, 10%);
 $body-color: $light;
 
-$headings-font-family: "Fredoka One", sans-serif;;
+$headings-font-family: "Fredoka One", sans-serif;
 $font-family-sans-serif: "Encode Sans Expanded";
 
 $link-hover-decoration: none;
@@ -65,7 +65,8 @@ body {
   display: block;
 }
 
-.nav-link, .dropdown-item {
+.nav-link,
+.dropdown-item {
   font-family: $headings-font-family;
 }
 
@@ -196,17 +197,17 @@ $brand-colors: (
   }
 }
 
-.articles{
-  &:hover{
-    & .article:not(:hover){
-      opacity: .3;
-      transform: scale(.975);
+.articles {
+  &:hover {
+    & .article:not(:hover) {
+      opacity: 0.3;
+      transform: scale(0.975);
     }
   }
 }
 
 .flags i:not(:last-of-type) {
-  margin-right: .3rem;
+  margin-right: 0.3rem;
 }
 
 @media only screen and (orientation: landscape) and (max-width: 992px) {
