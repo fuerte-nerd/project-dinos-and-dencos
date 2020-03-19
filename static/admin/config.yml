@@ -267,6 +267,7 @@ collections:
               - { name: it, label: Italiano, widget: string }
               - { name: fr, label: Français, widget: string }
   - name: articles
+    identifier_field: title_en
     label: Articles
     folder: articles
     create: true

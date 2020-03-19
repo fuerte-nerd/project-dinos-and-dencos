@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 import { connect } from "react-redux"
 import { Container, Row, Col, Button } from "reactstrap"
 import tempImage from "../images/article.jpg"
@@ -8,6 +9,15 @@ import ArticleCard from "../components/ArticleCard"
 import LangConsts from "../components/LanguageConstants"
 
 const Articles = props => {
+  const featuredArticle = props.data.articles.edges[0].node
+  const otherArticles = props.data.articles.edges.map((i, ind) => {
+    if (ind > 0) {
+      return i.node
+    } else {
+      return
+    }
+  })
+  console.log(featuredArticle)
   const tempData = {
     featured: {
       id: 1,
@@ -65,7 +75,7 @@ const Articles = props => {
         <div className="articles">
           <Row className="mb-4">
             <Col>
-              <MainArticleCard data={tempData.featured} />
+              <MainArticleCard data={featuredArticle} />
             </Col>
           </Row>
           <Row>
@@ -87,6 +97,52 @@ const Articles = props => {
     </Layout>
   )
 }
+
+export const articlesData = graphql`
+  query {
+    articles: allFile(filter: { sourceInstanceName: { eq: "articles" } }) {
+      edges {
+        node {
+          childMarkdownRemark {
+            fields {
+              slug
+            }
+            frontmatter {
+              date
+              featured_image
+              content_de {
+                body_de
+                title_de
+                intro_de
+              }
+              content_en {
+                title_en
+                intro_en
+                body_en
+              }
+              content_es {
+                body_es
+                title_es
+                intro_es
+              }
+              content_fr {
+                body_fr
+                title_fr
+                intro_fr
+              }
+              content_it {
+                title_it
+                body_it
+                intro_it
+              }
+              tags
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 const mapStateToProps = state => ({
   lang: state.language.lang,

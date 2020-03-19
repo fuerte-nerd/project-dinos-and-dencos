@@ -3,7 +3,7 @@ module.exports = {
     title: `Fuerteventura Dog Rescue`,
     description: `Taking care of the abandoned and mistreated dogs from the La Oliva area of Fuerteventura since 2013.`,
     author: `Fuertenerd`,
-    siteUrl: `https://fuerteventuradogrescue.org`
+    siteUrl: `https://fuerteventuradogrescue.org`,
   },
   plugins: [
     {
@@ -13,6 +13,14 @@ module.exports = {
         path: `${__dirname}/static/assets`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `articles`,
+        path: `${__dirname}/articles`,
+      },
+    },
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -61,3 +69,4 @@ module.exports = {
 //     path: `${__dirname}/src/images`,
 //   },
 // },
+
