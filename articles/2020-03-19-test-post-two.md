@@ -1,7 +1,7 @@
 ---
 post_title: test post two
 featured_image: assets/img_20190428_102217.jpg
-date: 2020-03-18T23:08:53.256Z
+date: 2020-03-19T23:08:00.000Z
 tags:
   - article
   - teela
