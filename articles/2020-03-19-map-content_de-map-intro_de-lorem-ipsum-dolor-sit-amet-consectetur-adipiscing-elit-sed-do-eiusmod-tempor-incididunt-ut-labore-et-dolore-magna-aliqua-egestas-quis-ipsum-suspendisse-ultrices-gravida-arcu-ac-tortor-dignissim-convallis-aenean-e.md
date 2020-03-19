@@ -1,4 +1,5 @@
 ---
+post_title: test post one
 featured_image: assets/img_20190428_102217.jpg
 date: 2020-03-19T19:26:13.911Z
 tags:
