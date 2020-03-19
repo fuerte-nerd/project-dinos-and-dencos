@@ -275,6 +275,7 @@ collections:
     editor:
       preview: false
     fields:
+      - { name: post_title, label: "Post title (used to create pages)" }
       - { name: featured_image, label: Image, widget: image }
       - { name: date, label: Date, widget: datetime }
       - { name: tags, label: Tags, widget: list, default: ["article"] }
