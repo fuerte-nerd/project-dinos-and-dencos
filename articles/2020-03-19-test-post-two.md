@@ -1,7 +1,7 @@
 ---
 post_title: test post two
-featured_image: assets/img_20190829_093257-01.jpeg
-date: 2020-03-18T23:08:53.256Z
+featured_image: assets/img_20190428_102217.jpg
+date: 2020-03-19T23:08:00.000Z
 tags:
   - article
   - teela
@@ -14,9 +14,7 @@ content_en:
     This is the test post 2.  It has nothing interesting in it except for some
     lorem ipsum text.
   body_en: >-
-    2
-    
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+    2 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
     eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
     voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
     clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
@@ -31,6 +29,9 @@ content_en:
     amet.
 
 
+    ![Susi](assets/img_20190914_103326-01.jpeg "Susi")
+
+
     Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
     molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros
     et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril
@@ -41,8 +42,7 @@ content_es:
   body_es: >-
     Spanish
 
-    2
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+    2 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
     eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
     voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
     clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
@@ -71,8 +71,7 @@ content_de:
   body_de: >-
     German
 
-    2
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+    2 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
     eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
     voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
     clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
@@ -101,8 +100,7 @@ content_fr:
   body_fr: >-
     French
 
-    2
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+    2 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
     eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
     voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
     clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
@@ -132,8 +130,7 @@ content_it:
   body_it: >-
     French
 
-    2
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+    2 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
     eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
     voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
     clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
