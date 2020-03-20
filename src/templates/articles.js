@@ -67,7 +67,13 @@ const Articles = props => {
       spacer={true}
     >
       <Container>
-        <h1>Articles</h1>
+        <h1>
+          {
+            props.data.labels.childMarkdownRemark.frontmatter.articles[
+              props.lang
+            ]
+          }
+        </h1>
         <p className="lead">
           From shelter updates to useful dog-owner tip, you wll find it all
           here!
@@ -137,6 +143,19 @@ export const articlesData = graphql`
               }
               tags
             }
+          }
+        }
+      }
+    }
+    labels: file(name: { eq: "labels" }) {
+      childMarkdownRemark {
+        frontmatter {
+          articles {
+            en
+            it
+            de
+            es
+            fr
           }
         }
       }

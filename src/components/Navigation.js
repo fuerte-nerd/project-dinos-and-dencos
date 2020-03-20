@@ -319,14 +319,14 @@ function Navigation(props) {
               <div class="d-flex justify-content-center">
                 <a
                   href={`https://www.facebook.com/${facebook_username}`}
-                  className="rounded-circle social social-sm social-facebook"
+                  className="btn rounded-circle social social-sm social-facebook"
                 >
                   <i class="fab fa-facebook-f"></i>
                 </a>
                 <a
                   href={`https://www.instagram.com/${instagram_username}`}
                   color={null}
-                  class="ml-2 rounded-circle social social-sm social-instagram"
+                  class="ml-2 btn rounded-circle social social-sm social-instagram"
                 >
                   <i class="fab fa-instagram"></i>
                 </a>
