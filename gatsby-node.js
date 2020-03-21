@@ -42,7 +42,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const dogTemplate = path.resolve(`src/templates/dogTemplate.js`)
   const articlesTemplate = path.resolve("src/templates/articles.js")
   const articleTemplate = path.resolve("src/templates/article.js")
-  const adoptTemplate = path.resolve("src/templates/adopt.js")
+  const staticTemplate = path.resolve("src/templates/staticPage.js")
 
   const indexBgQuery = await graphql(`
     {
@@ -166,8 +166,42 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     })
   })
+  const adoptQuery = await graphql(`
+  file(name: {eq: "adopt"}) {
+    childMarkdownRemark {
+      frontmatter {
+        background_image
+        heading {
+          de
+          en
+          es
+          it
+          fr
+        }
+        subheading {
+          en
+          fr
+          de
+          es
+          it
+        }
+        main {
+          en
+          es
+          de
+          it
+          fr
+        }
+      }
+    }
+  }
+    `)
+  if (adoptQuery.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
   createPage({
     path: "/adopt",
-    component: adoptTemplate,
+    component: staticTemplate,
   })
 }
