@@ -28,7 +28,13 @@ const Article = props => {
         <i class="fas fa-arrow-left mr-1"></i>{" "}
         {LangConsts.back_to_articles[props.lang]}
       </Link>
-      <div class="jumbotron d-flex justify-content-center align-items-center bg-transparent rounded-0 position-relative overflow-hidden p-5 my-0">
+      <div
+        class="jumbotron d-flex justify-content-center align-items-center bg-transparent rounded-0 position-relative overflow-hidden my-0"
+        style={{
+          paddingTop: "5rem",
+          paddingBottom: "5rem",
+        }}
+      >
         <Img
           fluid={props.data.image.childImageSharp.fluid}
           className="position-absolute w-100 animated fadeIn"
