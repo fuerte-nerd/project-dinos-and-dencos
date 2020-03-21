@@ -270,8 +270,8 @@ collections:
         name: "adopt"
         file: "content/adopt.md"
         fields:
-          - { name: "background_image", label: "Banner Background image", widget: image }
-          - name: "heading"
+          - { name: "background_image_adopt", label: "Banner Background image", widget: image }
+          - name: "heading_adopt"
             label: "Heading"
             widget: object
             fields:
@@ -280,7 +280,7 @@ collections:
               - { name: de, label: Deutsch, widget: string }
               - { name: it, label: Italiano, widget: string }
               - { name: fr, label: Français, widget: string }
-          - name: "subheading"
+          - name: "subheading_adopt"
             label: "Subheading"
             widget: object
             fields:
@@ -289,7 +289,7 @@ collections:
               - { name: de, label: Deutsch, widget: string }
               - { name: it, label: Italiano, widget: string }
               - { name: fr, label: Français, widget: string }
-          - name: "body"
+          - name: "body_adopt"
             label: "Body"
             widget: object
             fields:
@@ -302,8 +302,8 @@ collections:
         name: "foster"
         file: "content/foster.md"
         fields:
-          - { name: "background_image", label: "Banner Background image", widget: image }
-          - name: "heading"
+          - { name: "background_image_foster", label: "Banner Background image", widget: image }
+          - name: "heading_foster"
             label: "Heading"
             widget: object
             fields:
@@ -312,7 +312,7 @@ collections:
               - { name: de, label: Deutsch, widget: string }
               - { name: it, label: Italiano, widget: string }
               - { name: fr, label: Français, widget: string }
-          - name: "subheading"
+          - name: "subheading_foster"
             label: "Subheading"
             widget: object
             fields:
@@ -322,7 +322,7 @@ collections:
               - { name: de, label: Deutsch, widget: string }
               - { name: it, label: Italiano, widget: string }
               - { name: fr, label: Français, widget: string }
-          - name: "body"
+          - name: "body_foster"
             label: "Body"
             widget: object
             fields:
@@ -336,8 +336,8 @@ collections:
         name: "donate"
         file: "content/donate.md"
         fields:
-          - { name: "background_image", label: "Banner Background image", widget: image }
-          - name: "heading"
+          - { name: "background_image_donate", label: "Banner Background image", widget: image }
+          - name: "heading_donate"
             label: "Heading"
             widget: object
             fields:
@@ -346,7 +346,7 @@ collections:
               - { name: de, label: Deutsch, widget: string }
               - { name: it, label: Italiano, widget: string }
               - { name: fr, label: Français, widget: string }
-          - name: "subheading"
+          - name: "subheading_donate"
             label: "Subheading"
             widget: object
             fields:
@@ -356,7 +356,7 @@ collections:
               - { name: de, label: Deutsch, widget: string }
               - { name: it, label: Italiano, widget: string }
               - { name: fr, label: Français, widget: string }
-          - name: "body"
+          - name: "body_donate"
             label: "Body"
             widget: object
             fields:
@@ -370,8 +370,8 @@ collections:
         name: "volunteer"
         file: "content/volunteer.md"
         fields:
-          - { name: "background_image", label: "Banner Background image", widget: image }
-          - name: "heading"
+          - { name: "background_image_volunteer", label: "Banner Background image", widget: image }
+          - name: "heading_volunteer"
             label: "Heading"
             widget: object
             fields:
@@ -380,7 +380,7 @@ collections:
               - { name: de, label: Deutsch, widget: string }
               - { name: it, label: Italiano, widget: string }
               - { name: fr, label: Français, widget: string }
-          - name: "subheading"
+          - name: "subheading_volunteer"
             label: "Subheading"
             widget: object
             fields:
@@ -390,7 +390,7 @@ collections:
               - { name: de, label: Deutsch, widget: string }
               - { name: it, label: Italiano, widget: string }
               - { name: fr, label: Français, widget: string }
-          - name: "body"
+          - name: "body_volunteer"
             label: "Body"
             widget: object
             fields:
