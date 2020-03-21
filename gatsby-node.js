@@ -42,7 +42,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const dogTemplate = path.resolve(`src/templates/dogTemplate.js`)
   const articlesTemplate = path.resolve("src/templates/articles.js")
   const articleTemplate = path.resolve("src/templates/article.js")
-  const adoptTemplate = path.resolve("src/templates/adopt")
+  const adoptTemplate = path.resolve("src/templates/adopt.js")
 
   const indexBgQuery = await graphql(`
     {
