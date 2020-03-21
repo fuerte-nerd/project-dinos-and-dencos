@@ -10,7 +10,7 @@ const staticPage = props => {
   const { frontmatter } = props.data.text.childMarkdownRemark
   return (
     <Layout
-      title={frontmatter.heading.es}
+      title={frontmatter.heading[props.lang]}
       spacer={true}
       showFooter={true}
       og={{
@@ -30,12 +30,8 @@ const staticPage = props => {
             zIndex: -50,
           }}
         />
-        <h1>Adopt a dog</h1>
-        <p class="lead">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-          accusantium neque deserunt quasi, commodi maiores ab voluptatem
-          quisquam ratione libero?
-        </p>
+        <h1>{frontmatter.heading[props.lang]}</h1>
+        <p class="lead">{frontmatter.subheading[props.lang]}</p>
       </div>
       <div class="page-content extend-line-height container py-3">
         <h2>Subheading One</h2>
