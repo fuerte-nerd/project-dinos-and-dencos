@@ -31,8 +31,8 @@ const Article = props => {
       <div
         class="jumbotron d-flex justify-content-center align-items-center bg-transparent rounded-0 position-relative overflow-hidden my-0"
         style={{
-          paddingTop: "5rem",
-          paddingBottom: "5rem",
+          paddingTop: "7rem",
+          paddingBottom: "7rem",
         }}
       >
         <Img
@@ -153,7 +153,7 @@ export const articleQuery = graphql`
     }
     image: file(relativePath: { eq: $image }) {
       childImageSharp {
-        fluid(maxWidth: 1920, maxHeight: 1920, cropFocus: CENTER) {
+        fluid(maxWidth: 1920, maxHeight: 1920) {
           ...GatsbyImageSharpFluid
         }
       }
