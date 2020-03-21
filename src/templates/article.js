@@ -9,8 +9,6 @@ import { connect } from "react-redux"
 import ReactMarkdown from "react-markdown"
 
 const Article = props => {
-  console.log(props)
-
   const { frontmatter } = props.data.content.childMarkdownRemark
 
   return (
