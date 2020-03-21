@@ -1,4 +1,5 @@
 import React from "react"
+import ReactMarkdown from "react-markdown"
 import { connect } from "react-redux"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
@@ -14,7 +15,7 @@ const staticPage = props => {
       spacer={true}
       showFooter={true}
       og={{
-        description: "Temp description",
+        description: frontmatter.subheading[props.lang],
         image: "image+url+here",
         url: "fuerteventuradogrescue.org",
       }}
@@ -34,36 +35,7 @@ const staticPage = props => {
         <p class="lead">{frontmatter.subheading[props.lang]}</p>
       </div>
       <div class="page-content extend-line-height container py-3">
-        <h2>Subheading One</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est in
-          corporis sunt? Veritatis fugiat illo reiciendis id quae, consequuntur
-          nobis expedita fuga esse odio doloribus rerum eaque aut exercitationem
-          qui optio debitis minus autem commodi nostrum iure ipsa ea doloremque
-          officiis! Hic, earum. Nobis minus aliquam consectetur aperiam
-          voluptatem, minima, totam impedit tempore incidunt amet quidem dicta
-          explicabo, autem enim!
-        </p>
-        <img
-          src={TempImage2}
-          alt="Chispa"
-          class="w-100 img-thumbnail bg-light mb-3"
-        />
-        <h2>Subheading Two</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est in
-          corporis sunt? Veritatis fugiat illo reiciendis id quae, consequuntur
-          nobis expedita fuga esse odio doloribus rerum eaque aut exercitationem
-          qui optio debitis minus autem commodi nostrum iure ipsa ea doloremque
-          officiis! Hic, earum. Nobis minus aliquam consectetur aperiam
-          voluptatem, minima, totam impedit tempore incidunt amet quidem dicta
-          explicabo, autem enim!
-        </p>
-        <img
-          src={TempImage2}
-          alt="Chispa"
-          class="w-100 img-thumbnail bg-light mb-3"
-        />
+        <ReactMarkdown source={frontmatter.main[props.lang]} />
         <div class="text-center">
           <p class="mb-0 text-center">For more information about adopting...</p>
           <Link
