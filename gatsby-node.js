@@ -170,29 +170,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     query {
       file(name: { eq: "adopt" }) {
         childMarkdownRemark {
+          id
           frontmatter {
             background_image
-            heading {
-              de
-              en
-              es
-              it
-              fr
-            }
-            subheading {
-              en
-              fr
-              de
-              es
-              it
-            }
-            main {
-              en
-              es
-              de
-              it
-              fr
-            }
           }
         }
       }
@@ -206,6 +186,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     path: "/adopt",
     component: staticTemplate,
     context: {
+      id: adoptQuery.data.file.childMarkdownRemark.id,
       img: getFilename(
         adoptQuery.data.file.childMarkdownRemark.frontmatter.background_image
       ),
