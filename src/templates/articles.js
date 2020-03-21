@@ -52,10 +52,14 @@ const Articles = props => {
           </Row>
         </div>
         <div className="d-block text-center my-5">
-          <Button color="primary" size="lg">
-            <i className="fas fa-book mr-3"></i>
-            {LangConsts.show_articles_archive[props.lang]}
-          </Button>
+          {props.data.articles.edges.length > 8 ? (
+            <Button color="primary" size="lg">
+              <i className="fas fa-book mr-3"></i>
+              {LangConsts.show_articles_archive[props.lang]}
+            </Button>
+          ) : (
+            <p>{LangConsts.no_more_articles[props.lang]}</p>
+          )}
         </div>
       </Container>
     </Layout>
@@ -67,6 +71,7 @@ export const articlesData = graphql`
     articles: allFile(
       filter: { sourceInstanceName: { eq: "articles" } }
       limit: 8
+      sort: { order: DESC, fields: childMarkdownRemark___frontmatter___date }
     ) {
       edges {
         node {

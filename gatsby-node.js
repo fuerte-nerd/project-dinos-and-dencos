@@ -142,6 +142,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               fields {
                 slug
               }
+              frontmatter {
+                featured_image
+              }
             }
           }
         }
@@ -158,6 +161,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: articleTemplate,
       context: {
         id: node.id,
+        image: getFilename(node.childMarkdownRemark.frontmatter.featured_image),
       },
     })
   })

@@ -1,4 +1,11 @@
 export default {
+  no_more_articles: {
+    en: "No more articles",
+    es: "No mas articulos",
+    de: "Keine Artikel mehr",
+    it: "Niente più articoli",
+    fr: "Fin des articles",
+  },
   comments: {
     en: "Comments",
     es: "Comentarios",

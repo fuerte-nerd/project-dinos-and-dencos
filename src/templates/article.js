@@ -1,4 +1,5 @@
 import React from "react"
+import Img from "gatsby-image"
 import moment from "moment"
 import LangConsts from "../components/LanguageConstants"
 import { graphql } from "gatsby"
@@ -29,7 +30,16 @@ const Article = props => {
         <i class="fas fa-arrow-left mr-1"></i>{" "}
         {LangConsts.back_to_articles[props.lang]}
       </Link>
-      <div class="jumbotron bg-transparent rounded-0 position-relative overflow-hidden p-5 my-0">
+      <div
+        class="jumbotron d-flex justify-content-center align-items-center bg-transparent rounded-0 position-relative overflow-hidden p-5 my-0"
+        style={{ height: "65vh" }}
+      >
+        <Img
+          fluid={props.data.image.childImageSharp.fluid}
+          className="position-absolute w-100 animated fadeIn"
+          style={{ top: 0, left: 0, zIndex: -50 }}
+        />
+
         {/*<img
           src={data.featured_image}
           alt="Article pic"
@@ -42,7 +52,7 @@ const Article = props => {
         />*/}
         <div class="animated fadeIn delay-1s d-flex justify-content-center">
           <div class="d-inline-block">
-            <h1 class="font-weight-bold bg-primary-trans p-3 d-inline-block h2 mb-0 rounded-top rounded-right">
+            <h1 class="bg-primary-trans p-3 d-inline-block h2 mb-0 rounded-top rounded-right">
               {frontmatter[`content_${props.lang}`][`title_${props.lang}`]}
             </h1>
             <div>
@@ -104,7 +114,7 @@ const Article = props => {
   )
 }
 export const articleQuery = graphql`
-  query($id: String!) {
+  query($id: String!, $image: String!) {
     content: file(id: { eq: $id }) {
       childMarkdownRemark {
         frontmatter {
@@ -137,6 +147,13 @@ export const articleQuery = graphql`
             intro_it
           }
           tags
+        }
+      }
+    }
+    image: file(relativePath: { eq: $image }) {
+      childImageSharp {
+        fluid(maxWidth: 1920, maxHeight: 1080, cropFocus: CENTER) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
