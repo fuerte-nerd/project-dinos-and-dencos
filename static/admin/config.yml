@@ -289,7 +289,7 @@ collections:
               - { name: de, label: Deutsch, widget: string }
               - { name: it, label: Italiano, widget: string }
               - { name: fr, label: Français, widget: string }
-          - name: "body_adopt"
+          - name: "main"
             label: "Body"
             widget: object
             fields:
