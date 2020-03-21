@@ -1,4 +1,5 @@
 import React from "react"
+import { connect } from "react-redux"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Link from "../components/Link"
@@ -6,9 +7,10 @@ import TempImage from "../images/chispa-chopped.jpg"
 import TempImage2 from "../images/article.jpg"
 
 const staticPage = props => {
+  const { frontmatter } = props.data.text.childMarkdownRemark
   return (
     <Layout
-      title="TempTitle"
+      title={frontmatter.heading.es}
       spacer={true}
       showFooter={true}
       og={{
@@ -79,5 +81,39 @@ const staticPage = props => {
     </Layout>
   )
 }
-export const staticQuery = graphql``
-export default staticPage
+export const staticQuery = graphql`
+  query($id: String!) {
+    text: file(id: { eq: $id }) {
+      childMarkdownRemark {
+        frontmatter {
+          heading {
+            en
+            es
+            de
+            it
+            fr
+          }
+          main {
+            en
+            es
+            de
+            it
+            fr
+          }
+          subheading {
+            en
+            es
+            de
+            it
+            fr
+          }
+        }
+      }
+    }
+  }
+`
+
+const mapStateToProps = state => ({
+  lang: state.language.lang,
+})
+export default connect(mapStateToProps)(staticPage)
