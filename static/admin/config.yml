@@ -272,7 +272,6 @@ collections:
         fields:
           - { name: "background_image", label: "Banner Background image", widget: image }
           - name: "heading"
-          - name: "heading"
             label: "Heading"
             widget: object
             fields:
@@ -304,7 +303,6 @@ collections:
         file: "content/foster.md"
         fields:
           - { name: "background_image", label: "Banner Background image", widget: image }
-          - name: "heading"
           - name: "heading"
             label: "Heading"
             widget: object
@@ -340,7 +338,6 @@ collections:
         fields:
           - { name: "background_image", label: "Banner Background image", widget: image }
           - name: "heading"
-          - name: "heading"
             label: "Heading"
             widget: object
             fields:
@@ -374,7 +371,6 @@ collections:
         file: "content/volunteer.md"
         fields:
           - { name: "background_image", label: "Banner Background image", widget: image }
-          - name: "heading"
           - name: "heading"
             label: "Heading"
             widget: object
