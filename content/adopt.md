@@ -1,5 +1,5 @@
 ---
-background_image_adopt: assets/rafael-profile.jpg
+background_image: assets/rafael-profile.jpg
 heading:
   en: Adopt a dog
   es: Adoptar un perro
