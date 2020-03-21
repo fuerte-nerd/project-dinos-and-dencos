@@ -207,7 +207,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     component: staticTemplate,
     context: {
       img: getFilename(
-        adoptQuery.file.childMarkdownRemark.frontmatter.background_image
+        adoptQuery.data.file.childMarkdownRemark.frontmatter.background_image
       ),
     },
   })
