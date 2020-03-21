@@ -42,6 +42,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const dogTemplate = path.resolve(`src/templates/dogTemplate.js`)
   const articlesTemplate = path.resolve("src/templates/articles.js")
   const articleTemplate = path.resolve("src/templates/article.js")
+  const adoptTemplate = path.resolve("src/templates/adopt")
 
   const indexBgQuery = await graphql(`
     {
@@ -164,5 +165,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         image: getFilename(node.childMarkdownRemark.frontmatter.featured_image),
       },
     })
+  })
+  createPage({
+    path: "/adopt",
+    component: adoptTemplate,
   })
 }
