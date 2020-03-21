@@ -272,7 +272,7 @@ collections:
         fields:
           - { name: "background_image_adopt", label: "Banner Background image", widget: image }
           - name: "heading_adopt"
-            label: "Heading"
+            label: "Heading for adop for adopt"
             widget: object
             fields:
               - { name: en, label: English, widget: string }
