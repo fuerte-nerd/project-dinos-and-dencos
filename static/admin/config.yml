@@ -348,17 +348,15 @@ collections:
             label: "Subheading"
             widget: object
             fields:
-              - { name: en, label: English, widget: markdown }
               - { name: en, label: English, widget: string }
               - { name: es, label: Español, widget: string }
               - { name: de, label: Deutsch, widget: string }
               - { name: it, label: Italiano, widget: string }
               - { name: fr, label: Français, widget: string }
-          - name: "body_donate"
+          - name: "main"
             label: "Body"
             widget: object
             fields:
-              - { name: en, label: English, widget: markdown }
               - { name: en, label: English, widget: markdown }
               - { name: es, label: Español, widget: markdown }
               - { name: de, label: Deutsch, widget: markdown }
@@ -368,8 +366,8 @@ collections:
         name: "volunteer"
         file: "content/volunteer.md"
         fields:
-          - { name: "background_image_volunteer", label: "Banner Background image", widget: image }
-          - name: "heading_volunteer"
+          - { name: "background_image", label: "Banner Background image", widget: image }
+          - name: "heading"
             label: "Heading"
             widget: object
             fields:
@@ -378,21 +376,19 @@ collections:
               - { name: de, label: Deutsch, widget: string }
               - { name: it, label: Italiano, widget: string }
               - { name: fr, label: Français, widget: string }
-          - name: "subheading_volunteer"
+          - name: "subheading"
             label: "Subheading"
             widget: object
             fields:
-              - { name: en, label: English, widget: markdown }
               - { name: en, label: English, widget: string }
               - { name: es, label: Español, widget: string }
               - { name: de, label: Deutsch, widget: string }
               - { name: it, label: Italiano, widget: string }
               - { name: fr, label: Français, widget: string }
-          - name: "body_volunteer"
+          - name: "main"
             label: "Body"
             widget: object
             fields:
-              - { name: en, label: English, widget: markdown }
               - { name: en, label: English, widget: markdown }
               - { name: es, label: Español, widget: markdown }
               - { name: de, label: Deutsch, widget: markdown }
