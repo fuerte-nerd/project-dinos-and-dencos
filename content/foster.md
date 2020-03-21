@@ -1,11 +1,11 @@
 ---
 background_image: assets/rafael-profile.jpg
 heading:
-  en: Adopt a dog
-  es: Adoptar un perro
-  de: Adoptiere einen Hund
-  it: Adotta un cane
-  fr: Adoptez un chien
+  en: Foster a dog
+  es: Fomentar un perro
+  de: Pflegen Sie einen Hund
+  it: Incoraggia un cane
+  fr: Favoriser un chien
 subheading:
   en: >-
     Elit sint libero consectetur dolor voluptatum! Molestias similique provident unde eaque totam? Voluptatibus eaque odit suscipit natus laboriosam qui fuga English?
