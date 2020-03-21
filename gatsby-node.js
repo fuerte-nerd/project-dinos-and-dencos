@@ -167,35 +167,37 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   })
   const adoptQuery = await graphql(`
-  file(name: {eq: "adopt"}) {
-    childMarkdownRemark {
-      frontmatter {
-        background_image
-        heading {
-          de
-          en
-          es
-          it
-          fr
-        }
-        subheading {
-          en
-          fr
-          de
-          es
-          it
-        }
-        main {
-          en
-          es
-          de
-          it
-          fr
+    query {
+      file(name: { eq: "adopt" }) {
+        childMarkdownRemark {
+          frontmatter {
+            background_image
+            heading {
+              de
+              en
+              es
+              it
+              fr
+            }
+            subheading {
+              en
+              fr
+              de
+              es
+              it
+            }
+            main {
+              en
+              es
+              de
+              it
+              fr
+            }
+          }
         }
       }
     }
-  }
-    `)
+  `)
   if (adoptQuery.errors) {
     reporter.panicOnBuild(`Error while running GraphQL query.`)
     return
@@ -203,5 +205,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   createPage({
     path: "/adopt",
     component: staticTemplate,
+    context: {
+      img: getFilename(
+        adoptQuery.file.childMarkdownRemark.frontmatter.background_image
+      ),
+    },
   })
 }

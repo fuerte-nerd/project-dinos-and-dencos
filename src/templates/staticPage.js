@@ -7,11 +7,11 @@ import TempImage2 from "../images/article.jpg"
 const staticPage = props => {
   return (
     <Layout
-      title={props.data.title}
+      title="TempTitle"
       spacer={true}
       showFooter={true}
       og={{
-        description: props.data.description,
+        description: "Temp description",
         image: "image+url+here",
         url: "fuerteventuradogrescue.org",
       }}
@@ -79,4 +79,4 @@ const staticPage = props => {
   )
 }
 
-export default adopt
+export default staticPage
