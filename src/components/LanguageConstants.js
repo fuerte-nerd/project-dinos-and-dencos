@@ -1,4 +1,41 @@
 export default {
+  comments: {
+    en: "Comments",
+    es: "Comentarios",
+    de: "Bemerkungen",
+    fr: "commentaires",
+    it: "Commenti",
+  },
+  by: {
+    en: "by",
+    es: "por",
+    de: "von",
+    it: "di",
+    fr: "par",
+  },
+  date_on: {
+    en: "on",
+    es: "el",
+    de: "am",
+    it: "il",
+    fr: "le",
+  },
+  back_to_articles: {
+    en: "Back to articles",
+    es: "Volver a los artículos",
+    de: "Zurück zu den Artikeln",
+    it: "Torna agli articoli",
+    fr: "Retour aux articles",
+  },
+
+  show_articles_archive: {
+    en: "Show articles archive",
+    es: "Mostrar archivo de artículos",
+    de: "Artikelarchiv anzeigen",
+    it: "Mostra archivio articoli",
+    fr: "Afficher l'archive des articles",
+  },
+
   most_recent: {
     en: "Most recent",
     es: "Más reciente",

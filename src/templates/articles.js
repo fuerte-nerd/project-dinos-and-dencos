@@ -2,7 +2,6 @@ import React from "react"
 import { graphql } from "gatsby"
 import { connect } from "react-redux"
 import { Container, Row, Col, Button } from "reactstrap"
-import tempImage from "../images/article.jpg"
 import Layout from "../components/layout"
 import MainArticleCard from "../components/MainArticleCard"
 import ArticleCard from "../components/ArticleCard"
@@ -10,51 +9,13 @@ import LangConsts from "../components/LanguageConstants"
 
 const Articles = props => {
   const featuredArticle = props.data.articles.edges[0].node
-  const otherArticles = props.data.articles.edges.map((i, ind) => {
+  const otherArticles = props.data.articles.edges.filter((i, ind) => {
     if (ind > 0) {
       return i.node
     } else {
-      return
+      return null
     }
   })
-  console.log(featuredArticle)
-  const tempData = {
-    featured: {
-      id: 1,
-      slug: "slug1",
-      title: "Post Title",
-      languages: ["gb", "es", "it"],
-      date: new Date(2020, 2, 6),
-      author: "Harry",
-      featured_image: tempImage,
-      excerpt:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt amet officiis minus quasi voluptates optio adipisci. Maxime sed odio dolorum id quaerat eligendi perferendis labore?...",
-    },
-    other_stories: [
-      {
-        id: 2,
-        slug: "slug2",
-        title: "Post Title 2",
-        languages: ["gb", "es", "it", "de"],
-        date: new Date(2020, 2, 3),
-        author: "Derek",
-        featured_image: tempImage,
-        excerpt:
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt amet officiis minus quasi voluptates optio adipisci, praesentium reprehenderit, nobis libero animi. Maxime sed odio dolorum id quaerat eligendi perferendis labore?...",
-      },
-      {
-        id: 3,
-        slug: "slug3",
-        title: "Post Title 3",
-        languages: ["gb", "es"],
-        date: new Date(2020, 2, 2),
-        author: "John",
-        featured_image: tempImage,
-        excerpt:
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt amet officiis minus quasi voluptates optio adipisci, praesentium reprehenderit, nobis libero animi. Maxime sed odio dolorum id quaerat eligendi perferendis labore?...",
-      },
-    ],
-  }
   return (
     <Layout
       title="Articles"
@@ -74,10 +35,6 @@ const Articles = props => {
             ]
           }
         </h1>
-        <p className="lead">
-          From shelter updates to useful dog-owner tip, you wll find it all
-          here!
-        </p>
         <div className="articles">
           <Row className="mb-4">
             <Col>
@@ -85,7 +42,7 @@ const Articles = props => {
             </Col>
           </Row>
           <Row>
-            {tempData.other_stories.map(i => {
+            {otherArticles.map(i => {
               return (
                 <Col lg={6} className="mb-2">
                   <ArticleCard data={i} />
@@ -96,7 +53,8 @@ const Articles = props => {
         </div>
         <div className="d-block text-center my-5">
           <Button color="primary" size="lg">
-            <i className="fas fa-book mr-3"></i>Load more articles
+            <i className="fas fa-book mr-3"></i>
+            {LangConsts.show_articles_archive[props.lang]}
           </Button>
         </div>
       </Container>
@@ -106,7 +64,10 @@ const Articles = props => {
 
 export const articlesData = graphql`
   query {
-    articles: allFile(filter: { sourceInstanceName: { eq: "articles" } }) {
+    articles: allFile(
+      filter: { sourceInstanceName: { eq: "articles" } }
+      limit: 8
+    ) {
       edges {
         node {
           childMarkdownRemark {

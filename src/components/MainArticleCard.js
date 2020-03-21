@@ -59,7 +59,12 @@ function MainArticleCard(props) {
               alt="Temp"
               className="w-100 rounded d-lg-none mb-3 mb-lg-0"
             />
-            <p className="text-justify">
+            <p
+              className="text-justify"
+              style={{
+                height: "6rem",
+              }}
+            >
               {article[`content_${props.lang}`][`intro_${props.lang}`]}
             </p>
           </Col>
@@ -73,7 +78,7 @@ function MainArticleCard(props) {
           </Col>
         </Row>
         <Link
-          to={`/articles/article`}
+          to={props.data.childMarkdownRemark.fields.slug}
           classes="btn btn-success d-block stretched-link mt-lg-1 font-weight-bold"
         >
           <i className="fas fa-book-open mr-3"></i>

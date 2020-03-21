@@ -41,6 +41,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const theDogsTemplate = path.resolve(`src/templates/the-dogs.js`)
   const dogTemplate = path.resolve(`src/templates/dogTemplate.js`)
   const articlesTemplate = path.resolve("src/templates/articles.js")
+  const articleTemplate = path.resolve("src/templates/article.js")
+
   const indexBgQuery = await graphql(`
     {
       file(sourceInstanceName: { eq: "content" }, name: { eq: "home" }) {
@@ -129,5 +131,34 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     path: "/articles",
     component: articlesTemplate,
     context: {},
+  })
+  const articlesQuery = await graphql(`
+    query {
+      allFile(filter: { sourceInstanceName: { eq: "articles" } }) {
+        edges {
+          node {
+            id
+            childMarkdownRemark {
+              fields {
+                slug
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+  if (articlesQuery.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+  articlesQuery.data.allFile.edges.forEach(({ node }) => {
+    createPage({
+      path: node.childMarkdownRemark.fields.slug,
+      component: articleTemplate,
+      context: {
+        id: node.id,
+      },
+    })
   })
 }
