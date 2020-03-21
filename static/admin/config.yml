@@ -284,6 +284,7 @@ collections:
           - name: "subheading"
             label: "Subheading"
             widget: object
+            fields:
               - { name: en, label: English, widget: string }
               - { name: es, label: Español, widget: string }
               - { name: de, label: Deutsch, widget: string }
@@ -292,6 +293,7 @@ collections:
           - name: "body"
             label: "Body"
             widget: object
+            fields:
               - { name: en, label: English, widget: markdown }
               - { name: es, label: Español, widget: markdown }
               - { name: de, label: Deutsch, widget: markdown }
@@ -315,6 +317,8 @@ collections:
           - name: "subheading"
             label: "Subheading"
             widget: object
+            fields:
+              - { name: en, label: English, widget: markdown }
               - { name: en, label: English, widget: string }
               - { name: es, label: Español, widget: string }
               - { name: de, label: Deutsch, widget: string }
@@ -323,6 +327,8 @@ collections:
           - name: "body"
             label: "Body"
             widget: object
+            fields:
+              - { name: en, label: English, widget: markdown }
               - { name: en, label: English, widget: markdown }
               - { name: es, label: Español, widget: markdown }
               - { name: de, label: Deutsch, widget: markdown }
@@ -346,6 +352,8 @@ collections:
           - name: "subheading"
             label: "Subheading"
             widget: object
+            fields:
+              - { name: en, label: English, widget: markdown }
               - { name: en, label: English, widget: string }
               - { name: es, label: Español, widget: string }
               - { name: de, label: Deutsch, widget: string }
@@ -354,6 +362,8 @@ collections:
           - name: "body"
             label: "Body"
             widget: object
+            fields:
+              - { name: en, label: English, widget: markdown }
               - { name: en, label: English, widget: markdown }
               - { name: es, label: Español, widget: markdown }
               - { name: de, label: Deutsch, widget: markdown }
@@ -377,6 +387,8 @@ collections:
           - name: "subheading"
             label: "Subheading"
             widget: object
+            fields:
+              - { name: en, label: English, widget: markdown }
               - { name: en, label: English, widget: string }
               - { name: es, label: Español, widget: string }
               - { name: de, label: Deutsch, widget: string }
@@ -385,6 +397,8 @@ collections:
           - name: "body"
             label: "Body"
             widget: object
+            fields:
+              - { name: en, label: English, widget: markdown }
               - { name: en, label: English, widget: markdown }
               - { name: es, label: Español, widget: markdown }
               - { name: de, label: Deutsch, widget: markdown }
