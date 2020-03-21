@@ -17,7 +17,7 @@ subheading:
     Adipisicing ipsum sequi eaque maiores impedit odit. Id minima id eum alias sint Esse quae quod optio explicabo nobis Quia?
   fr: >-
     Consectetur vero reprehenderit exercitationem voluptatum nostrum vitae Assumenda fugiat nostrum eveniet fugit iure. In sed doloremque illo atque veritatis Architecto
-body:
+main:
   en: >-
     Dolor voluptate dicta eum libero quas! Repudiandae et culpa molestias quaerat deserunt? Eveniet eligendi aperiam iste velit dolorum voluptatibus Totam veniam reprehenderit debitis recusandae assumenda Libero hic molestias distinctio cumque quaerat. Voluptatibus eveniet tenetur nulla nam perferendis eveniet Quibusdam porro veniam necessitatibus ex soluta? Id sunt repellendus non cumque ut
     
