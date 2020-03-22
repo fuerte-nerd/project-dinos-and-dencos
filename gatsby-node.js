@@ -271,4 +271,30 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       ),
     },
   })
+  const donateQuery = await graphql(`
+    query {
+      file(name: { eq: "donate" }) {
+        childMarkdownRemark {
+          frontmatter {
+            background_image
+          }
+        }
+        id
+      }
+    }
+  `)
+  if (donateQuery.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+  createPage({
+    path: "/donate",
+    component: staticTemplate,
+    context: {
+      id: donateQuery.data.file.id,
+      img: getFilename(
+        donateQuery.data.file.childMarkdownRemark.frontmatter.background_image
+      ),
+    },
+  })
 }
