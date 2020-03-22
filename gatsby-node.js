@@ -43,6 +43,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const articlesTemplate = path.resolve("src/templates/articles.js")
   const articleTemplate = path.resolve("src/templates/article.js")
   const staticTemplate = path.resolve("src/templates/staticPage.js")
+  const contactTemplate = path.resolve("src/templates/contactPage.js")
 
   const indexBgQuery = await graphql(`
     {
@@ -294,6 +295,32 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       id: donateQuery.data.file.id,
       img: getFilename(
         donateQuery.data.file.childMarkdownRemark.frontmatter.background_image
+      ),
+    },
+  })
+  const contactQuery = await graphql(`
+    query {
+      file(name: { eq: "contact" }) {
+        childMarkdownRemark {
+          frontmatter {
+            background_image
+          }
+        }
+        id
+      }
+    }
+  `)
+  if (contactQuery.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+  createPage({
+    path: "/contact",
+    component: contactTemplate,
+    context: {
+      id: contactQuery.data.file.id,
+      img: getFilename(
+        contactQuery.data.file.childMarkdownRemark.frontmatter.background_image
       ),
     },
   })
