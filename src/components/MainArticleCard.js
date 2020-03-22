@@ -16,7 +16,7 @@ function MainArticleCard(props) {
         edges {
           node {
             id
-            fluid(maxWidth: 492, maxHeight: 277, cropFocus: ENTROPY) {
+            fluid(maxWidth: 492, maxHeight: 400, cropFocus: ENTROPY) {
               ...GatsbyImageSharpFluid
               originalName
             }
