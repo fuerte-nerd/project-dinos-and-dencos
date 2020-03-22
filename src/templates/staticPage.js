@@ -28,14 +28,14 @@ const staticPage = props => {
         <ReactMarkdown source={frontmatter.main[props.lang]} />
         <div class="text-center">
           <p class="mb-0 text-center">
-            {LangConsts.for_more_information[props.lang]} For more information
-            about adopting...
+            {LangConsts.for_more_information[props.lang]}
           </p>
           <Link
             to="/contact"
             classes="btn btn-lg font-weight-bold btn-primary d-lg-inline-flex d-block align-items-center"
           >
-            Contact us<i class="ml-3 fas fa-paw"></i>
+            {LangConsts.contact_us[props.lang]}
+            <i class="ml-3 fas fa-paw"></i>
           </Link>
         </div>
       </div>
