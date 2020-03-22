@@ -48,6 +48,20 @@ export const staticQuery = graphql`
             it
             fr
           }
+          messenger_intro {
+            en
+            es
+            de
+            it
+            fr
+          }
+          messenger_intro {
+            en
+            es
+            de
+            it
+            fr
+          }
         }
       }
     }
