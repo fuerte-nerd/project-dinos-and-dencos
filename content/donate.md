@@ -3,7 +3,7 @@ background_image: assets/rafael-profile.jpg
 heading:
   en: Donate to the dogs
   es: Donar a los perros
-  de: Faire un don aux chiens
+  de: Spende an die Hunde
   it: Dona ai cani
   fr: Faire un don aux chiens
 subheading:

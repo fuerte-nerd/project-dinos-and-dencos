@@ -1,4 +1,11 @@
 export default {
+  donate_now: {
+    en: "Donate now via PayPal",
+    es: "Done ahora a través de PayPal",
+    de: "Spenden Sie jetzt über PayPal",
+    it: "Dona ora tramite PayPal",
+    fr: "Faites un don maintenant via PayPal",
+  },
   for_more_information: {
     en: "For more information...",
     es: "Para más información...",

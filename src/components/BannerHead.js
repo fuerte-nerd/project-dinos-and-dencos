@@ -1,6 +1,5 @@
 import React from "react"
 import { connect } from "react-redux"
-import Link from "../components/Link"
 
 const BannerHead = props => {
   return (
@@ -10,7 +9,7 @@ const BannerHead = props => {
       {props.path === "/donate" ? (
         <a
           href="http://www.paypal.com"
-          className="btn btn-l btn-primary d-inline-flex align-items-center"
+          className="btn btn-lg btn-light d-inline-flex align-items-center"
         >
           Donate <i className="fab fa-paypal ml-3" />
         </a>
