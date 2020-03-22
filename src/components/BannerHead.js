@@ -13,7 +13,7 @@ const BannerHead = props => {
           className="btn btn-lg btn-light d-inline-flex align-items-center"
         >
           {LangConsts.donate_now[props.lang]}
-          <i className="fab fa-paypal ml-3" />
+          <i className="fab fa-paypal ml-3 d-block d-lg-inline" />
         </a>
       ) : null}
     </div>
