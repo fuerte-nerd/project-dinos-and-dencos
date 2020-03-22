@@ -43,25 +43,28 @@ const contactTemplate = props => {
           <p>{frontmatter.contact_form_intro[props.lang]}</p>
           <form>
             <div class="row">
-              <div class="col-md-6">
+              <div class="col">
                 <input
                   type="text"
                   class="form-control"
                   placeholder={frontmatter.contact_name[props.lang]}
                 />
               </div>
-              <div class="col-md-6 mt-3 mt-md-0">
+            </div>
+            <div className="row">
+              <div class="col-md-6 mt-3">
                 <input
-                  type="text"
+                  type="email"
                   class="form-control"
-                  placeholder="Last name"
+                  placeholder={frontmatter.email[props.lang]}
                 />
               </div>
               <div class="col-md-6 mt-3">
-                <input type="email" class="form-control" placeholder="Email" />
-              </div>
-              <div class="col-md-6 mt-3">
-                <input type="text" class="form-control" placeholder="Phone" />
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder={frontmatter.phone[props.lang]}
+                />
               </div>
             </div>
             <div class="row">
@@ -70,7 +73,7 @@ const contactTemplate = props => {
                   class="form-control"
                   id="exampleFormControlTextarea1"
                   rows="3"
-                  placeholder="Write your message here..."
+                  placeholder={frontmatter.write_your_message[props.lang]}
                 ></textarea>
               </div>
             </div>
@@ -79,7 +82,8 @@ const contactTemplate = props => {
                 type="submit"
                 class="btn btn-primary btn-lg btn-block font-weight-bold my-3"
               >
-                Send <i class="ml-2 far fa-paper-plane"></i>
+                {frontmatter.send[props.lang]}{" "}
+                <i class="ml-2 far fa-paper-plane"></i>
               </button>
             </div>
           </form>

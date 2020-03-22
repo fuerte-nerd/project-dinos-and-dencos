@@ -31,7 +31,7 @@ messenger_button_text:
   fr: Contactez Messenger
 i_dont_use_messenger:
   en: I don't use Messenger
-  es: Yo no uso 
+  es: Yo no uso Messenger 
   de: Ich ze Messenger nicht
   it: Non uso Messenger
   fr: Je n'utilise pas Messenger
