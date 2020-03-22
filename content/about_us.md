@@ -1,11 +1,11 @@
 ---
 background_image: assets/rafael-profile.jpg
 heading:
-  en: Foster a dog
-  es: Fomentar un perro
-  de: Pflegen Sie einen Hund
-  it: Incoraggia un cane
-  fr: Favoriser un chien
+  en: Who are we?
+  es: ¿Quienes somos nosotros?
+  de: Wer sind wir?
+  it: Chi siamo noi?
+  fr: Qui sommes nous?
 subheading:
   en: >-
     Elit sint libero consectetur dolor voluptatum! Molestias similique provident unde eaque totam? Voluptatibus eaque odit suscipit natus laboriosam qui fuga English?

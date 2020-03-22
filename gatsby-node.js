@@ -245,4 +245,30 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       ),
     },
   })
+  const aboutUsQuery = await graphql(`
+    query {
+      file(name: { eq: "about_us" }) {
+        childMarkdownRemark {
+          frontmatter {
+            background_image
+          }
+        }
+        id
+      }
+    }
+  `)
+  if (aboutUsQuery.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+  createPage({
+    path: "/about",
+    component: staticTemplate,
+    context: {
+      id: aboutUsQuery.data.file.id,
+      img: getFilename(
+        aboutUsQuery.data.file.childMarkdownRemark.frontmatter.background_image
+      ),
+    },
+  })
 }
