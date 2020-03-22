@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import MainArticleCard from "../components/MainArticleCard"
 import ArticleCard from "../components/ArticleCard"
 import LangConsts from "../components/LanguageConstants"
+import BannerHead from "../components/BannerHead"
 
 const Articles = props => {
   const featuredArticle = props.data.articles.edges[0].node
