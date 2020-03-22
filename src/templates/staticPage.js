@@ -9,6 +9,8 @@ import LangConsts from "../components/LanguageConstants"
 
 const staticPage = props => {
   const { frontmatter } = props.data.text.childMarkdownRemark
+  console.log(props)>
+
   return (
     <Layout
       title={frontmatter.heading[props.lang]}
