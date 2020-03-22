@@ -33,24 +33,21 @@ const contactTemplate = props => {
             class="btn btn-lg font-weight-bold btn-primary d-block d-lg-inline-block align-items-center"
           >
             <div class="d-flex align-items-center justify-content-center">
-              Get in touch on Messenger{" "}
+              {frontmatter.messenger_button_text[props.lang]}{" "}
               <i class="ml-3 fab fa-facebook-messenger display-4"></i>
             </div>
           </a>
         </div>
         <div class="my-3">
-          <h2>"I don't use Messenger..."</h2>
-          <p>
-            No problem! Complete and submit the form below and we will get back
-            to you as soon as possible...
-          </p>
+          <h2>"{frontmatter.i_dont_use_messenger[props.lang]}"</h2>
+          <p>{frontmatter.contact_form_intro[props.lang]}</p>
           <form>
             <div class="row">
               <div class="col-md-6">
                 <input
                   type="text"
                   class="form-control"
-                  placeholder="First name"
+                  placeholder={frontmatter.contact_name[props.lang]}
                 />
               </div>
               <div class="col-md-6 mt-3 mt-md-0">
