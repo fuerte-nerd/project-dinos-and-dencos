@@ -5,9 +5,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Link from "../components/Link"
 import BannerHead from "../components/BannerHead"
-
-import TempImage from "../images/chispa-chopped.jpg"
-import TempImage2 from "../images/article.jpg"
+import LangConsts from "../components/LanguageConstants"
 
 const staticPage = props => {
   const { frontmatter } = props.data.text.childMarkdownRemark
@@ -29,7 +27,10 @@ const staticPage = props => {
       <div class="page-content extend-line-height container py-3">
         <ReactMarkdown source={frontmatter.main[props.lang]} />
         <div class="text-center">
-          <p class="mb-0 text-center">For more information about adopting...</p>
+          <p class="mb-0 text-center">
+            {LangConsts.for_more_information[props.lang]} For more information
+            about adopting...
+          </p>
           <Link
             to="/contact"
             classes="btn btn-lg font-weight-bold btn-primary d-lg-inline-flex d-block align-items-center"
