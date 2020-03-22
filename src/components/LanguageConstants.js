@@ -1,4 +1,18 @@
 export default {
+  for_more_information: {
+    en: "For more information...",
+    es: "Para más información...",
+    de: "Für mehr Informationen...",
+    it: "Per maggiori informazioni...",
+    fr: "Pour plus d'informations...",
+  },
+  contact_us: {
+    en: "Contact us",
+    es: "Contáctanos",
+    de: "Kontaktiere uns",
+    it: "Contattaci",
+    fr: "Nous contacter",
+  },
   no_more_articles: {
     en: "No more articles",
     es: "No mas articulos",
