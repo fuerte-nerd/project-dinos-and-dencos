@@ -9,7 +9,7 @@ import LangConsts from "../components/LanguageConstants"
 
 const staticPage = props => {
   const { frontmatter } = props.data.text.childMarkdownRemark
-  console.log(props)>
+  console.log(props)
 
   return (
     <Layout
@@ -25,6 +25,7 @@ const staticPage = props => {
       <BannerHead
         heading={frontmatter.heading[props.lang]}
         subheading={frontmatter.subheading[props.lang]}
+        path={props.path}
       />
       <div class="page-content extend-line-height container py-3">
         <ReactMarkdown source={frontmatter.main[props.lang]} />
