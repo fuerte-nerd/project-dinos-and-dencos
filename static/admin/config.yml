@@ -72,92 +72,92 @@ collections:
             label: "'Home' page"
             widget: object
             fields:
-              - { name: en, label: English, widget: string }
-              - { name: es, label: Español, widget: string }
-              - { name: de, label: Deutsch, widget: string }
-              - { name: it, label: Italiano, widget: string }
-              - { name: fr, label: Français, widget: string }
+              - { name: en, label: English, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"] }
+              - { name: es, label: Español, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: de, label: Deutsch, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: it, label: Italiano, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: fr, label: Français, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
           - name: "the_dogs"
             label: "'The Dogs' page"
             widget: object
             fields:
-              - { name: en, label: English, widget: string }
-              - { name: es, label: Español, widget: string }
-              - { name: de, label: Deutsch, widget: string }
-              - { name: it, label: Italiano, widget: string }
-              - { name: fr, label: Français, widget: string }
+              - { name: en, label: English, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: es, label: Español, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: de, label: Deutsch, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: it, label: Italiano, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: fr, label: Français, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
           - name: "articles"
             label: "'Articles' page"
             widget: object
             fields:
-              - { name: en, label: English, widget: string }
-              - { name: es, label: Español, widget: string }
-              - { name: de, label: Deutsch, widget: string }
-              - { name: it, label: Italiano, widget: string }
-              - { name: fr, label: Français, widget: string }
+              - { name: en, label: English, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: es, label: Español, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: de, label: Deutsch, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: it, label: Italiano, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: fr, label: Français, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
           - name: "about"
             label: "'About' page"
             widget: object
             fields:
-              - { name: en, label: English, widget: string }
-              - { name: es, label: Español, widget: string }
-              - { name: de, label: Deutsch, widget: string }
-              - { name: it, label: Italiano, widget: string }
-              - { name: fr, label: Français, widget: string }
+              - { name: en, label: English, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: es, label: Español, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: de, label: Deutsch, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: it, label: Italiano, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: fr, label: Français, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
           - name: "help_us"
             label: "'Help us' label (in navigation)"
             widget: object
             fields:
-              - { name: en, label: English, widget: string }
-              - { name: es, label: Español, widget: string }
-              - { name: de, label: Deutsch, widget: string }
-              - { name: it, label: Italiano, widget: string }
-              - { name: fr, label: Français, widget: string }
+              - { name: en, label: English, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: es, label: Español, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: de, label: Deutsch, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: it, label: Italiano, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: fr, label: Français, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
           - name: "adopt"
             label: "'Adopt' page"
             widget: object
             fields:
-              - { name: en, label: English, widget: string }
-              - { name: es, label: Español, widget: string }
-              - { name: de, label: Deutsch, widget: string }
-              - { name: it, label: Italiano, widget: string }
-              - { name: fr, label: Français, widget: string }
+              - { name: en, label: English, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: es, label: Español, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: de, label: Deutsch, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: it, label: Italiano, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: fr, label: Français, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
           - name: "foster"
             label: "'Foster' page"
             widget: object
             fields:
-              - { name: en, label: English, widget: string }
-              - { name: es, label: Español, widget: string }
-              - { name: de, label: Deutsch, widget: string }
-              - { name: it, label: Italiano, widget: string }
-              - { name: fr, label: Français, widget: string }
+              - { name: en, label: English, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: es, label: Español, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: de, label: Deutsch, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: it, label: Italiano, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: fr, label: Français, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
           - name: "donate"
             label: "'Donate' page"
             widget: object
             fields:
-              - { name: en, label: English, widget: string }
-              - { name: es, label: Español, widget: string }
-              - { name: de, label: Deutsch, widget: string }
-              - { name: it, label: Italiano, widget: string }
-              - { name: fr, label: Français, widget: string }
+              - { name: en, label: English, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: es, label: Español, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: de, label: Deutsch, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: it, label: Italiano, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: fr, label: Français, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
           - name: "volunteer"
             label: "'Volunteer' page"
             widget: object
             fields:
-              - { name: en, label: English, widget: string }
-              - { name: es, label: Español, widget: string }
-              - { name: de, label: Deutsch, widget: string }
-              - { name: it, label: Italiano, widget: string }
-              - { name: fr, label: Français, widget: string }
+              - { name: en, label: English, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: es, label: Español, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: de, label: Deutsch, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: it, label: Italiano, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: fr, label: Français, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
           - name: "contact"
             label: "'Contact' page"
             widget: object
             fields:
-              - { name: en, label: English, widget: string }
-              - { name: es, label: Español, widget: string }
-              - { name: de, label: Deutsch, widget: string }
-              - { name: it, label: Italiano, widget: string }
-              - { name: fr, label: Français, widget: string }
+              - { name: en, label: English, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: es, label: Español, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: de, label: Deutsch, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: it, label: Italiano, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: fr, label: Français, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
       - label: "Home"
         name: "home"
         file: "content/home.md"
@@ -167,11 +167,11 @@ collections:
             label: "Heading"
             widget: object
             fields:
-              - { name: en, label: English, widget: string }
-              - { name: es, label: Español, widget: string }
-              - { name: de, label: Deutsch, widget: string }
-              - { name: it, label: Italiano, widget: string }
-              - { name: fr, label: Français, widget: string }
+              - { name: en, label: English, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: es, label: Español, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: de, label: Deutsch, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: it, label: Italiano, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: fr, label: Français, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
           - name: "subheading"
             label: "Subheading"
             widget: object
