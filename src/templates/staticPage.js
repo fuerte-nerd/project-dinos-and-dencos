@@ -4,6 +4,8 @@ import { connect } from "react-redux"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Link from "../components/Link"
+import BannerHead from "../components/BannerHead"
+
 import TempImage from "../images/chispa-chopped.jpg"
 import TempImage2 from "../images/article.jpg"
 
@@ -20,20 +22,10 @@ const staticPage = props => {
         url: "fuerteventuradogrescue.org",
       }}
     >
-      <div class="jumbotron bg-light-trans text-dark position-relative overflow-hidden mb-0">
-        <img
-          src={TempImage}
-          alt="Rafael"
-          class="w-100 position-absolute"
-          style={{
-            top: 0,
-            left: 0,
-            zIndex: -50,
-          }}
-        />
-        <h1>{frontmatter.heading[props.lang]}</h1>
-        <p class="lead">{frontmatter.subheading[props.lang]}</p>
-      </div>
+      <BannerHead
+        heading={frontmatter.heading[props.lang]}
+        subtitle={frontmatter.subheading[props.lang]}
+      />
       <div class="page-content extend-line-height container py-3">
         <ReactMarkdown source={frontmatter.main[props.lang]} />
         <div class="text-center">
