@@ -41,7 +41,7 @@ contact_form_intro:
   de: Kein Problem! Füllen Sie das unten stehende Formular aus und senden Sie es ab. Wir werden uns so schnell wie möglich mit Ihnen in Verbindung setzen.
   it: Nessun problema! Compila e invia il modulo sottostante e ti contatteremo al più presto.
   fr: Aucun problème! Remplissez et soumettez le formulaire ci-dessous et nous vous contacterons dans les plus brefs délais.
-name:
+contact_name:
   en: Name
   es: Nombre
   de: Name
