@@ -35,3 +35,15 @@ i_dont_use_messenger:
   de: Ich ze Messenger nicht
   it: Non uso Messenger
   fr: Je n'utilise pas Messenger
+contact_form_intro:
+  en: No problem!  Complete and submit the below form and we will contact you as soon as possible.
+  es: ¡No hay problema! Complete y envíe el siguiente formulario y nos pondremos en contacto con usted lo antes posible.
+  de: Kein Problem! Füllen Sie das unten stehende Formular aus und senden Sie es ab. Wir werden uns so schnell wie möglich mit Ihnen in Verbindung setzen.
+  it: Nessun problema! Compila e invia il modulo sottostante e ti contatteremo al più presto.
+  fr: Aucun problème! Remplissez et soumettez le formulaire ci-dessous et nous vous contacterons dans les plus brefs délais.
+name:
+  en: Name
+  es: Nombre
+  de: Name
+  it: Nome
+  fr: Nom
