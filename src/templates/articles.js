@@ -28,14 +28,15 @@ const Articles = props => {
       }}
       spacer={true}
     >
+      <BannerHead
+        heading={
+          props.data.labels.childMarkdownRemark.frontmatter.articles[props.lang]
+        }
+        subheading="Sit doloremque provident fugit doloremque culpa quae consequuntur!
+      Voluptate non vel obcaecati harum sunt. Dignissimos."
+      />
+
       <Container>
-        <h1>
-          {
-            props.data.labels.childMarkdownRemark.frontmatter.articles[
-              props.lang
-            ]
-          }
-        </h1>
         <div className="articles">
           <Row className="mb-4">
             <Col>
