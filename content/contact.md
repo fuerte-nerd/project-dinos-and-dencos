@@ -47,3 +47,27 @@ name:
   de: Name
   it: Nome
   fr: Nom
+email:
+  en: Email
+  es: Email
+  de: Email
+  it: E-mail
+  fr: Email
+phone:
+  en: Phone
+  es: Teléfono
+  de: Telefon
+  it: Telefono
+  fr: Téléphone
+write_your_message:
+  en: Write your message here...
+  es: Escriba su mensaje aquí...
+  de: Schreibe deine Nachricht hier...
+  it: Scrivi qui il tuo messaggio...
+  fr:  votre message ici...
+send:
+  en: Send
+  es: Enviar
+  de: Senden
+  it: Inviare
+  fr: Envoyer
