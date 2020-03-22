@@ -192,4 +192,30 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       ),
     },
   })
+  const fosterQuery = await graphql(`
+    query {
+      file(name: { eq: "foster" }) {
+        childMarkdownRemark {
+          frontmatter {
+            background_image
+          }
+        }
+        id
+      }
+    }
+  `)
+  if (fosterQuery.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+  createPage({
+    path: "/foster",
+    component: staticTemplate,
+    context: {
+      id: fosterQuery.data.file.id,
+      img: getFilename(
+        fosterQuery.data.file.childMarkdownRemark.frontmatter.background_image
+      ),
+    },
+  })
 }

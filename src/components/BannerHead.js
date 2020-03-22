@@ -3,7 +3,7 @@ import { connect } from "react-redux"
 
 const BannerHead = props => {
   return (
-    <div class="jumbotron bg-light text-dark position-relative overflow-hidden mb-0">
+    <div class="jumbotron bg-primary text-light position-relative overflow-hidden mb-0">
       <h1>{props.heading}</h1>
       <p class="lead">{props.subheading}</p>
     </div>

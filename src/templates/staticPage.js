@@ -24,7 +24,7 @@ const staticPage = props => {
     >
       <BannerHead
         heading={frontmatter.heading[props.lang]}
-        subtitle={frontmatter.subheading[props.lang]}
+        subheading={frontmatter.subheading[props.lang]}
       />
       <div class="page-content extend-line-height container py-3">
         <ReactMarkdown source={frontmatter.main[props.lang]} />
