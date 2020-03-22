@@ -1,5 +1,6 @@
 import React from "react"
 import { connect } from "react-redux"
+import LangConsts from "./LanguageConstants"
 
 const BannerHead = props => {
   return (
@@ -11,7 +12,8 @@ const BannerHead = props => {
           href="http://www.paypal.com"
           className="btn btn-lg btn-light d-inline-flex align-items-center"
         >
-          Donate <i className="fab fa-paypal ml-3" />
+          {LangConsts.donate_now[props.lang]}
+          <i className="fab fa-paypal ml-3" />
         </a>
       ) : null}
     </div>
