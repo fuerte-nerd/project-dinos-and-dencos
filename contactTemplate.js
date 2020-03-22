@@ -7,7 +7,7 @@ import Link from "../components/Link"
 import BannerHead from "../components/BannerHead"
 import LangConsts from "../components/LanguageConstants"
 
-const staticPage = props => {
+const contactiTemplate = props => {
   const { frontmatter } = props.data.text.childMarkdownRemark
   console.log(props)
 
@@ -27,21 +27,7 @@ const staticPage = props => {
         subheading={frontmatter.subheading[props.lang]}
         path={props.path}
       />
-      <div class="page-content extend-line-height container py-3">
-        <ReactMarkdown source={frontmatter.main[props.lang]} />
-        <div class="text-center">
-          <p class="mb-0 text-center">
-            {LangConsts.for_more_information[props.lang]}
-          </p>
-          <Link
-            to="/contact"
-            classes="btn btn-lg font-weight-bold btn-primary d-lg-inline-flex d-block align-items-center"
-          >
-            {LangConsts.contact_us[props.lang]}
-            <i class="ml-3 fas fa-paw"></i>
-          </Link>
-        </div>
-      </div>
+      <div class="page-content extend-line-height container py-3"></div>
     </Layout>
   )
 }
@@ -51,13 +37,6 @@ export const staticQuery = graphql`
       childMarkdownRemark {
         frontmatter {
           heading {
-            en
-            es
-            de
-            it
-            fr
-          }
-          main {
             en
             es
             de
@@ -80,4 +59,4 @@ export const staticQuery = graphql`
 const mapStateToProps = state => ({
   lang: state.language.lang,
 })
-export default connect(mapStateToProps)(staticPage)
+export default connect(mapStateToProps)(contactTemplate)
