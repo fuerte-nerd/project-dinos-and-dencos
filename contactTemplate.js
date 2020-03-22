@@ -1,13 +1,11 @@
 import React from "react"
-import ReactMarkdown from "react-markdown"
 import { connect } from "react-redux"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import Link from "../components/Link"
 import BannerHead from "../components/BannerHead"
 import LangConsts from "../components/LanguageConstants"
 
-const contactiTemplate = props => {
+const contactTemplate = props => {
   const { frontmatter } = props.data.text.childMarkdownRemark
   console.log(props)
 
