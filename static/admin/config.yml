@@ -453,7 +453,7 @@ collections:
               - { name: de, label: Deutsch, widget: string }
               - { name: it, label: Italiano, widget: string }
               - { name: fr, label: Français, widget: string }
-          - name: "name"
+          - name: "contact_name"
             label: "Name"
             widget: object
             fields:
