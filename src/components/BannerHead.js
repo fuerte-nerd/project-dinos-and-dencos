@@ -4,7 +4,7 @@ import LangConsts from "./LanguageConstants"
 
 const BannerHead = props => {
   return (
-    <div class="jumbotron bg-primary text-light shadow mb-0">
+    <div class="jumbotron bg-primary text-light shadow">
       <h1>{props.heading}</h1>
       <p class="lead">{props.subheading}</p>
       {props.path === "/donate" ? (

@@ -32,12 +32,10 @@ function TheDogs(props) {
         description: subheading[props.lang],
       }}
     >
-      <Jumbotron fluid className="bg-primary text-center mb-3 py-5 shadow">
-        <Container fluid className="text-light">
-          <h1>{heading[props.lang]}</h1>
-          <p class="lead">{subheading[props.lang]}</p>
-        </Container>
-      </Jumbotron>
+      <BannerHead
+        heading={heading[props.lang]}
+        subheading={subheading[props.lang]}
+      />
       <Container className="text-center">
         <small class="font-italic">{listing_note[props.lang]}</small>
         <Dogs data={dogsArr} />
