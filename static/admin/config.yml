@@ -17,11 +17,11 @@ collections:
             name: "find_us_text"
             widget: object
             fields:
-              - { name: en, label: English, widget: string }
-              - { name: es, label: Español, widget: string }
-              - { name: de, label: Deutsch, widget: string }
-              - { name: it, label: Italiano, widget: string }
-              - { name: fr, label: Français, widget: string }
+              - { name: en, label: English, widget: string, pattern: ['.{5, 20}', "Must be between 5 and 12 characters"]}
+              - { name: es, label: Español, widget: string, pattern: ['.{5, 20}', "Must be between 5 and 12 characters"]}
+              - { name: de, label: Deutsch, widget: string, pattern: ['.{5, 20}', "Must be between 5 and 12 characters"]  }
+              - { name: it, label: Italiano, widget: string, pattern: ['.{5, 20}', "Must be between 5 and 12 characters"] }
+              - { name: fr, label: Français, widget: string, pattern: ['.{5, 20}', "Must be between 5 and 12 characters"] }
           - { label: "Facebook username", name: "facebook_username", widget: string }
           - { label: "Instagram username", name: "instagram_username", widget: string }
       - label: "Language Selector"
