@@ -463,7 +463,6 @@ collections:
               - { name: de, label: Deutsch, widget: string }
               - { name: it, label: Italiano, widget: string }
               - { name: fr, label: Français, widget: string }
-
       - label: "Social Media"
         name: "social_media"
         file: "content/social_media.md"
