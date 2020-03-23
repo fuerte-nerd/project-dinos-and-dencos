@@ -9,21 +9,22 @@ collections:
     editor:
       preview: false
     files:
-      - label: "Social Media"
-        name: "social_media"
-        file: "content/social_media.md"
+      - label: "Dictionary"
+        name: "dictionary"
+        file: "content/dictionary.md"
         fields:
-          - label: "'Find us' text"
-            name: "find_us_text"
+
+
+          - label: "Age"
+            name: "age"
             widget: object
             fields:
-              - { name: en, label: English, widget: string, pattern: ['.{5, 20}', "Must be between 5 and 12 characters"]}
+              - { name: en, label: English, widget: string }
               - { name: es, label: Español, widget: string, pattern: ['.{5, 20}', "Must be between 5 and 12 characters"]}
               - { name: de, label: Deutsch, widget: string, pattern: ['.{5, 20}', "Must be between 5 and 12 characters"]  }
               - { name: it, label: Italiano, widget: string, pattern: ['.{5, 20}', "Must be between 5 and 12 characters"] }
               - { name: fr, label: Français, widget: string, pattern: ['.{5, 20}', "Must be between 5 and 12 characters"] }
-          - { label: "Facebook username", name: "facebook_username", widget: string }
-          - { label: "Instagram username", name: "instagram_username", widget: string }
+
       - label: "Social Media"
         name: "social_media"
         file: "content/social_media.md"
