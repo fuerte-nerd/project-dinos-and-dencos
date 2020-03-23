@@ -101,43 +101,40 @@ breed:
   it: Razza
   fr: Race
 
-can_you_help: 
-  prefix: 
-    en: Can you help 
-    es: ¿Puedes ayudar a 
-    de: Kannst du 
-    it: Puoi aiutare 
-    fr: Pouvez-vous aider 
-  
-  suffix: 
-    en: ?
-    es: ?
-    de:  helfen?
-    it: ?
-    fr: ?
+can_you_help_prefix: 
+  en: Can you help 
+  es: ¿Puedes ayudar a 
+  de: Kannst du 
+  it: Puoi aiutare 
+  fr: Pouvez-vous aider 
+
+can_you_help_suffix:
+  en: ?
+  es: ?
+  de:  helfen?
+  it: ?
+  fr: ?
   
 
-cant_adopt_or_foster: 
-  prefix: 
-    en:
-      If you can't adopt or foster but still want to help, you can! Please help us to spread the word about 
-    es:
-      Si no puede adoptar o fomentar pero aún quiere ayudar, ¡puede hacerlo! Ayúdenos a correr la voz sobre 
-    de:
-      Wenn Sie nicht adoptieren oder fördern können, aber trotzdem helfen möchten, können Sie! Bitte helfen Sie uns, 
-    it:
-      Se non puoi adottare o affidarti, ma vuoi comunque aiutare, puoi farlo! Aiutaci a spargere la voce su 
-    fr:
-      Si vous ne pouvez pas adopter ou favoriser mais que vous voulez toujours aider, vous pouvez! Aidez-nous à faire connaître 
-  
-  suffix: 
-    en:  by using the buttons below...
-    es:  usando los botones a continuación ...
-    de:  über die folgenden Schaltflächen bekannt zu machen ...
-    it:  usando i pulsanti qui sotto ...
-    fr:  en utilisant les boutons ci-dessous ...
-  
+cant_adopt_or_foster_prefix: 
+  en: >-
+    If you can't adopt or foster but still want to help, you can! Please help us to spread the word about 
+  es: >-
+    Si no puede adoptar o fomentar pero aún quiere ayudar, ¡puede hacerlo! Ayúdenos a correr la voz sobre 
+  de: >-
+    Wenn Sie nicht adoptieren oder fördern können, aber trotzdem helfen möchten, können Sie! Bitte helfen Sie uns, 
+  it: >-
+    Se non puoi adottare o affidarti, ma vuoi comunque aiutare, puoi farlo! Aiutaci a spargere la voce su 
+  fr: >-
+    Si vous ne pouvez pas adopter ou favoriser mais que vous voulez toujours aider, vous pouvez! Aidez-nous à faire connaître 
 
+cant_adopt_or_foster_suffix:
+  en:  by using the buttons below...
+  es:  usando los botones a continuación ...
+  de:  über die folgenden Schaltflächen bekannt zu machen ...
+  it:  usando i pulsanti qui sotto ...
+  fr:  en utilisant les boutons ci-dessous ...
+  
 cat_friendly: 
   en: Cat-friendly
   es: Amigable con los gatos
@@ -173,8 +170,7 @@ family_friendly:
   it: Famiglie
   fr: Conviviale et familiale
 
-find_a_home: 
-  prefix: 
+find_a_home_prefix: 
     en: Please help us to find a home for 
     es: Ayúdenos a encontrar un hogar para 
     de: Bitte helfen Sie uns, ein Zuhause für 
