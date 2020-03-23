@@ -17,13 +17,24 @@ import {
 
 import LanguageModal from "./LanguageModal"
 
-import LangConsts from "./LanguageConstants"
-
 import logo from "../images/logo.png"
 
 function Navigation(props) {
   const data = useStaticQuery(graphql`
     query {
+      dictionary: file(name: { eq: "dictionary" }) {
+        childMarkdownRemark {
+          frontmatter {
+            change_language_text {
+              en
+              fr
+              de
+              it
+              es
+            }
+          }
+        }
+      }
       social_media: file(
         name: { eq: "social_media" }
         sourceInstanceName: { eq: "content" }
@@ -230,6 +241,9 @@ function Navigation(props) {
     instagram_username,
   } = data.social_media.childMarkdownRemark.frontmatter
 
+  const {
+    change_language_text,
+  } = data.dictionary.childMarkdownRemark.frontmatter
   return (
     <div>
       <Navbar expand="lg" fixed="top" className={`${responsiveClasses.nav}`}>
@@ -335,7 +349,7 @@ function Navigation(props) {
             <small
               className={`${responsiveClasses.navLink} d-block d-lg-none mt-3 font-weight-bold`}
             >
-              {LangConsts.change_language_text[props.lang]}
+              {change_language_text[props.lang]}
             </small>
             <li className="nav-item mt-lg-0 d-flex align-items-center justify-content-center">
               <LanguageModal />
