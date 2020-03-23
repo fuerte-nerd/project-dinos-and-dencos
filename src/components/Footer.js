@@ -1,6 +1,6 @@
 import React from "react"
 import { connect } from "react-redux"
-
+import { useStaticQuery, graphql } from "gatsby"
 import Helmet from "react-helmet"
 
 import { Container, Row, Col } from "reactstrap"
@@ -14,6 +14,34 @@ import LeafletMap from "./LeafletMap"
 function Footer(props) {
   const { lang } = props
 
+  const query = useStaticQuery(graphql`
+    query {
+      dictionary: file(name: { eq: "dictionary" }) {
+        childMarkdownRemark {
+          frontmatter {
+            registered_charity {
+              en
+              it
+              de
+              fr
+              es
+            }
+            website_by {
+              en
+              es
+              de
+              it
+              fr
+            }
+          }
+        }
+      }
+    }
+  `)
+  const {
+    registered_charity,
+    website_by,
+  } = query.dictionary.childMarkdownRemark.frontmatter
   return props.show ? (
     <footer class="bg-dark py-3">
       <Container>
@@ -50,11 +78,12 @@ function Footer(props) {
           </Col>
         </Row>
         <small class="text-center d-block mt-4">
-          {LangConsts.registered_charity[lang]}
+          {registered_charity[lang]}
         </small>
         <small class="text-center d-block">G1/S1/19399-13/F</small>
         <small class="text-center d-block text-muted mt-1">
-          {`${LangConsts.website_by[lang]} `}{" "}
+          {website_by[lang]}
+          {` `}
           <a href="mailto:fuertenerd@gmail.com">Fuertenerd</a>
         </small>
       </Container>

@@ -1,6 +1,5 @@
 import React from "react"
 import { connect } from "react-redux"
-import LangConsts from "./LanguageConstants"
 import { useStaticQuery, graphql } from "gatsby"
 
 const BannerHead = props => {
