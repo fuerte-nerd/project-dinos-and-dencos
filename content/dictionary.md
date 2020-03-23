@@ -90,7 +90,7 @@ back_to_the_dogs:
   it: Di nuovo ai cani
   fr: Retour aux chiens
 
-breed: 
+breed_text: 
   en: Breed
   es: Raza
   de: Rasse
@@ -146,7 +146,7 @@ days:
   it: giorni
   fr: journées
 
-dog_friendly: 
+dog_friendly_text: 
   en: Dog-friendly
   es: Amigable con los perros
   de: Hundefreundlich
