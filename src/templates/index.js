@@ -25,6 +25,8 @@ const IndexPage = props => {
     instagram_username,
   } = props.data.social_media.childMarkdownRemark.frontmatter
 
+  const { find_us } = props.data.dictionary.childMarkdownRemark.frontmatter
+
   return (
     <Layout
       title="Home"
@@ -85,7 +87,7 @@ const IndexPage = props => {
             >
               <div className="p-0 p-lg-4 mt-2 mt-lg-0 animated fadeIn fast delay-2s">
                 <small className="d-block font-weight-bold mb-2">
-                  {LangConsts.find_us[props.lang]}
+                  {find_us[props.lang]}
                 </small>
                 <div className="d-flex justify-content-center justify-content-md-end">
                   <a
