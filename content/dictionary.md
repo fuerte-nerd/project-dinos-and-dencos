@@ -105,11 +105,11 @@ can_you_help_prefix:
   fr: Pouvez-vous aider 
 
 can_you_help_suffix:
-  en: ?
-  es: ?
-  de: helfen?
-  it: ?
-  fr: ?
+  en: "?"
+  es: "?"
+  de: " helfen?"
+  it: "?"
+  fr: "?"
   
 cant_adopt_or_foster_prefix: 
   en: If you can't adopt or foster but still want to help, you can! Please help us to spread the word about 
