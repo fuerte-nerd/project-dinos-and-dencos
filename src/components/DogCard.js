@@ -35,6 +35,55 @@ function DogCard(props) {
           }
         }
       }
+      dictionary: file(name: { eq: "dictionary" }) {
+        id
+        childMarkdownRemark {
+          frontmatter {
+            age {
+              en
+              es
+              de
+              it
+              fr
+            }
+            sex_sex {
+              en
+              es
+              de
+              it
+              fr
+            }
+            sex_m {
+              en
+              es
+              de
+              it
+              fr
+            }
+            sex_f {
+              en
+              es
+              de
+              it
+              fr
+            }
+            breed_text {
+              en
+              it
+              de
+              fr
+              es
+            }
+            days {
+              en
+              es
+              de
+              fr
+              it
+            }
+          }
+        }
+      }
     }
   `)
 
