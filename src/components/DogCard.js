@@ -158,7 +158,9 @@ function DogCard(props) {
             <tbody>
               <tr>
                 <td>{moment(data.frontmatter.date_of_birth).toNow(true)}</td>
-                <td>{[sex_data.frontmatter.sex][props.lang]}</td>
+                <td>
+                  {[`sex_${data.frontmatter.sex.toLowerCase()}`][props.lang]}
+                </td>
                 <td>{data.frontmatter.breed}</td>
               </tr>
             </tbody>
