@@ -9,7 +9,11 @@ import LangConsts from "../components/LanguageConstants"
 
 const staticPage = props => {
   const { frontmatter } = props.data.text.childMarkdownRemark
-  console.log(props)
+
+  const {
+    for_more_information,
+    contact_us,
+  } = props.data.dictionary.childMarkdownRemark.frontmatter
 
   return (
     <Layout
