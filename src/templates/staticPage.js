@@ -74,6 +74,26 @@ export const staticQuery = graphql`
         }
       }
     }
+    dictionary: file(name: { eq: "dictionary" }) {
+      childMarkdownRemark {
+        frontmatter {
+          for_more_information {
+            en
+            es
+            de
+            it
+            fr
+          }
+          contact_us {
+            en
+            es
+            de
+            it
+            fr
+          }
+        }
+      }
+    }
   }
 `
 
