@@ -107,7 +107,7 @@ can_you_help_prefix:
 can_you_help_suffix:
   en: ?
   es: ?
-  de:  helfen?
+  de: helfen?
   it: ?
   fr: ?
   
@@ -341,5 +341,4 @@ website_by:
   de: Website von
   it: Sito web di
   fr: Site web par
-
 ---
