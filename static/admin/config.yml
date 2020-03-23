@@ -20,10 +20,91 @@ collections:
             widget: object
             fields:
               - { name: en, label: English, widget: string }
-              - { name: es, label: Español, widget: string, pattern: ['.{5, 20}', "Must be between 5 and 12 characters"]}
-              - { name: de, label: Deutsch, widget: string, pattern: ['.{5, 20}', "Must be between 5 and 12 characters"]  }
-              - { name: it, label: Italiano, widget: string, pattern: ['.{5, 20}', "Must be between 5 and 12 characters"] }
-              - { name: fr, label: Français, widget: string, pattern: ['.{5, 20}', "Must be between 5 and 12 characters"] }
+              - { name: es, label: Español, widget: string }
+              - { name: de, label: Deutsch, widget: string }
+              - { name: it, label: Italiano, widget: string }
+              - { name: fr, label: Français, widget: string }
+          - label: "Back to articles"
+            name: "back_to_articles"
+            widget: object
+            fields:
+              - { name: en, label: English, widget: string }
+              - { name: es, label: Español, widget: string }
+              - { name: de, label: Deutsch, widget: string }
+              - { name: it, label: Italiano, widget: string }
+              - { name: fr, label: Français, widget: string }
+          - label: "Back to the dogs"
+            name: "back_to_the_dogs"
+            widget: object
+            fields:
+              - { name: en, label: English, widget: string }
+              - { name: es, label: Español, widget: string }
+              - { name: de, label: Deutsch, widget: string }
+              - { name: it, label: Italiano, widget: string }
+              - { name: fr, label: Français, widget: string }
+          - label: "Breed"
+            name: "breed"
+            widget: object
+            fields:
+              - { name: en, label: English, widget: string }
+              - { name: es, label: Español, widget: string }
+              - { name: de, label: Deutsch, widget: string }
+              - { name: it, label: Italiano, widget: string }
+              - { name: fr, label: Français, widget: string }
+          - label: "By"
+            name: "by"
+            widget: object
+            fields:
+              - { name: en, label: English, widget: string }
+              - { name: es, label: Español, widget: string }
+              - { name: de, label: Deutsch, widget: string }
+              - { name: it, label: Italiano, widget: string }
+              - { name: fr, label: Français, widget: string }
+          - label: "Can you help (prefix)"
+            name: "can_you_help_prefix"
+            widget: object
+            fields:
+              - { name: en, label: English, widget: string }
+              - { name: es, label: Español, widget: string }
+              - { name: de, label: Deutsch, widget: string }
+              - { name: it, label: Italiano, widget: string }
+              - { name: fr, label: Français, widget: string }
+          - label: "Can you help (suffix)"
+            name: "can_you_help_suffix"
+            widget: object
+            fields:
+              - { name: en, label: English, widget: string }
+              - { name: es, label: Español, widget: string }
+              - { name: de, label: Deutsch, widget: string }
+              - { name: it, label: Italiano, widget: string }
+              - { name: fr, label: Français, widget: string }
+          - label: "Can't adopt or foster (prefix)"
+            name: "cant_adopt_or_foster_prefix"
+            widget: object
+            fields:
+              - { name: en, label: English, widget: string }
+              - { name: es, label: Español, widget: string }
+              - { name: de, label: Deutsch, widget: string }
+              - { name: it, label: Italiano, widget: string }
+              - { name: fr, label: Français, widget: string }
+          - label: "Cat-friendly"
+            name: "cat_friendly"
+            widget: object
+            fields:
+              - { name: en, label: English, widget: string }
+              - { name: es, label: Español, widget: string }
+              - { name: de, label: Deutsch, widget: string }
+              - { name: it, label: Italiano, widget: string }
+              - { name: fr, label: Français, widget: string }
+          - label: "Can't adopt or foster (prefix)"
+            name: "cant_adopt_or_foster_prefix"
+            widget: object
+            fields:
+              - { name: en, label: English, widget: string }
+              - { name: es, label: Español, widget: string }
+              - { name: de, label: Deutsch, widget: string }
+              - { name: it, label: Italiano, widget: string }
+              - { name: fr, label: Français, widget: string }
 
       - label: "Social Media"
         name: "social_media"
