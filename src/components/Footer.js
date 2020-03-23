@@ -7,8 +7,6 @@ import { Container, Row, Col } from "reactstrap"
 
 import logo from "../images/logo.png"
 
-import LangConsts from "./LanguageConstants"
-
 import LeafletMap from "./LeafletMap"
 
 function Footer(props) {
@@ -83,7 +81,7 @@ function Footer(props) {
         <small class="text-center d-block">G1/S1/19399-13/F</small>
         <small class="text-center d-block text-muted mt-1">
           {website_by[lang]}
-          {` `}
+          {`  `}
           <a href="mailto:fuertenerd@gmail.com">Fuertenerd</a>
         </small>
       </Container>
