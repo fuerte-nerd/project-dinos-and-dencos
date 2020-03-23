@@ -159,7 +159,9 @@ function DogCard(props) {
               <tr>
                 <td>{moment(data.frontmatter.date_of_birth).toNow(true)}</td>
                 <td>
-                  {[`sex_${data.frontmatter.sex.toLowerCase()}`][props.lang]}
+                  {data.frontmatter.sex === "M"
+                    ? sex_m[props.lang]
+                    : sex_f[props.lang]}
                 </td>
                 <td>{data.frontmatter.breed}</td>
               </tr>
