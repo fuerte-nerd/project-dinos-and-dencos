@@ -3,51 +3,62 @@ import { connect } from "react-redux"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import BannerHead from "../components/BannerHead"
-import LangConsts from "../components/LanguageConstants"
 
 const contactTemplate = props => {
-  const { frontmatter } = props.data.text.childMarkdownRemark
+  const {
+    messenger_intro,
+    heading,
+    subheading,
+    messenger_button_text,
+    i_dont_use_messenger,
+    contact_form_intro,
+    contact_name,
+    email,
+    phone,
+    write_your_message,
+    send,
+  } = props.data.text.childMarkdownRemark.frontmatter
 
   return (
     <Layout
-      title={frontmatter.heading[props.lang]}
+      title={heading[props.lang]}
       spacer={true}
       showFooter={true}
       og={{
-        description: frontmatter.subheading[props.lang],
+        description: subheading[props.lang],
         image: "image+url+here",
         url: "fuerteventuradogrescue.org",
       }}
     >
       <BannerHead
-        heading={frontmatter.heading[props.lang]}
-        subheading={frontmatter.subheading[props.lang]}
+        heading={heading[props.lang]}
+        subheading={subheading[props.lang]}
         path={props.path}
       />
       <div class="page-content extend-line-height container py-3">
         <div class="my-3">
           <h2>Messenger</h2>
-          <p class="text-left">{frontmatter.messenger_intro[props.lang]}</p>
+          <p class="text-left">{messenger_intro[props.lang]}</p>
           <a
             href="http://www.messenger.com"
             class="btn btn-lg font-weight-bold btn-primary d-block d-lg-inline-block align-items-center"
           >
             <div class="d-flex align-items-center justify-content-center">
-              {frontmatter.messenger_button_text[props.lang]}{" "}
+              {messenger_button_text[props.lang]}{" "}
               <i class="ml-3 fab fa-facebook-messenger display-4"></i>
             </div>
           </a>
         </div>
         <div class="my-3">
-          <h2>"{frontmatter.i_dont_use_messenger[props.lang]}"</h2>
-          <p>{frontmatter.contact_form_intro[props.lang]}</p>
+          <h2>"{i_dont_use_messenger[props.lang]}"</h2>
+          <p>{contact_form_intro[props.lang]}</p>
           <form>
             <div class="row">
               <div class="col">
                 <input
                   type="text"
                   class="form-control"
-                  placeholder={frontmatter.contact_name[props.lang]}
+                  placeholder={contact_name[props.lang]}
                 />
               </div>
             </div>
@@ -56,14 +67,14 @@ const contactTemplate = props => {
                 <input
                   type="email"
                   class="form-control"
-                  placeholder={frontmatter.email[props.lang]}
+                  placeholder={email[props.lang]}
                 />
               </div>
               <div class="col-md-6 mt-3">
                 <input
                   type="text"
                   class="form-control"
-                  placeholder={frontmatter.phone[props.lang]}
+                  placeholder={phone[props.lang]}
                 />
               </div>
             </div>
@@ -73,7 +84,7 @@ const contactTemplate = props => {
                   class="form-control"
                   id="exampleFormControlTextarea1"
                   rows="3"
-                  placeholder={frontmatter.write_your_message[props.lang]}
+                  placeholder={write_your_message[props.lang]}
                 ></textarea>
               </div>
             </div>
@@ -82,8 +93,7 @@ const contactTemplate = props => {
                 type="submit"
                 class="btn btn-primary btn-lg btn-block font-weight-bold my-3"
               >
-                {frontmatter.send[props.lang]}{" "}
-                <i class="ml-2 far fa-paper-plane"></i>
+                {send[props.lang]} <i class="ml-2 far fa-paper-plane"></i>
               </button>
             </div>
           </form>
