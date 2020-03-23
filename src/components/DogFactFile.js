@@ -6,8 +6,6 @@ import moment from "moment"
 
 import { Card, CardBody, CardTitle, Table, Tooltip } from "reactstrap"
 
-import LangConsts from "./LanguageConstants.js"
-
 function DogFactFile(props) {
   const dataQL = useStaticQuery(graphql`
     query {
