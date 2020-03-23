@@ -55,14 +55,12 @@ back_to_articles:
   it: Torna agli articoli
   fr: Retour aux articles
 
-
 show_articles_archive: 
   en: Show articles archive
   es: Mostrar archivo de artículos
   de: Artikelarchiv anzeigen
   it: Mostra archivio articoli
   fr: Afficher l'archive des articles
-
 
 most_recent: 
   en: Most recent
@@ -71,14 +69,12 @@ most_recent:
   it: Piu recente
   fr: Le plus récent
 
-
 read_more: 
   en: Read more
   es: Lee mas
   de: Weiterlesen
   it: Leggi di più
   fr: Lire la suite
-
 
 age: 
   en: Age
@@ -117,16 +113,11 @@ can_you_help_suffix:
   
 
 cant_adopt_or_foster_prefix: 
-  en: >-
-    If you can't adopt or foster but still want to help, you can! Please help us to spread the word about 
-  es: >-
-    Si no puede adoptar o fomentar pero aún quiere ayudar, ¡puede hacerlo! Ayúdenos a correr la voz sobre 
-  de: >-
-    Wenn Sie nicht adoptieren oder fördern können, aber trotzdem helfen möchten, können Sie! Bitte helfen Sie uns, 
-  it: >-
-    Se non puoi adottare o affidarti, ma vuoi comunque aiutare, puoi farlo! Aiutaci a spargere la voce su 
-  fr: >-
-    Si vous ne pouvez pas adopter ou favoriser mais que vous voulez toujours aider, vous pouvez! Aidez-nous à faire connaître 
+  en: If you can't adopt or foster but still want to help, you can! Please help us to spread the word about 
+  es: Si no puede adoptar o fomentar pero aún quiere ayudar, ¡puede hacerlo! Ayúdenos a correr la voz sobre 
+  de: Wenn Sie nicht adoptieren oder fördern können, aber trotzdem helfen möchten, können Sie! Bitte helfen Sie uns, 
+  it: Se non puoi adottare o affidarti, ma vuoi comunque aiutare, puoi farlo! Aiutaci a spargere la voce su 
+  fr: Si vous ne pouvez pas adopter ou favoriser mais que vous voulez toujours aider, vous pouvez! Aidez-nous à faire connaître 
 
 cant_adopt_or_foster_suffix:
   en:  by using the buttons below...
