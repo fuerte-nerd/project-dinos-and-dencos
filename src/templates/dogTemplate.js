@@ -97,7 +97,9 @@ function DogTemplate(props) {
               <p>
                 <small>
                   {find_a_home_prefix[props.lang]}
+                  {` `}
                   {name}
+                  {` `}
                   {find_a_home_suffix[props.lang]}
                 </small>
               </p>

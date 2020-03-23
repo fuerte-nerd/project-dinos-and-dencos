@@ -5,10 +5,14 @@ import { Container, Row, Col, Button } from "reactstrap"
 import Layout from "../components/layout"
 import MainArticleCard from "../components/MainArticleCard"
 import ArticleCard from "../components/ArticleCard"
-import LangConsts from "../components/LanguageConstants"
 import BannerHead from "../components/BannerHead"
 
 const Articles = props => {
+  const {
+    show_articles_archive,
+    no_more_articles,
+  } = props.data.dictionary.childMarkdownRemark.frontmatter
+
   const featuredArticle = props.data.articles.edges[0].node
   const otherArticles = props.data.articles.edges.filter((i, ind) => {
     if (ind > 0) {
@@ -57,10 +61,10 @@ const Articles = props => {
           {props.data.articles.edges.length > 8 ? (
             <Button color="primary" size="lg">
               <i className="fas fa-book mr-3"></i>
-              {LangConsts.show_articles_archive[props.lang]}
+              {show_articles_archive[props.lang]}
             </Button>
           ) : (
-            <p>{LangConsts.no_more_articles[props.lang]}</p>
+            <p>{no_more_articles[props.lang]}</p>
           )}
         </div>
       </Container>
@@ -123,6 +127,26 @@ export const articlesData = graphql`
             it
             de
             es
+            fr
+          }
+        }
+      }
+    }
+    dictionary: file(name: { eq: "dictionary" }) {
+      childMarkdownRemark {
+        frontmatter {
+          show_articles_archive {
+            en
+            es
+            de
+            it
+            fr
+          }
+          no_more_articles {
+            en
+            es
+            de
+            it
             fr
           }
         }
