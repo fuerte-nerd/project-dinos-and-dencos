@@ -25,6 +25,19 @@ function ArticleCard(props) {
           }
         }
       }
+      dictionary: file(name: { eq: "dictionary" }) {
+        childMarkdownRemark {
+          frontmatter {
+            read_more {
+              en
+              es
+              de
+              it
+              fr
+            }
+          }
+        }
+      }
     }
   `)
   const thumb = imgThumbQuery.gallery_thumbs.edges.filter(i => {
@@ -37,6 +50,8 @@ function ArticleCard(props) {
     return null
   })[0]
   moment.locale(props.lang)
+
+  const { read_more } = props.data.dictionary.childMarkdownRemark.frontmatter
   return (
     <div class="ani article card text-dark">
       <div class="card-body">
@@ -66,7 +81,7 @@ function ArticleCard(props) {
           class="btn btn-success d-block stretched-link mt-lg-1 font-weight-bold"
         >
           <i class="fas fa-book-open mr-3"></i>
-          {LangConsts.read_more[props.lang]}
+          {read_more[props.lang]}
         </a>
       </div>
     </div>
