@@ -36,7 +36,6 @@ function DogCard(props) {
         }
       }
       dictionary: file(name: { eq: "dictionary" }) {
-        id
         childMarkdownRemark {
           frontmatter {
             age {
@@ -81,11 +80,28 @@ function DogCard(props) {
               fr
               it
             }
+            in_care {
+              fr
+              en
+              es
+              de
+              it
+            }
           }
         }
       }
     }
   `)
+
+  const {
+    age,
+    sex_sex,
+    sex_m,
+    sex_f,
+    breed_text,
+    days,
+    in_care,
+  } = dataQL.dictionary.childMarkdownRemark.frontmatter
 
   const imageToGatsbify = dataQL.images.edges.filter(img => {
     if (
@@ -118,9 +134,9 @@ function DogCard(props) {
                 moment(data.frontmatter.date_entered),
                 "days"
               )}{" "}
-              {LangConsts.days[props.lang]}
+              {days[props.lang]}
             </span>{" "}
-            {LangConsts.in_care[props.lang]}
+            {in_care[props.lang]}
           </span>
         </div>
         <CardBody className="bg-primary text-light m-0 p-0">
@@ -134,15 +150,15 @@ function DogCard(props) {
           >
             <thead>
               <tr>
-                <th>{LangConsts.age[props.lang]}</th>
-                <th>{LangConsts.sex.sex[props.lang]}</th>
-                <th>{LangConsts.breed[props.lang]}</th>
+                <th>{age[props.lang]}</th>
+                <th>{sex_sex[props.lang]}</th>
+                <th>{breed_text[props.lang]}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>{moment(data.frontmatter.date_of_birth).toNow(true)}</td>
-                <td>{LangConsts.sex[data.frontmatter.sex][props.lang]}</td>
+                <td>{[sex_data.frontmatter.sex][props.lang]}</td>
                 <td>{data.frontmatter.breed}</td>
               </tr>
             </tbody>
