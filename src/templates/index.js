@@ -6,8 +6,6 @@ import BackgroundImage from "gatsby-background-image"
 
 import { Container, Row, Col } from "reactstrap"
 
-import LangConsts from "../components/LanguageConstants"
-
 import Layout from "../components/layout"
 import Link from "../components/Link"
 
