@@ -5,12 +5,11 @@ import { connect } from "react-redux"
 import moment from "moment"
 import Link from "./Link"
 import { Card, CardBody, Row, Col, CardTitle } from "reactstrap"
-import LangConsts from "./LanguageConstants"
 
 function MainArticleCard(props) {
   moment.locale(props.lang)
   const article = props.data.childMarkdownRemark.frontmatter
-  const imgThumbQuery = useStaticQuery(graphql`
+  const query = useStaticQuery(graphql`
     query {
       gallery_thumbs: allImageSharp {
         edges {
@@ -26,9 +25,29 @@ function MainArticleCard(props) {
           }
         }
       }
+      dictionary: file(name: { eq: "dictionary" }) {
+        childMarkdownRemark {
+          frontmatter {
+            most_recent {
+              en
+              es
+              de
+              it
+              fr
+            }
+            read_more {
+              en
+              es
+              de
+              it
+              fr
+            }
+          }
+        }
+      }
     }
   `)
-  const thumb = imgThumbQuery.gallery_thumbs.edges.filter(i => {
+  const thumb = query.gallery_thumbs.edges.filter(i => {
     if (
       i.node.fluid.originalName ===
       article.featured_image.match(/(?<=\/).*/g)[0]
@@ -37,14 +56,18 @@ function MainArticleCard(props) {
     }
     return null
   })[0]
-  console.log(thumb)
+
+  const {
+    most_recent,
+    read_more,
+  } = query.dictionary.childMarkdownRemark.frontmatter
   return (
     <Card className="article ani text-dark">
       <CardBody>
         <Row>
           <Col lg={6}>
             <p className="text-muted font-weight-bold small">
-              {LangConsts.most_recent[props.lang]}
+              {most_recent[props.lang]}
             </p>
             <CardTitle className="h2 mb-0">
               {article[`content_${props.lang}`][`title_${props.lang}`]}
@@ -56,7 +79,6 @@ function MainArticleCard(props) {
             </p>
             <Img
               fluid={thumb.node.fluid}
-              alt="Temp"
               className="w-100 rounded d-lg-none mb-3 mb-lg-0"
             />
             <p
@@ -72,7 +94,6 @@ function MainArticleCard(props) {
           <Col lg={6}>
             <Img
               fluid={thumb.node.fluid}
-              alt="Temp"
               className="w-100 rounded d-none d-lg-inline-block"
             />
           </Col>
@@ -82,7 +103,7 @@ function MainArticleCard(props) {
           classes="btn btn-success d-block stretched-link mt-lg-1 font-weight-bold"
         >
           <i className="fas fa-book-open mr-3"></i>
-          {LangConsts.read_more[props.lang]}
+          {read_more[props.lang]}
         </Link>
       </CardBody>
     </Card>
