@@ -171,36 +171,32 @@ family_friendly:
   fr: Conviviale et familiale
 
 find_a_home_prefix: 
-    en: Please help us to find a home for 
-    es: Ayúdenos a encontrar un hogar para 
-    de: Bitte helfen Sie uns, ein Zuhause für 
-    it: Aiutateci a trovare una casa per 
-    fr: Aidez-nous à trouver un logement pour 
-  
-  suffix: 
-    en:  by sharing this page with your family and friends.
-    es:  compartiendo esta página con su familia y amigos.
-    de:
-       zu finden, indem Sie diese Seite mit Ihrer Familie und Freunden teilen.
-    it:  condividendo questa pagina con la famiglia e gli amici.
-    fr:  en partageant cette page avec votre famille et vos amis.
-  
+  en: Please help us to find a home for 
+  es: Ayúdenos a encontrar un hogar para 
+  de: Bitte helfen Sie uns, ein Zuhause für 
+  it: Aiutateci a trovare una casa per 
+  fr: Aidez-nous à trouver un logement pour 
+ 
+find_a_home_suffix:
+  en:  by sharing this page with your family and friends.
+  es:  compartiendo esta página con su familia y amigos.
+  de:  zu finden, indem Sie diese Seite mit Ihrer Familie und Freunden teilen.
+  it:  condividendo questa pagina con la famiglia e gli amici.
+  fr:  en partageant cette page avec votre famille et vos amis.
 
-find_out_more: 
-  adoption: 
-    en: Find out more about the adoption process
-    es: Obtenga más información sobre el proceso de adopción
-    de: Erfahren Sie mehr über den Adoptionsprozess
-    it: Scopri di più sul processo di adozione
-    fr: En savoir plus sur le processus d'adoption
-  
-  fostering: 
-    en: Find out more about the fostering process
-    es: Obtenga más información sobre el proceso de fomento
-    de: Erfahren Sie mehr über den Förderprozess
-    it: Scopri di più sul processo di promozione
-    fr: En savoir plus sur le processus de placement
-  
+find_out_more_adoption: 
+  en: Find out more about the adoption process
+  es: Obtenga más información sobre el proceso de adopción
+  de: Erfahren Sie mehr über den Adoptionsprozess
+  it: Scopri di più sul processo di adozione
+  fr: En savoir plus sur le processus d'adoption
+
+find_out_more_fostering:
+  en: Find out more about the fostering process
+  es: Obtenga más información sobre el proceso de fomento
+  de: Erfahren Sie mehr über den Förderprozess
+  it: Scopri di più sul processo di promozione
+  fr: En savoir plus sur le processus de placement
 
 find_us: 
   en: Find us on...
@@ -223,36 +219,34 @@ licence_required:
   it: Licenza richiesta
   fr: Licence requise
 
-location: 
-  location: 
-    en: Location
-    es: Ubicación
-    de: Ort
-    it: Posizione
-    fr: Emplacement
-  
-  shelter: 
-    en: Shelter
-    es: Perrera
-    de: Tierheim
-    it: Canile
-    fr: Fourrière
-  
-  foster: 
-    en: Foster home
-    es: Casa de acogida
-    de: Pflegeheim
-    it: Casa adottiva
-    fr: Foyer d'accueil
-  
-  other: 
-    en: Other (see description)
-    es: Otro (ver descripción)
-    de: Andere (siehe Beschreibung)
-    it: Altro (vedi descrizione)
-    fr: Autre (voir description)
-  
+location_location: 
+  en: Location
+  es: Ubicación
+  de: Ort
+  it: Posizione
+  fr: Emplacement
 
+location_shelter:
+  en: Shelter
+  es: Perrera
+  de: Tierheim
+  it: Canile
+  fr: Fourrière
+
+location_foster:
+  en: Foster home
+  es: Casa de acogida
+  de: Pflegeheim
+  it: Casa adottiva
+  fr: Foyer d'accueil
+  
+location_other:
+  en: Other (see description)
+  es: Otro (ver descripción)
+  de: Andere (siehe Beschreibung)
+  it: Altro (vedi descrizione)
+  fr: Autre (voir description)
+  
 meet_the_dogs: 
   en: Meet the dogs!
   es: ¡Conozcan a los perros!
@@ -281,29 +275,27 @@ photos:
   it: Fotografie
   fr: Photos
 
-sex: 
-  sex: 
-    en: Sex
-    es: Sexo
-    de: Geschlect
-    it: Sesso
-    fr: Sexe
-  
-  M: 
-    en: Male
-    es: Macho
-    de: Männlich
-    it: Maschio
-    fr: Mâle
-  
-  F: 
-    en: Female
-    es: Hembra
-    de: Weiblich
-    it: Femmina
-    fr: Femelle
-  
+sex_sex: 
+  en: Sex
+  es: Sexo
+  de: Geschlect
+  it: Sesso
+  fr: Sexe
 
+sex_m:
+  en: Male
+  es: Macho
+  de: Männlich
+  it: Maschio
+  fr: Mâle
+
+sex_f:
+  en: Female
+  es: Hembra
+  de: Weiblich
+  it: Femmina
+  fr: Femelle
+  
 share: 
   en: Share
   es: Compartir
@@ -348,13 +340,10 @@ yes:
 
 registered_charity: 
   en: Registered Charity in the Canary Islands since April 2013
-  es:
-    Sociedad benéfica registrada en las Islas Canarias desde abril de 2013
-  de:
-    Eingetragene Wohltätigkeitsorganisation auf den Kanarischen Inseln seit April 2013
+  es: Sociedad benéfica registrada en las Islas Canarias desde abril de 2013
+  de: Eingetragene Wohltätigkeitsorganisation auf den Kanarischen Inseln seit April 2013
   it: Carità registrata nelle Isole Canarie da aprile 2013
-  fr:
-    Organisme de bienfaisance enregistré aux îles Canaries depuis avril 2013
+  fr: Organisme de bienfaisance enregistré aux îles Canaries depuis avril 2013
 
 website_by: 
   en: Website by
@@ -362,6 +351,5 @@ website_by:
   de: Website von
   it: Sito web di
   fr: Site web par
-
 
 ---
