@@ -64,7 +64,7 @@ function DogFactFile(props) {
               it
               fr
             }
-            age_text {
+            age {
               en
               es
               fr
@@ -148,6 +148,13 @@ function DogFactFile(props) {
               it
               fr
             }
+            more_info {
+              en
+              es
+              de
+              it
+              fr
+            }
           }
         }
       }
@@ -177,7 +184,7 @@ function DogFactFile(props) {
     yes,
     no,
     tbc,
-    age_text,
+    age,
     sex_sex,
     sex_m,
     sex_f,
@@ -188,6 +195,7 @@ function DogFactFile(props) {
     dog_friendly_text,
     cat_friendly_text,
     family_friendly_text,
+    more_info,
   } = dataQL.dictionary.childMarkdownRemark.frontmatter
 
   const [tooltips, setTooltips] = useState({
@@ -273,7 +281,7 @@ function DogFactFile(props) {
           >
             <tbody>
               <tr>
-                <th>{angConsts.age[props.lang]}</th>
+                <th>{age[props.lang]}</th>
                 <td class="text-center">
                   {moment(date_of_birth).toNow(true)}{" "}
                   <span className="text-muted small d-block">
@@ -282,65 +290,61 @@ function DogFactFile(props) {
                 </td>
               </tr>
               <tr>
-                <th>{LangConsts.sex.sex[props.lang]}</th>
+                <th>{sex_sex[props.lang]}</th>
                 <td class="text-center">
-                  {sex === "M"
-                    ? LangConsts.sex.M[props.lang]
-                    : LangConsts.sex.F[props.lang]}
+                  {sex === "M" ? sex_m[props.lang] : sex_f[props.lang]}
                 </td>
               </tr>
               <tr>
-                <th>{LangConsts.breed[props.lang]}</th>
+                <th>{breed_text[props.lang]}</th>
                 <td class="text-center">{breed}</td>
               </tr>
               <tr>
-                <th>{LangConsts.location.location[props.lang]}</th>
+                <th>{location_location[props.lang]}</th>
                 <td class="text-center">{getLocation(location)}</td>
               </tr>
               <tr>
-                <th>{LangConsts.time_in_care[props.lang]}</th>
+                <th>{time_in_care[props.lang]}</th>
                 <td class="text-center">
                   {moment(new Date()).diff(moment(date_entered), "days")}{" "}
-                  {LangConsts.days[props.lang]}
+                  {days[props.lang]}
                   <span className="text-muted small d-block">
                     ({moment(date_entered).format("DD/MM/YYYY")})
                   </span>
                 </td>
               </tr>
               <tr>
-                <th>{LangConsts.dog_friendly[props.lang]}?</th>
+                <th>{dog_friendly_text[props.lang]}?</th>
                 <td class="text-center">{getYesNo(dog_friendly)}</td>
               </tr>
               <tr>
-                <th>{LangConsts.cat_friendly[props.lang]}?</th>
+                <th>{cat_friendly_text[props.lang]}?</th>
                 <td class="text-center">{getYesNo(cat_friendly)}</td>
               </tr>
               <tr>
-                <th>{LangConsts.family_friendly[props.lang]}?</th>
+                <th>{family_friendly_text[props.lang]}?</th>
                 <td class="text-center">{getYesNo(family_friendly)}</td>
               </tr>
               <tr>
                 <th>
-                  {LangConsts.licence_required[props.lang]}?{" "}
+                  {licence_required[props.lang]}?{" "}
                   <small class="font-italic" id="ppp">
-                    ({LangConsts.more_info[props.lang]})
+                    ({more_info[props.lang]})
                   </small>
                 </th>
                 <td class="text-center">
-                  {ppp ? LangConsts.yes[props.lang] : LangConsts.no[props.lang]}
+                  {ppp ? yes[props.lang] : no[props.lang]}
                 </td>
               </tr>
               <tr>
                 <th>
-                  {LangConsts.sterilised[props.lang]}?{" "}
+                  {sterilised_text[props.lang]}?{" "}
                   <small class="font-italic" id="sterile">
-                    ({LangConsts.more_info[props.lang]})
+                    ({more_info[props.lang]})
                   </small>
                 </th>
                 <td class="text-center">
-                  {sterilised
-                    ? LangConsts.yes[props.lang]
-                    : LangConsts.no[props.lang]}
+                  {sterilised ? yes[props.lang] : no[props.lang]}
                 </td>
               </tr>
             </tbody>
