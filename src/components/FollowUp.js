@@ -33,15 +33,82 @@ function FollowUp(props) {
           }
         }
       }
+      dictionary: file(name: { eq: "dictionary" }) {
+        childMarkdownRemark {
+          frontmatter {
+            can_you_help_prefix {
+              en
+              es
+              de
+              it
+              fr
+            }
+            can_you_help_suffix {
+              en
+              es
+              de
+              it
+              fr
+            }
+            find_out_more_adoption {
+              en
+              es
+              de
+              it
+              fr
+            }
+            find_out_more_fostering {
+              en
+              es
+              de
+              it
+              fr
+            }
+            cant_adopt_or_foster_prefix {
+              en
+              es
+              de
+              it
+              fr
+            }
+            cant_adopt_or_foster_suffix {
+              en
+              es
+              de
+              it
+              fr
+            }
+            back_to_the_dogs {
+              en
+              es
+              de
+              it
+              fr
+            }
+          }
+        }
+      }
     }
   `)
+
+  const {
+    can_you_help_prefix,
+    can_you_help_suffix,
+    find_out_more_adoption,
+    find_out_more_fostering,
+    cant_adopt_or_foster_prefix,
+    cant_adopt_or_foster_suffix,
+    back_to_the_dogs,
+  } = query.dictionary.childMarkdownRemark.frontmatter
 
   return (
     <div class="dog-follow-up container rounded py-3 my-4 text-center">
       <h3>
-        {LangConsts.can_you_help.prefix[props.lang]}
+        {can_you_help_prefix[props.lang]}
+        {` `}
         {props.name}
-        {LangConsts.can_you_help.suffix[props.lang]}
+        {` `}
+        {can_you_help_suffix[props.lang]}
       </h3>
       <div class="row">
         <div class="col">
