@@ -4,8 +4,6 @@ import { connect } from "react-redux"
 import Img from "gatsby-image"
 import { Container, Row, Col } from "reactstrap"
 
-import LangConsts from "../components/LanguageConstants"
-
 import Layout from "../components/layout"
 import FactFile from "../components/DogFactFile.js"
 import PageShare from "../components/PageShare"
@@ -21,6 +19,12 @@ function DogTemplate(props) {
     description,
     images,
   } = props.data.content.childMarkdownRemark.frontmatter
+
+  const {
+    find_a_home_prefix,
+    find_a_home_suffix,
+    share,
+  } = props.data.dictionary.childMarkdownRemark.frontmatter
 
   moment.relativeTimeRounding(Math.floor)
 
@@ -89,14 +93,12 @@ function DogTemplate(props) {
         <div className="p-2 mt-3">
           <div className="text-center">
             <div className="mb-2">
-              <p className="font-weight-bold mb-0">
-                {LangConsts.share[props.lang]}
-              </p>
+              <p className="font-weight-bold mb-0">{share[props.lang]}</p>
               <p>
                 <small>
-                  {LangConsts.find_a_home.prefix[props.lang]}
+                  {find_a_home_prefix[props.lang]}
                   {name}
-                  {LangConsts.find_a_home.suffix[props.lang]}
+                  {find_a_home_suffix[props.lang]}
                 </small>
               </p>
             </div>
@@ -192,6 +194,33 @@ export const dogQuery = graphql`
           }
           original {
             src
+          }
+        }
+      }
+    }
+    dictionary: file(name: { eq: "dictionary" }) {
+      childMarkdownRemark {
+        frontmatter {
+          find_a_home_prefix {
+            en
+            es
+            de
+            it
+            fr
+          }
+          find_a_home_suffix {
+            en
+            es
+            de
+            it
+            fr
+          }
+          share {
+            en
+            es
+            de
+            it
+            fr
           }
         }
       }
