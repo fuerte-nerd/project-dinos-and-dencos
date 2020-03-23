@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { graphql, useStaticQuery } from "gatsby"
 import { connect } from "react-redux"
 
 import moment from "moment"

@@ -6,7 +6,6 @@ import Img from "gatsby-image"
 
 import { Col, Card, CardBody, CardTitle, Table } from "reactstrap"
 
-import LangConsts from "./LanguageConstants"
 import Link from "./Link"
 
 import moment from "moment"
@@ -87,6 +86,13 @@ function DogCard(props) {
               de
               it
             }
+            more_info {
+              en
+              es
+              de
+              fr
+              it
+            }
           }
         }
       }
@@ -101,6 +107,7 @@ function DogCard(props) {
     breed_text,
     days,
     in_care,
+    more_info,
   } = dataQL.dictionary.childMarkdownRemark.frontmatter
 
   const imageToGatsbify = dataQL.images.edges.filter(img => {
@@ -172,7 +179,7 @@ function DogCard(props) {
             classes="btn btn-block btn-success stretched-link"
           >
             <i className="mr-2 fas fa-info-circle"></i>
-            {LangConsts.more_info[props.lang]}
+            {more_info[props.lang]}
           </Link>
         </CardBody>
       </Card>
