@@ -164,6 +164,19 @@ export const query = graphql`
         }
       }
     }
+    dictionary: file(name: { eq: "dictionary" }) {
+      childMarkdownRemark {
+        frontmatter {
+          find_us {
+            en
+            es
+            de
+            it
+            fr
+          }
+        }
+      }
+    }
   }
 `
 const mapStateToProps = state => ({
