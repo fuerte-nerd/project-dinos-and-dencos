@@ -2,8 +2,6 @@ import React from "react"
 import { connect } from "react-redux"
 import { graphql, useStaticQuery } from "gatsby"
 
-import LangConsts from "./LanguageConstants"
-
 import Link from "./Link"
 import PageShare from "./PageShare"
 
@@ -107,7 +105,6 @@ function FollowUp(props) {
         {can_you_help_prefix[props.lang]}
         {` `}
         {props.name}
-        {` `}
         {can_you_help_suffix[props.lang]}
       </h3>
       <div class="row">
@@ -119,7 +116,7 @@ function FollowUp(props) {
             <i class="d-block display-4 fas fa-paw"></i>
             {query.labels.childMarkdownRemark.frontmatter.adopt[props.lang]}
             <span class="d-block font-weight-normal small">
-              {LangConsts.find_out_more.adoption[props.lang]}
+              {find_out_more_adoption[props.lang]}
             </span>
           </Link>
         </div>
@@ -131,20 +128,22 @@ function FollowUp(props) {
             <i class="d-block display-4 fas fa-bone"></i>
             {query.labels.childMarkdownRemark.frontmatter.foster[props.lang]}
             <span class="d-block font-weight-normal small">
-              {LangConsts.find_out_more.fostering[props.lang]}
+              {find_out_more_fostering[props.lang]}
             </span>
           </Link>
         </div>
       </div>
       <p class="lead pt-4">
-        {LangConsts.cant_adopt_or_foster.prefix[props.lang]}
+        {cant_adopt_or_foster_prefix[props.lang]}
+        {` `}
         {props.name}
-        {LangConsts.cant_adopt_or_foster.suffix[props.lang]}
+        {` `}
+        {cant_adopt_or_foster_suffix[props.lang]}
       </p>
       <PageShare />
       <Link to="the-dogs" classes="btn btn-primary mt-4 font-weight-bold p-3">
         <i class="mr-3 fas fa-dog"></i>
-        {LangConsts.back_to_the_dogs[props.lang]}
+        {back_to_the_dogs[props.lang]}
       </Link>
     </div>
   )
