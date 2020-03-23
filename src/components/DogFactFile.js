@@ -10,119 +10,149 @@ import LangConsts from "./LanguageConstants.js"
 
 function DogFactFile(props) {
   const dataQL = useStaticQuery(graphql`
-      ifile(name: {eq: "dictionary"}) {
-    id
-    childMarkdownRemark {
-      frontmatter {
-        breed_text {
-          en
-          it
-          de
-          fr
-          es
-        }
-        location_shelter {
-          en
-          es
-          de
-          it
-          fr
-        }
-        location_location {
-          en
-          es
-          de
-          it
-          fr
-        }
-        location_other {
-          en
-          es
-          de
-          it
-          fr
-        }
-        yes {
-          en
-          es
-          de
-          it
-          fr
-        }
-        no {
-          en
-          es
-          de
-          it
-          fr
-        }
-        tbc {
-          en
-          es
-          de
-          it
-          fr
-        }
-        age_text {
-          en
-          es
-          fr
-          de
-          it
-        }
-        sex_sex {
-          en
-          es
-          de
-          it
-          fr
-        }
-        sex_m {
-          en
-          es
-          de
-          it
-          fr
-        }
-        sex_f {
-          en
-          es
-          de
-          it
-          fr
-        }
-        location_foster {
-          en
-          es
-          de
-          it
-          fr
-        }
-        time_in_care {
-          en
-          es
-          de
-          it
-          fr
-        }
-        days {
-          en
-          es
-          de
-          it
-          fr
-        }
-        licence_required {
-          en
-          es
-          de
-          it
-          fr
+    query {
+      dictionary: file(name: { eq: "dictionary" }) {
+        id
+        childMarkdownRemark {
+          frontmatter {
+            breed_text {
+              en
+              it
+              de
+              fr
+              es
+            }
+            location_shelter {
+              en
+              es
+              de
+              it
+              fr
+            }
+            location_location {
+              en
+              es
+              de
+              it
+              fr
+            }
+            location_other {
+              en
+              es
+              de
+              it
+              fr
+            }
+            yes {
+              en
+              es
+              de
+              it
+              fr
+            }
+            no {
+              en
+              es
+              de
+              it
+              fr
+            }
+            tbc {
+              en
+              es
+              de
+              it
+              fr
+            }
+            age_text {
+              en
+              es
+              fr
+              de
+              it
+            }
+            sex_sex {
+              en
+              es
+              de
+              it
+              fr
+            }
+            sex_m {
+              en
+              es
+              de
+              it
+              fr
+            }
+            sex_f {
+              en
+              es
+              de
+              it
+              fr
+            }
+            location_foster {
+              en
+              es
+              de
+              it
+              fr
+            }
+            time_in_care {
+              en
+              es
+              de
+              it
+              fr
+            }
+            days {
+              en
+              es
+              de
+              it
+              fr
+            }
+            licence_required {
+              en
+              es
+              de
+              it
+              fr
+            }
+            sterilised_text {
+              en
+              es
+              de
+              it
+              fr
+            }
+            dog_friendly_text {
+              en
+              es
+              de
+              it
+              fr
+            }
+            family_friendly_text {
+              en
+              es
+              de
+              it
+              fr
+            }
+            cat_friendly_text {
+              en
+              es
+              de
+              it
+              fr
+            }
+          }
         }
       }
     }
-  }
-    `)
+  `)
 
   const {
     name,
