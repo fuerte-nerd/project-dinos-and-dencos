@@ -168,6 +168,28 @@ function DogFactFile(props) {
     sterilised,
   } = props.data
 
+  const {
+    breed_text,
+    location_shelter,
+    location_location,
+    location_other,
+    location_foster,
+    yes,
+    no,
+    tbc,
+    age_text,
+    sex_sex,
+    sex_m,
+    sex_f,
+    time_in_care,
+    days,
+    licence_required,
+    sterilised_text,
+    dog_friendly_text,
+    cat_friendly_text,
+    family_friendly_text,
+  } = dataQL.dictionary.childMarkdownRemark.frontmatter
+
   const [tooltips, setTooltips] = useState({
     ppp: false,
     sterile: false,
@@ -191,11 +213,11 @@ function DogFactFile(props) {
   const getLocation = code => {
     switch (parseInt(code)) {
       case 0:
-        return LangConsts.location.shelter[props.lang]
+        return location_shelter[props.lang]
       case 1:
-        return LangConsts.location.foster[props.lang]
+        return location_foster[props.lang]
       case 2:
-        return LangConsts.location.other[props.lang]
+        return location_other[props.lang]
       default:
         return null
     }
@@ -204,11 +226,11 @@ function DogFactFile(props) {
   const getYesNo = code => {
     switch (parseInt(code)) {
       case 0:
-        return LangConsts.yes[props.lang]
+        return yes[props.lang]
       case 1:
-        return LangConsts.no[props.lang]
+        return no[props.lang]
       case 2:
-        return LangConsts.tbc[props.lang]
+        return tbc[props.lang]
       default:
         return null
     }
@@ -251,7 +273,7 @@ function DogFactFile(props) {
           >
             <tbody>
               <tr>
-                <th>{LangConsts.age[props.lang]}</th>
+                <th>{angConsts.age[props.lang]}</th>
                 <td class="text-center">
                   {moment(date_of_birth).toNow(true)}{" "}
                   <span className="text-muted small d-block">
