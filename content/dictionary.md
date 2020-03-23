@@ -125,7 +125,7 @@ cant_adopt_or_foster_suffix:
   it:  usando i pulsanti qui sotto ...
   fr:  en utilisant les boutons ci-dessous ...
   
-cat_friendly: 
+cat_friendly_text: 
   en: Cat-friendly
   es: Amigable con los gatos
   de: Katzenfreundlich
@@ -153,7 +153,7 @@ dog_friendly_text:
   it: Amichevole con i cani
   fr: Convient aux chiens
 
-family_friendly: 
+family_friendly_text: 
   en: Family-friendly
   es: Familiar
   de: Familienfreundlich
@@ -293,7 +293,7 @@ share:
   it: Condividere
   fr: Partager
 
-sterilised: 
+sterilised_text: 
   en: Sterilised
   es: Esterilizado
   de: Sterilisiert

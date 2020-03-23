@@ -158,7 +158,7 @@ collections:
               - { name: it, label: Italiano, widget: string }
               - { name: fr, label: Français, widget: string }
           - label: "Family-friendly"
-            name: "family_friendly"
+            name: "family_friendly_text"
             widget: object
             fields:
               - { name: en, label: English, widget: string }
@@ -401,7 +401,7 @@ collections:
               - { name: it, label: Italiano, widget: string }
               - { name: fr, label: Français, widget: string }
           - label: "Sterilised"
-            name: "sterilised"
+            name: "sterilised_text"
             widget: object
             fields:
               - { name: en, label: English, widget: string }
