@@ -4,12 +4,10 @@ import { graphql, useStaticQuery } from "gatsby"
 import { connect } from "react-redux"
 import moment from "moment"
 
-import LangConsts from "./LanguageConstants"
-
 function ArticleCard(props) {
   const article = props.data.node.childMarkdownRemark.frontmatter
   console.log(article)
-  const imgThumbQuery = useStaticQuery(graphql`
+  const query = useStaticQuery(graphql`
     query {
       gallery_thumbs: allImageSharp {
         edges {
@@ -40,7 +38,7 @@ function ArticleCard(props) {
       }
     }
   `)
-  const thumb = imgThumbQuery.gallery_thumbs.edges.filter(i => {
+  const thumb = query.gallery_thumbs.edges.filter(i => {
     if (
       i.node.fluid.originalName ===
       article.featured_image.match(/(?<=\/).*/g)[0]
@@ -51,7 +49,7 @@ function ArticleCard(props) {
   })[0]
   moment.locale(props.lang)
 
-  const { read_more } = props.data.dictionary.childMarkdownRemark.frontmatter
+  const { read_more } = query.dictionary.childMarkdownRemark.frontmatter
   return (
     <div class="ani article card text-dark">
       <div class="card-body">
