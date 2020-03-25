@@ -88,13 +88,6 @@ function MainArticleCard(props) {
             >
               {article[`content_${props.lang}`][`intro_${props.lang}`]}
             </p>
-            <Link
-              to={props.data.childMarkdownRemark.fields.slug}
-              classes="btn btn-success d-block stretched-link mt-lg-1 font-weight-bold"
-            >
-              <i className="fas fa-book-open mr-3"></i>
-              {read_more[props.lang]}
-            </Link>
           </Col>
 
           <Col lg={6}>
@@ -104,6 +97,13 @@ function MainArticleCard(props) {
             />
           </Col>
         </Row>
+        <Link
+          to={props.data.childMarkdownRemark.fields.slug}
+          classes="btn btn-success d-block stretched-link mt-lg-1 font-weight-bold"
+        >
+          <i className="fas fa-book-open mr-3"></i>
+          {read_more[props.lang]}
+        </Link>
       </CardBody>
     </Card>
   )
