@@ -71,7 +71,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     },
   })
   const dogImagesQuery = await graphql(`
-   graphql {
+    query {
       allFile(filter: { sourceInstanceName: { eq: "dogs" } }) {
         edges {
           node {
