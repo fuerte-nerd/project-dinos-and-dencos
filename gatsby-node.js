@@ -324,4 +324,30 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       ),
     },
   })
+  const contactQuery = await graphql(`
+    query {
+      file(name: { eq: "contact" }) {
+        childMarkdownRemark {
+          frontmatter {
+            background_image
+          }
+        }
+        id
+      }
+    }
+  `)
+  if (contactQuery.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+  createPage({
+    path: "/contact",
+    component: contactTemplate,
+    context: {
+      id: contactQuery.data.file.id,
+      img: getFilename(
+        contactQuery.data.file.childMarkdownRemark.frontmatter.background_image
+      ),
+    },
+  })
 }
