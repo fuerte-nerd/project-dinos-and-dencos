@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import { navigate } from "gatsby"
+import { navigate, useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Link from "../components/Link"
 
@@ -12,6 +12,59 @@ export default function Thanks() {
     }, 7500)
   }, [])
 
+  const gqlQuery = useStaticQuery(graphql`
+    query MyQuery {
+      file(name: { eq: "thanks" }) {
+        id
+        childMarkdownRemark {
+          frontmatter {
+            redirect_btn_text {
+              en
+              es
+              de
+              it
+              fr
+            }
+            redirect_text {
+              en
+              es
+              de
+              it
+              fr
+            }
+            we_will_reply {
+              en
+              de
+              es
+              it
+              fr
+            }
+            thanks {
+              en
+              es
+              de
+              it
+              fr
+            }
+            thank_you_for_your_message {
+              en
+              es
+              de
+              it
+              fr
+            }
+          }
+        }
+      }
+    }
+  `)
+  const {
+    thanks,
+    thank_you_for_your_message,
+    we_will_reply,
+    redirect_text,
+    redirect_btn_text,
+  } = gqlQuery.childMarkdownRemark.frontmatter
   return (
     <Layout
       title="Thanks"
