@@ -6,7 +6,6 @@ import moment from "moment"
 
 function ArticleCard(props) {
   const article = props.data.node.childMarkdownRemark.frontmatter
-  console.log(article)
   const query = useStaticQuery(graphql`
     query {
       gallery_thumbs: allImageSharp {
@@ -38,11 +37,10 @@ function ArticleCard(props) {
       }
     }
   `)
+
+  const filename = article.featured_image.replace("assets/", "")
   const thumb = query.gallery_thumbs.edges.filter(i => {
-    if (
-      i.node.fluid.originalName ===
-      article.featured_image.match(/(?<=\/).*/g)[0]
-    ) {
+    if (i.node.fluid.originalName === filename) {
       return i
     }
     return null

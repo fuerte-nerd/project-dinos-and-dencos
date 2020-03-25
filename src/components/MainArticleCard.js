@@ -50,9 +50,7 @@ function MainArticleCard(props) {
 
   const filename = article.featured_image.replace("assets/", "")
   const thumb = query.gallery_thumbs.edges.filter(i => {
-    if (
-      i.node.fluid.originalName ===
-    ) {
+    if (i.node.fluid.originalName === filename) {
       return i
     }
     return null
@@ -90,6 +88,13 @@ function MainArticleCard(props) {
             >
               {article[`content_${props.lang}`][`intro_${props.lang}`]}
             </p>
+            <Link
+              to={props.data.childMarkdownRemark.fields.slug}
+              classes="btn btn-success d-block stretched-link mt-lg-1 font-weight-bold"
+            >
+              <i className="fas fa-book-open mr-3"></i>
+              {read_more[props.lang]}
+            </Link>
           </Col>
 
           <Col lg={6}>
@@ -99,13 +104,6 @@ function MainArticleCard(props) {
             />
           </Col>
         </Row>
-        <Link
-          to={props.data.childMarkdownRemark.fields.slug}
-          classes="btn btn-success d-block stretched-link mt-lg-1 font-weight-bold"
-        >
-          <i className="fas fa-book-open mr-3"></i>
-          {read_more[props.lang]}
-        </Link>
       </CardBody>
     </Card>
   )
