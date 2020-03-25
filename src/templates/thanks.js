@@ -6,7 +6,15 @@ import Logo from "../images/logo.png"
 
 export default function Thanks() {
   return (
-    <Layout title="Thanks" showFooter={false} spacer={false} hideNav={true}>
+    <Layout
+      title="Thanks"
+      showFooter={false}
+      spacer={false}
+      hideNav={true}
+      og={{
+        description: "Fuerteventura Dog Rescue",
+      }}
+    >
       <div className="min-vh-100 container d-flex justify-content-center align-items-center">
         <img src={Logo} alt="FDR Logo" />
         <p className="mt-3">
