@@ -61,7 +61,7 @@ const contactTemplate = props => {
                   placeholder={contact_name[props.lang]}
                 />
               </div>
-              <div class="col-md-4">
+              <div class="col-md-4 mt-md-2">
                 <input
                   type="email"
                   class="form-control"
