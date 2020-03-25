@@ -1,10 +1,17 @@
-import React from "react"
+import React, { useEffect } from "react"
+import { navigate } from "gatsby"
 import Layout from "../components/layout"
 import Link from "../components/Link"
 
 import Logo from "../images/logo.png"
 
 export default function Thanks() {
+  useEffect(() => {
+    setTimeout(() => {
+      navigate("/contact")
+    }, 7500)
+  }, [])
+
   return (
     <Layout
       title="Thanks"
