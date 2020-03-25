@@ -752,7 +752,7 @@ collections:
               - { name: fr, label: Français, widget: string }
           - name: "main"
             label: "Body"
-            widget: 
+            widget: object 
             fields:
               - { name: en, label: English, widget: markdown }
               - { name: es, label: Español, widget: markdown }
