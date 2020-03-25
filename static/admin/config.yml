@@ -885,8 +885,8 @@ collections:
               - { name: de, label: Deutsch, widget: string }
               - { name: it, label: Italiano, widget: string }
               - { name: fr, label: Français, widget: string }
-          - name: "thank_you_for_your_message"
-            label: "Thank you for your message"
+          - name: "we_will_reply"
+            label: "We will reply ASAP"
             widget: object
             fields:
               - { name: en, label: English, widget: string }
@@ -894,8 +894,8 @@ collections:
               - { name: de, label: Deutsch, widget: string }
               - { name: it, label: Italiano, widget: string }
               - { name: fr, label: Français, widget: string }
-          - name: "thank_you_for_your_message"
-            label: "Thank you for your message"
+          - name: "redirect_text"
+            label: "Redirect text"
             widget: object
             fields:
               - { name: en, label: English, widget: string }
@@ -903,17 +903,8 @@ collections:
               - { name: de, label: Deutsch, widget: string }
               - { name: it, label: Italiano, widget: string }
               - { name: fr, label: Français, widget: string }
-          - name: "thank_you_for_your_message"
-            label: "Thank you for your message"
-            widget: object
-            fields:
-              - { name: en, label: English, widget: string }
-              - { name: es, label: Español, widget: string }
-              - { name: de, label: Deutsch, widget: string }
-              - { name: it, label: Italiano, widget: string }
-              - { name: fr, label: Français, widget: string }
-          - name: "thank_you_for_your_message"
-            label: "Thank you for your message"
+          - name: "redirect_btn_text"
+            label: "Redirect button text"
             widget: object
             fields:
               - { name: en, label: English, widget: string }
