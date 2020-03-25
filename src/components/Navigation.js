@@ -269,7 +269,7 @@ function Navigation(props) {
               </Link>
             </NavItem>
             <NavItem>
-              <Link to="the-dogs" classes="nav-link">
+              <Link to="/the-dogs" classes="nav-link">
                 {the_dogs[props.lang]}
               </Link>
             </NavItem>
