@@ -44,6 +44,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const articleTemplate = path.resolve("src/templates/article.js")
   const staticTemplate = path.resolve("src/templates/staticPage.js")
   const contactTemplate = path.resolve("src/templates/contact.js")
+  const thanksTemplate = path.resolve("src/templates/thanks.js")
 
   const indexBgQuery = await graphql(`
     {
@@ -324,22 +325,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       ),
     },
   })
-  const contactQuery = await graphql(`
-    query {
-      file(name: { eq: "contact" }) {
-        childMarkdownRemark {
-          frontmatter {
-            background_image
-          }
-        }
-        id
-      }
-    }
-  `)
-  if (contactQuery.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query.`)
-    return
-  }
   createPage({
     path: "/contact",
     component: contactTemplate,
