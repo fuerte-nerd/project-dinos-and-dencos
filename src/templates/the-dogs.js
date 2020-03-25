@@ -3,7 +3,7 @@ import { connect } from "react-redux"
 
 import { graphql } from "gatsby"
 
-import { Jumbotron, Container } from "reactstrap"
+import { Container } from "reactstrap"
 
 import Layout from "../components/layout"
 import Dogs from "../components/Dogs"
@@ -11,7 +11,6 @@ import BannerHead from "../components/BannerHead"
 
 function TheDogs(props) {
   const dogs = props.data.dogs.edges
-  console.log(dogs)
   const dogsArr = dogs.map(dog => {
     return dog.node.childMarkdownRemark
   })

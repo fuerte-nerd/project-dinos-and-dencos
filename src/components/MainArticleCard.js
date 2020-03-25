@@ -47,10 +47,11 @@ function MainArticleCard(props) {
       }
     }
   `)
+
+  const filename = article.featured_image.replace("assets/", "")
   const thumb = query.gallery_thumbs.edges.filter(i => {
     if (
       i.node.fluid.originalName ===
-      article.featured_image.match(/(?<=\/).*/g)[0]
     ) {
       return i
     }
