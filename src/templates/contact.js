@@ -52,7 +52,12 @@ const contactTemplate = props => {
         <div class="my-3">
           <h2>"{i_dont_use_messenger[props.lang]}"</h2>
           <p>{contact_form_intro[props.lang]}</p>
-            <form name="contact" method="POST" action="/pages/success" data-netlify="true">
+          <form
+            name="contact"
+            method="POST"
+            action="/pages/success"
+            data-netlify="true"
+          >
             <div class="row">
               <div class="col-md-4">
                 <input
@@ -94,7 +99,7 @@ const contactTemplate = props => {
               <button
                 type="submit"
                 class="btn btn-primary btn-lg btn-block font-weight-bold my-3"
-              :55>
+              >
                 {send[props.lang]} <i class="ml-2 far fa-paper-plane"></i>
               </button>
             </div>
