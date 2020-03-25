@@ -64,10 +64,10 @@ export default function Thanks() {
     we_will_reply,
     redirect_text,
     redirect_btn_text,
-  } = gqlQuery.childMarkdownRemark.frontmatter
+  } = gqlQuery.file.childMarkdownRemark.frontmatter
   return (
     <Layout
-      title="Thanks"
+      title={thanks}
       showFooter={false}
       spacer={false}
       hideNav={true}
