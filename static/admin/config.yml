@@ -863,6 +863,28 @@ collections:
               - { name: de, label: Deutsch, widget: string }
               - { name: it, label: Italiano, widget: string }
               - { name: fr, label: Français, widget: string }
+      - label: "Thanks page"
+        name: "thanks_page"
+        file: "content/thanks.md"
+        fields:
+          - name: "thanks"
+            label: "Thanks"
+            widget: object
+            fields:
+              - { name: en, label: English, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: es, label: Español, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: de, label: Deutsch, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: it, label: Italiano, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: fr, label: Français, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+          - name: "thank_you_for_your_message"
+            label: "Thank you for your message"
+            widget: object
+            fields:
+              - { name: en, label: English, widget: string }
+              - { name: es, label: Español, widget: string }
+              - { name: de, label: Deutsch, widget: string }
+              - { name: it, label: Italiano, widget: string }
+              - { name: fr, label: Français, widget: string }
   - name: articles
     identifier_field: post_title
     label: Articles
