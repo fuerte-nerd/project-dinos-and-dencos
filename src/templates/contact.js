@@ -18,10 +18,10 @@ const contactTemplate = props => {
     write_your_message,
     send,
   } = props.data.text.childMarkdownRemark.frontmatter
-
+  const { contact } = props.data.labels.childMarkdownRemark.frontmatter
   return (
     <Layout
-      title={heading[props.lang]}
+      title={contact[props.lang]}
       spacer={true}
       showFooter={true}
       og={{
@@ -185,6 +185,19 @@ export const staticQuery = graphql`
             fr
           }
           send {
+            en
+            es
+            de
+            it
+            fr
+          }
+        }
+      }
+    }
+    labels: file(name: { eq: "labels" }) {
+      childMarkdownRemark {
+        frontmatter {
+          contact {
             en
             es
             de
