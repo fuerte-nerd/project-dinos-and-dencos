@@ -6,12 +6,12 @@ import Link from "../components/Link"
 
 import Logo from "../images/logo.png"
 
-function Thanks() {
-  useEffect(() => {
-    setTimeout(() => {
-      navigate("/contact")
-    }, 7500)
-  }, [])
+function Thanks(props) {
+  //useEffect(() => {
+  //  setTimeout(() => {
+  //    navigate("/contact")
+  //  }, 7500)
+  //}, [])
 
   const gqlQuery = useStaticQuery(graphql`
     query MyQuery {
@@ -68,7 +68,7 @@ function Thanks() {
   } = gqlQuery.file.childMarkdownRemark.frontmatter
   return (
     <Layout
-      title={thanks}
+      title={thanks[props.lang]}
       showFooter={false}
       spacer={false}
       hideNav={true}
@@ -81,13 +81,13 @@ function Thanks() {
           <img src={Logo} alt="FDR Logo" />
           <p className="mt-3">
             <span className="d-block font-weight-bold">
-              Thank you for your message! 58 } 59 }{" "}
+              {thank_you_for_your_message[props.lang]}
             </span>
-            We will reply as soon as possible.
+            {we_will_reply[props.lang]}
           </p>
 
           <p>
-            We will redirect you back to the site shortly, but if you can't
+            {redirect_text[props.lang]}
             wait...
           </p>
           <Link to="contact" classes="btn btn-primary btn-lg ">
