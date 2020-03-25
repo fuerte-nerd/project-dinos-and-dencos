@@ -1,11 +1,12 @@
 import React, { useEffect } from "react"
+import { connect } from "react-redux"
 import { navigate, useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Link from "../components/Link"
 
 import Logo from "../images/logo.png"
 
-export default function Thanks() {
+function Thanks() {
   useEffect(() => {
     setTimeout(() => {
       navigate("/contact")
@@ -80,7 +81,7 @@ export default function Thanks() {
           <img src={Logo} alt="FDR Logo" />
           <p className="mt-3">
             <span className="d-block font-weight-bold">
-              Thank you for your message!
+              Thank you for your message! 58 } 59 }{" "}
             </span>
             We will reply as soon as possible.
           </p>
@@ -97,3 +98,7 @@ export default function Thanks() {
     </Layout>
   )
 }
+const mapStateToProps = state => ({
+  lang: state.language.lang,
+})
+export default connect(mapStateToProps)(Thanks)
