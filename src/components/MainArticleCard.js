@@ -68,14 +68,16 @@ function MainArticleCard(props) {
             <p className="text-muted font-weight-bold small">
               {most_recent[props.lang]}
             </p>
-            <CardTitle className="h2 mb-0">
-              {article[`content_${props.lang}`][`title_${props.lang}`]}
-            </CardTitle>
-            <p className="d-inline-block mb-2 small bg-primary p-1 rounded text-light">
-              <small>
-                {moment(new Date(article.date)).format("D MMMM YYYY")}
-              </small>
-            </p>
+            <div>
+              <CardTitle className="h2 mb-0">
+                {article[`content_${props.lang}`][`title_${props.lang}`]}
+              </CardTitle>
+              <p className="d-inline-block mb-2 small bg-primary p-1 rounded text-light">
+                <small>
+                  {moment(new Date(article.date)).format("D MMMM YYYY")}
+                </small>
+              </p>
+            </div>
             <Img
               fluid={thumb.node.fluid}
               className="w-100 rounded d-lg-none mb-3 mb-lg-0"
