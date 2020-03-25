@@ -326,13 +326,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     },
   })
   createPage({
-    path: "/contact",
-    component: contactTemplate,
-    context: {
-      id: contactQuery.data.file.id,
-      img: getFilename(
-        contactQuery.data.file.childMarkdownRemark.frontmatter.background_image
-      ),
-    },
+    path: "/thanks",
+    component: thanksTemplate,
+    context: {},
   })
 }
