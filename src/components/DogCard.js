@@ -110,11 +110,10 @@ function DogCard(props) {
     more_info,
   } = dataQL.dictionary.childMarkdownRemark.frontmatter
 
+  const searchString = data.frontmatter.main_image.replace("assets/", "")
+
   const imageToGatsbify = dataQL.images.edges.filter(img => {
-    if (
-      img.node.fluid.originalName ===
-      data.frontmatter.main_image.match(/(?<=\/).*/g)[0]
-    ) {
+    if (img.node.fluid.originalName === searchString) {
       return img
     }
     return null
