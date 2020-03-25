@@ -11,7 +11,7 @@ import BannerHead from "../components/BannerHead"
 
 function TheDogs(props) {
   const dogs = props.data.dogs.edges
-
+  console.log(dogs)
   const dogsArr = dogs.map(dog => {
     return dog.node.childMarkdownRemark
   })
