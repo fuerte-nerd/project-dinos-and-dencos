@@ -7,11 +7,11 @@ import Link from "../components/Link"
 import Logo from "../images/logo.png"
 
 function Thanks(props) {
-  //useEffect(() => {
-  //  setTimeout(() => {
-  //    navigate("/contact")
-  //  }, 7500)
-  //}, [])
+  useEffect(() => {
+    setTimeout(() => {
+      navigate("/contact")
+    }, 10000)
+  }, [])
 
   const gqlQuery = useStaticQuery(graphql`
     query MyQuery {
@@ -91,7 +91,7 @@ function Thanks(props) {
             wait...
           </p>
           <Link to="contact" classes="btn btn-primary btn-lg ">
-            Take me back now!
+            {redirect_btn_text[props.lang]}
           </Link>
         </div>
       </div>
