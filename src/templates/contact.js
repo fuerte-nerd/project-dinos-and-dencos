@@ -52,11 +52,12 @@ const contactTemplate = props => {
         <div class="my-3">
           <h2>"{i_dont_use_messenger[props.lang]}"</h2>
           <p>{contact_form_intro[props.lang]}</p>
-          <form>
+            <form name="contact" method="POST" action="/pages/success" data-netlify="true">
             <div class="row">
               <div class="col-md-4">
                 <input
                   type="text"
+                  name="name"
                   class="form-control"
                   placeholder={contact_name[props.lang]}
                 />
@@ -64,6 +65,7 @@ const contactTemplate = props => {
               <div class="col-md-4 mt-3 mt-md-0">
                 <input
                   type="email"
+                  name="email"
                   class="form-control"
                   placeholder={email[props.lang]}
                 />
@@ -71,6 +73,7 @@ const contactTemplate = props => {
               <div class="col-md-4 mt-3 mt-md-0">
                 <input
                   type="text"
+                  name="phone"
                   class="form-control"
                   placeholder={phone[props.lang]}
                 />
@@ -79,8 +82,9 @@ const contactTemplate = props => {
             <div class="row">
               <div class="col mt-3">
                 <textarea
+                  name="message"
                   class="form-control"
-                  id="exampleFormControlTextarea1"
+                  id="message"
                   rows="3"
                   placeholder={write_your_message[props.lang]}
                 ></textarea>
@@ -90,7 +94,7 @@ const contactTemplate = props => {
               <button
                 type="submit"
                 class="btn btn-primary btn-lg btn-block font-weight-bold my-3"
-              >
+              :55>
                 {send[props.lang]} <i class="ml-2 far fa-paper-plane"></i>
               </button>
             </div>
