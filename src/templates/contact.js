@@ -54,23 +54,21 @@ const contactTemplate = props => {
           <p>{contact_form_intro[props.lang]}</p>
           <form>
             <div class="row">
-              <div class="col">
+              <div class="col-md-4">
                 <input
                   type="text"
                   class="form-control"
                   placeholder={contact_name[props.lang]}
                 />
               </div>
-            </div>
-            <div className="row">
-              <div class="col-md-6 mt-3">
+              <div class="col-md-4">
                 <input
                   type="email"
                   class="form-control"
                   placeholder={email[props.lang]}
                 />
               </div>
-              <div class="col-md-6 mt-3">
+              <div class="col-md-4">
                 <input
                   type="text"
                   class="form-control"
