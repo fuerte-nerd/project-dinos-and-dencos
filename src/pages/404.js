@@ -1,5 +1,5 @@
 import React from "react"
-
+import Link from "../components/Link"
 import Layout from "../components/layout"
 
 const NotFoundPage = () => (
@@ -9,9 +9,18 @@ const NotFoundPage = () => (
       image: null,
       url: "http://www.fuerteventuradogrescue.org",
     }}
+    spacer={true}
   >
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <div className="container">
+      <h1>Sorry!</h1>
+      <p>
+        This page doesn't exist here. We have either removed it or you have
+        entered an incorrect address.
+      </p>
+      <Link to="/" classes="btn btn-primary btn-lg">
+        Take me home!
+      </Link>
+    </div>
   </Layout>
 )
 
