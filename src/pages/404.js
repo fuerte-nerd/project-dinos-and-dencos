@@ -9,7 +9,7 @@ const NotFoundPage = props => {
     sorry,
     take_me_home,
     page_does_not_exist,
-  } = props.data.childMarkdownRemark.frontmatter
+  } = props.data.file.childMarkdownRemark.frontmatter
   return (
     <Layout
       og={{
@@ -21,12 +21,9 @@ const NotFoundPage = props => {
     >
       <div className="container">
         <h1>{sorry[props.lang]}</h1>
-        <p>
-          This page doesn't exist here. We have either removed it or you have
-          entered an incorrect address.
-        </p>
+        <p>{page_does_not_exist[props.lang]}</p>
         <Link to="/" classes="btn btn-primary btn-lg">
-          Take me home!
+          {take_me_home[props.lang]}
         </Link>
       </div>
     </Layout>
