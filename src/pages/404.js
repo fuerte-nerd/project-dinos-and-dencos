@@ -1,8 +1,9 @@
 import React from "react"
+import { graphql } from "gatsby"
 import Link from "../components/Link"
 import Layout from "../components/layout"
 
-const NotFoundPage = () => (
+const NotFoundPage = props => (
   <Layout
     og={{
       description: "Cannot find page",

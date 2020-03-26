@@ -925,6 +925,24 @@ collections:
               - { name: de, label: Deutsch, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
               - { name: it, label: Italiano, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
               - { name: fr, label: Français, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+          - name: "page_does_not_exist"
+            label: "'Page does not exist' text"
+            widget: object
+            fields:
+              - { name: en, label: English, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: es, label: Español, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: de, label: Deutsch, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: it, label: Italiano, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: fr, label: Français, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+          - name: "take_me_home"
+            label: "'Take me to the homepage' button text"
+            widget: object
+            fields:
+              - { name: en, label: English, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: es, label: Español, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: de, label: Deutsch, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: it, label: Italiano, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
+              - { name: fr, label: Français, widget: string, pattern: ['.{3, 20}', "Must be between 3 and 20 characters"]  }
   - name: articles
     identifier_field: post_title
     label: Articles
