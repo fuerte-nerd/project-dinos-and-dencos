@@ -113,6 +113,7 @@ export const query = graphql`
               sterilised
               images
             }
+            id
           }
         }
       }

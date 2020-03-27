@@ -120,7 +120,7 @@ function DogCard(props) {
   })[0]
 
   return (
-    <Col lg={6} xl={4}>
+    <Col key={data.id} lg={6} xl={4}>
       <Card className="ani text-dark my-2">
         <Img
           className="card-img-top"
