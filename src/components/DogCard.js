@@ -118,7 +118,6 @@ function DogCard(props) {
     }
     return null
   })[0]
-
   return (
     <Col key={data.id} lg={6} xl={4}>
       <Card className="ani text-dark my-2">
