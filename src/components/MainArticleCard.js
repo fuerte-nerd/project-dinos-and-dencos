@@ -2,6 +2,10 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import { connect } from "react-redux"
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faBookOpen } from "@fortawesome/free-solid-svg-icons"
+
 import moment from "moment"
 import Link from "./Link"
 import { Card, CardBody, Row, Col, CardTitle } from "reactstrap"
@@ -103,7 +107,7 @@ function MainArticleCard(props) {
           to={props.data.childMarkdownRemark.fields.slug}
           classes="btn btn-success d-block stretched-link mt-lg-1 font-weight-bold"
         >
-          <i className="fas fa-book-open mr-3"></i>
+          <FontAwesomeIcon icon={faBookOpen} className="mr-2" />
           {read_more[props.lang]}
         </Link>
       </CardBody>

@@ -2,6 +2,8 @@ import React from "react"
 import { connect } from "react-redux"
 import { graphql, useStaticQuery } from "gatsby"
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faDog, faPaw, faBone } from "@fortawesome/free-solid-svg-icons"
 import Link from "./Link"
 import PageShare from "./PageShare"
 
@@ -111,9 +113,9 @@ function FollowUp(props) {
         <div class="col">
           <Link
             to="adopt"
-            classes="btn btn-block btn-light font-weight-bold py-4"
+            classes="btn btn-block btn-light font-weight-bold py-4 d-flex flex-column align-items-center"
           >
-            <i class="d-block display-4 fas fa-paw"></i>
+            <FontAwesomeIcon icon={faPaw} className="d-block display-4" />
             {query.labels.childMarkdownRemark.frontmatter.adopt[props.lang]}
             <span class="d-block font-weight-normal small">
               {find_out_more_adoption[props.lang]}
@@ -123,9 +125,12 @@ function FollowUp(props) {
         <div class="col">
           <Link
             to="foster"
-            classes="btn btn-block btn-light font-weight-bold py-4"
+            classes="btn btn-block btn-light font-weight-bold py-4 d-flex flex-column align-items-center"
           >
-            <i class="d-block display-4 fas fa-bone"></i>
+            <FontAwesomeIcon
+              icon={faBone}
+              className="d-block display-4 text-center"
+            />
             {query.labels.childMarkdownRemark.frontmatter.foster[props.lang]}
             <span class="d-block font-weight-normal small">
               {find_out_more_fostering[props.lang]}
@@ -142,7 +147,7 @@ function FollowUp(props) {
       </p>
       <PageShare />
       <Link to="the-dogs" classes="btn btn-primary mt-4 font-weight-bold p-3">
-        <i class="mr-3 fas fa-dog"></i>
+        <FontAwesomeIcon icon={faDog} className="mr-2" />
         {back_to_the_dogs[props.lang]}
       </Link>
     </div>

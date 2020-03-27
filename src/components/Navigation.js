@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from "react"
 import { connect } from "react-redux"
 import { useStaticQuery, graphql } from "gatsby"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faFacebookF, faInstagram } from "@fortawesome/free-brands-svg-icons"
+import {
+  faPaw,
+  faBone,
+  faDonate,
+  faHandsHelping,
+} from "@fortawesome/free-solid-svg-icons"
 import { toggleNav, setNavState } from "../state/actions"
 import Link from "./Link"
 
@@ -299,21 +307,21 @@ function Navigation(props) {
                   classes={`${responsiveClasses.dropdown} dropdown-item d-flex justify-content-between align-items-center`}
                 >
                   <span>{adopt[props.lang]}</span>
-                  <i className="fas fa-paw" />
+                  <FontAwesomeIcon icon={faPaw} />
                 </Link>
                 <Link
                   to="/foster"
                   classes={`${responsiveClasses.dropdown} dropdown-item d-flex justify-content-between align-items-center`}
                 >
                   <span>{foster[props.lang]}</span>
-                  <i className="fas fa-bone"></i>
+                  <FontAwesomeIcon icon={faBone} />
                 </Link>
                 <Link
                   to="/donate"
                   classes={`${responsiveClasses.dropdown} dropdown-item d-flex justify-content-between align-items-center`}
                 >
                   <span>{donate[props.lang]}</span>
-                  <i className="fas fa-donate"></i>
+                  <FontAwesomeIcon icon={faDonate} />
                 </Link>
 
                 <Link
@@ -321,7 +329,7 @@ function Navigation(props) {
                   classes={`${responsiveClasses.dropdown} dropdown-item d-flex justify-content-between align-items-center`}
                 >
                   <span>{volunteer[props.lang]}</span>
-                  <i className="fas fa-hands-helping"></i>
+                  <FontAwesomeIcon icon={faHandsHelping} />
                 </Link>
               </DropdownMenu>
             </UncontrolledDropdown>
@@ -341,14 +349,14 @@ function Navigation(props) {
                   href={`https://www.facebook.com/${facebook_username}`}
                   className="btn rounded-circle social social-sm social-facebook"
                 >
-                  <i className="fab fa-facebook-f"></i>
+                  <FontAwesomeIcon icon={faFacebookF} />
                 </a>
                 <a
                   href={`https://www.instagram.com/${instagram_username}`}
                   color={null}
                   className="ml-2 btn rounded-circle social social-sm social-instagram"
                 >
-                  <i className="fab fa-instagram"></i>
+                  <FontAwesomeIcon icon={faInstagram} />
                 </a>
               </div>
             </div>

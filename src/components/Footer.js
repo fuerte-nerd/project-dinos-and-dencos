@@ -3,6 +3,9 @@ import { connect } from "react-redux"
 import { useStaticQuery, graphql } from "gatsby"
 import Helmet from "react-helmet"
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
+
 import { Container, Row, Col } from "reactstrap"
 
 import logo from "../images/logo.png"
@@ -57,8 +60,14 @@ function Footer(props) {
             </p>
 
             <div className="pt-2 py-lg-0">
-              <a href="mailto:info@fuerteventuradogrescue.org">
-                <i class="fas fa-envelope d-block d-lg-inline-block"></i>
+              <a
+                href="mailto:info@fuerteventuradogrescue.org"
+                className="d-flex flex-column d-lg-inline-block align-items-center"
+              >
+                <FontAwesomeIcon
+                  icon={faEnvelope}
+                  className="d-block d-lg-inline-block"
+                />
                 <span class="ml-3">info@fuerteventuradogrescue.org</span>
               </a>
             </div>

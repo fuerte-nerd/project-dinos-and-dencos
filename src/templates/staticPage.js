@@ -6,6 +6,9 @@ import Layout from "../components/layout"
 import Link from "../components/Link"
 import BannerHead from "../components/BannerHead"
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faPaw } from "@fortawesome/free-solid-svg-icons"
+
 const staticPage = props => {
   const { frontmatter } = props.data.text.childMarkdownRemark
 
@@ -39,7 +42,7 @@ const staticPage = props => {
             classes="btn btn-lg font-weight-bold btn-primary d-lg-inline-flex d-block align-items-center"
           >
             {contact_us[props.lang]}
-            <i class="ml-3 fas fa-paw"></i>
+            <FontAwesomeIcon icon={faPaw} className="ml-2" />
           </Link>
         </div>
       </div>

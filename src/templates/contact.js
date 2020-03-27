@@ -1,4 +1,7 @@
 import React from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faFacebookMessenger } from "@fortawesome/free-brands-svg-icons"
+import { faPaperPlane } from "@fortawesome/free-solid-svg-icons"
 import { connect } from "react-redux"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
@@ -45,7 +48,10 @@ const contactTemplate = props => {
           >
             <div class="d-flex align-items-center justify-content-center">
               {messenger_button_text[props.lang]}{" "}
-              <i class="ml-3 fab fa-facebook-messenger display-4"></i>
+              <FontAwesomeIcon
+                icon={faFacebookMessenger}
+                className="display-4 ml-2"
+              />
             </div>
           </a>
         </div>
@@ -100,7 +106,8 @@ const contactTemplate = props => {
                 type="submit"
                 class="btn btn-primary btn-lg btn-block font-weight-bold my-3"
               >
-                {send[props.lang]} <i class="ml-2 far fa-paper-plane"></i>
+                {send[props.lang]}{" "}
+                <FontAwesomeIcon icon={faPaperPlane} className="ml-2" />
               </button>
             </div>
           </form>

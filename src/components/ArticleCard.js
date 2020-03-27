@@ -4,6 +4,9 @@ import { graphql, useStaticQuery } from "gatsby"
 import { connect } from "react-redux"
 import moment from "moment"
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faBookOpen } from "@fortawesome/free-solid-svg-icons"
+
 function ArticleCard(props) {
   const article = props.data.node.childMarkdownRemark.frontmatter
   const query = useStaticQuery(graphql`
@@ -76,7 +79,7 @@ function ArticleCard(props) {
           href={props.data.node.childMarkdownRemark.fields.slug}
           class="btn btn-success d-block stretched-link mt-lg-1 font-weight-bold"
         >
-          <i class="fas fa-book-open mr-3"></i>
+          <FontAwesomeIcon icon={faBookOpen} className="mr-2" />
           {read_more[props.lang]}
         </a>
       </div>

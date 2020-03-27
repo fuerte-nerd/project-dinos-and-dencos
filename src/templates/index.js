@@ -1,4 +1,7 @@
 import React from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faFacebookF, faInstagram } from "@fortawesome/free-brands-svg-icons"
+import { faDog } from "@fortawesome/free-solid-svg-icons"
 import { graphql } from "gatsby"
 import { connect } from "react-redux"
 
@@ -74,7 +77,10 @@ const IndexPage = props => {
                     classes="btn btn-primary btn-lg font-weight-bold"
                   >
                     {" "}
-                    <i className="animated tada infinite slow mr-3 fas fa-dog"></i>
+                    <FontAwesomeIcon
+                      icon={faDog}
+                      className="animated tada infinite slow mr-3"
+                    />
                     {button_text[props.lang]}
                   </Link>
                 </div>
@@ -93,13 +99,13 @@ const IndexPage = props => {
                     href={`https://www.facebook.com/${facebook_username}`}
                     className="btn rounded-circle social social-facebook"
                   >
-                    <i className="fab fa-facebook-f"></i>
+                    <FontAwesomeIcon icon={faFacebookF} />
                   </a>
                   <a
                     href={`https://www.instagram.com/${instagram_username}`}
                     className="btn ml-2 rounded-circle social social-instagram"
                   >
-                    <i className="fab fa-instagram"></i>
+                    <FontAwesomeIcon icon={faInstagram} />
                   </a>
                 </div>
               </div>

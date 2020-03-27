@@ -66,18 +66,10 @@ function Head({ description, lang, meta, title, og }) {
         ].concat(meta)}
       />
       <Helmet>
-        {/*<link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Comfortaa|Spartan"
-        />*/}
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/css/flag-icon.min.css"
         />
-        <script
-          src="https://kit.fontawesome.com/e6cbd84bc2.js"
-          crossorigin="anonymous"
-        ></script>
       </Helmet>
     </>
   )

@@ -4,6 +4,8 @@ import { connect } from "react-redux"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faInfoCircle } from "@fortawesome/free-solid-svg-icons"
 import { Col, Card, CardBody, CardTitle, Table } from "reactstrap"
 
 import Link from "./Link"
@@ -176,7 +178,7 @@ function DogCard(props) {
             to={data.fields.slug}
             classes="btn btn-block btn-success stretched-link"
           >
-            <i className="mr-2 fas fa-info-circle"></i>
+            <FontAwesomeIcon icon={faInfoCircle} className="mr-2" />
             {more_info[props.lang]}
           </Link>
         </CardBody>

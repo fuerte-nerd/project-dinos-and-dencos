@@ -6,6 +6,14 @@ import { graphql } from "gatsby"
 import Link from "../components/Link"
 import Layout from "../components/layout"
 import { connect } from "react-redux"
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {
+  faFacebookF,
+  faTwitter,
+  faWhatsapp,
+} from "@fortawesome/free-brands-svg-icons"
+import { faComments, faArrowLeft } from "@fortawesome/free-solid-svg-icons"
 import ReactMarkdown from "react-markdown"
 
 const Article = props => {
@@ -25,7 +33,7 @@ const Article = props => {
         to="articles"
         classes="btn btn-block btn-sm text-left rounded-0 btn-dark"
       >
-        <i class="fas fa-arrow-left mr-1"></i>{" "}
+        <FontAwesomeIcon icon={faArrowLeft} className="mr-1" />
         {LangConsts.back_to_articles[props.lang]}
       </Link>
       <div
@@ -41,16 +49,6 @@ const Article = props => {
           style={{ top: 0, left: 0, zIndex: -50 }}
         />
 
-        {/*<img
-          src={data.featured_image}
-          alt="Article pic"
-          class="position-absolute w-100 animated fadeIn"
-          style={{
-            top: 0,
-            left: 0,
-            zIndex: -50,
-          }}
-        />*/}
         <div class="animated fadeIn delay-1s d-flex justify-content-center">
           <div class="d-inline-block">
             <h1 class="bg-primary-trans p-3 d-inline-block h2 mb-0 rounded-top rounded-right">
@@ -70,7 +68,7 @@ const Article = props => {
                   class="button button-small facebook mr-2"
                 >
                   <span class="icon">
-                    <i class="fab fa-facebook-f"></i>
+                    <FontAwesomeIcon icon={faFacebookF} />
                   </span>
                 </a>
                 <a
@@ -78,7 +76,7 @@ const Article = props => {
                   class="button button-small twitter mr-2"
                 >
                   <span class="icon">
-                    <i class="fab fa-twitter"></i>
+                    <FontAwesomeIcon icon={faTwitter} />
                   </span>
                 </a>
                 <a
@@ -86,7 +84,7 @@ const Article = props => {
                   class="button button-small whatsapp"
                 >
                   <span class="icon">
-                    <i class="fab fa-whatsapp"></i>
+                    <FontAwesomeIcon icon={faWhatsapp} />
                   </span>
                 </a>
               </div>
@@ -107,7 +105,7 @@ const Article = props => {
         <div class="text-center">
           <button class="btn btn-outline-light btn-lg">
             {LangConsts.comments[props.lang]}
-            <i class="ml-3 far fa-comments"></i>
+            <FontAwesomeIcon icon={faComments} className="ml-3" />
           </button>
         </div>
       </div>
