@@ -44,7 +44,7 @@ const Layout = props => {
   return (
     <>
       <Head title={props.title} og={props.og} />
-      {props.hideNav ? null : <Navigation />}
+      {props.hideNav ? null : <Navigation animate={props.animateNav} />}
       <div onClick={checkNav} role="button" tabIndex="0">
         {props.spacer ? <Spacer /> : null}
         <main className="animated fadeIn faster">{props.children}</main>
