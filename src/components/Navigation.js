@@ -246,7 +246,13 @@ function Navigation(props) {
   } = data.dictionary.childMarkdownRemark.frontmatter
   return (
     <div>
-      <Navbar expand="lg" fixed="top" className={`${responsiveClasses.nav}`}>
+      <Navbar
+        expand="lg"
+        fixed="top"
+        className={`${responsiveClasses.nav} ${
+          props.animate ? "animated fadeIn delay-1s" : null
+        }`}
+      >
         <Link to="/" classes={`${responsiveClasses.navBrand} navbar-brand`}>
           <img
             src={logo}
@@ -293,21 +299,21 @@ function Navigation(props) {
                   classes={`${responsiveClasses.dropdown} dropdown-item d-flex justify-content-between align-items-center`}
                 >
                   <span>{adopt[props.lang]}</span>
-                  <i class="fas fa-paw" />
+                  <i className="fas fa-paw" />
                 </Link>
                 <Link
                   to="/foster"
                   classes={`${responsiveClasses.dropdown} dropdown-item d-flex justify-content-between align-items-center`}
                 >
                   <span>{foster[props.lang]}</span>
-                  <i class="fas fa-bone"></i>
+                  <i className="fas fa-bone"></i>
                 </Link>
                 <Link
                   to="/donate"
                   classes={`${responsiveClasses.dropdown} dropdown-item d-flex justify-content-between align-items-center`}
                 >
                   <span>{donate[props.lang]}</span>
-                  <i class="fas fa-donate"></i>
+                  <i className="fas fa-donate"></i>
                 </Link>
 
                 <Link
@@ -315,7 +321,7 @@ function Navigation(props) {
                   classes={`${responsiveClasses.dropdown} dropdown-item d-flex justify-content-between align-items-center`}
                 >
                   <span>{volunteer[props.lang]}</span>
-                  <i class="fas fa-hands-helping"></i>
+                  <i className="fas fa-hands-helping"></i>
                 </Link>
               </DropdownMenu>
             </UncontrolledDropdown>
@@ -330,19 +336,19 @@ function Navigation(props) {
               <small className="d-block font-weight-bold mb-2">
                 {find_us_text[props.lang]}
               </small>
-              <div class="d-flex justify-content-center">
+              <div className="d-flex justify-content-center">
                 <a
                   href={`https://www.facebook.com/${facebook_username}`}
                   className="btn rounded-circle social social-sm social-facebook"
                 >
-                  <i class="fab fa-facebook-f"></i>
+                  <i className="fab fa-facebook-f"></i>
                 </a>
                 <a
                   href={`https://www.instagram.com/${instagram_username}`}
                   color={null}
-                  class="ml-2 btn rounded-circle social social-sm social-instagram"
+                  className="ml-2 btn rounded-circle social social-sm social-instagram"
                 >
-                  <i class="fab fa-instagram"></i>
+                  <i className="fab fa-instagram"></i>
                 </a>
               </div>
             </div>
