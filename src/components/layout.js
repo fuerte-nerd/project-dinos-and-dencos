@@ -34,7 +34,7 @@ const Layout = props => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  console.log(props)
+  //console.log(props)
   const checkNav = () => {
     if (props.navIsOpen) {
       props.dispatch(toggleNav())

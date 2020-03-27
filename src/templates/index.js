@@ -12,6 +12,7 @@ import Link from "../components/Link"
 import logo from "../images/logo.png"
 
 const IndexPage = props => {
+  console.log(props)
   const {
     heading,
     subheading,
