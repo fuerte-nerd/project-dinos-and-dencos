@@ -66,10 +66,10 @@ function Head({ description, lang, meta, title, og }) {
         ].concat(meta)}
       />
       <Helmet>
-        <link
+        {/*<link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/css/flag-icon.min.css"
-        />
+        />*/}
       </Helmet>
     </>
   )

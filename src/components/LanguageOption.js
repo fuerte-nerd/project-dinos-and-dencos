@@ -1,4 +1,5 @@
 import React from "react"
+import ReactCountryFlag from "react-country-flag"
 import { setLanguage, toggleLanguageModal } from "../state/actions"
 import { connect } from "react-redux"
 
@@ -18,10 +19,10 @@ function LanguageOption(props) {
       className="d-flex justify-content-between align-items-center"
       onClick={handleClick}
     >
-      <span className="">{props.language}</span>
+      <span>{props.language}</span>
+      <ReactCountryFlag code="GB" />
       <span className={`flag-icon flag-icon-${props.flag}`}></span>
     </Button>
   )
 }
 export default connect()(LanguageOption)
-
