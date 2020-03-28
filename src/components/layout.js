@@ -47,7 +47,12 @@ const Layout = props => {
       {props.hideNav ? null : <Navigation animate={props.animateNav} />}
       <div onClick={checkNav} role="button" tabIndex="0">
         {props.spacer ? <Spacer /> : null}
-        <main className="animated fadeIn faster">{props.children}</main>
+        <main
+          className="animated fadeIn faster"
+          style={{ animationDelay: ".3s" }}
+        >
+          {props.children}
+        </main>
         <Footer show={props.showFooter} />
       </div>
     </>
