@@ -4,7 +4,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { connect } from "react-redux"
 import { toggleLanguageModal } from "../state/actions"
-
+import ReactCountryFlag from "react-country-flag"
 import { Button, Modal, ModalHeader, ModalBody } from "reactstrap"
 
 import LanguageOption from "./LanguageOption"
@@ -42,9 +42,10 @@ const LanguageModal = props => {
         className="py-0 px-1 mb-1 bg-transparent border-0 flag-icon-selected ani"
         onClick={toggle}
       >
-        <span
+        <ReactCountryFlag countryCode="UK" svg />
+        {/*        <span
           class={`flag-icon flag-icon-selected flag-icon-${props.flag}`}
-        ></span>
+          ></span>*/}
       </Button>
       <Modal
         isOpen={props.langModalIsOpen}
