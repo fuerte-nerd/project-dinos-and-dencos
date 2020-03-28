@@ -43,7 +43,7 @@ const IndexPage = props => {
       spacer={false}
       animateNav={true}
     >
-      <Loader loaded={true} />
+      {/*<Loader loaded={true} />*/}
       <BackgroundImage
         className="min-vh-100 d-flex align-items-center align-items-md-end justify-content-start p-0 m-0"
         fluid={props.data.image.childImageSharp.fluid}
