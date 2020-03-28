@@ -152,6 +152,26 @@ export const articlesData = graphql`
         }
       }
     }
+    dictionary: file(name: { eq: "dictionary" }) {
+      childMarkdownRemark {
+        frontmatter {
+          show_articles_archive {
+            en
+            es
+            de
+            it
+            fr
+          }
+          no_more_articles {
+            en
+            es
+            de
+            it
+            fr
+          }
+        }
+      }
+    }
   }
 `
 
