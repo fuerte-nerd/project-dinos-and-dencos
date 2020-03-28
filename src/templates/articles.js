@@ -9,7 +9,7 @@ import BannerHead from "../components/BannerHead"
 
 const Articles = props => {
   const {
-    show_articles_archive,
+    show_articles_archive_articles_archive,
     no_more_articles,
   } = props.data.dictionary.childMarkdownRemark.frontmatter
 
