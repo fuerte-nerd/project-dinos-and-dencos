@@ -188,6 +188,7 @@ function Navigation(props) {
     const checkWindowState = () => {
       let newData = Object.assign({}, responsiveClasses)
       if (window.scrollY > 0) {
+        setAtTop(false)
         newData = {
           nav: "bg-white navbar-light shadow py-1",
           navBrand: "nav-shrink p-0",
@@ -306,7 +307,7 @@ function Navigation(props) {
                   to="/adopt"
                   classes={`${responsiveClasses.dropdown} dropdown-item d-flex justify-content-between align-items-center`}
                 >
-                  <span className="mr-lg-2">{adopt[props.lang]}</span>
+                  <span className="mr-lg-3">{adopt[props.lang]}</span>
                   <FontAwesomeIcon icon={faPaw} />
                 </Link>
                 <Link
@@ -366,7 +367,7 @@ function Navigation(props) {
               {change_language_text[props.lang]}
             </small>
             <li className="nav-item mt-lg-0 d-flex align-items-center justify-content-center">
-              <LanguageModal />
+              <LanguageModal atTop={} />
             </li>
           </Nav>
         </Collapse>
