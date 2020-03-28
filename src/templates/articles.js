@@ -9,9 +9,15 @@ import BannerHead from "../components/BannerHead"
 
 const Articles = props => {
   const {
-    show_articles_archive_articles_archive,
+    show_articles_archive,
     no_more_articles,
   } = props.data.dictionary.childMarkdownRemark.frontmatter
+
+  const { articles } = props.data.labels.childMarkdownRemark.frontmatter
+  const {
+    heading,
+    subheading,
+  } = props.data.articles_content.childMarkdownRemark.frontmatter
 
   const featuredArticle = props.data.articles.edges[0].node
   const otherArticles = props.data.articles.edges.filter((i, ind) => {
@@ -23,22 +29,16 @@ const Articles = props => {
   })
   return (
     <Layout
-      title="Articles"
+      title={articles[props.lang]}
       showFooter={true}
       og={{
-        description: "This is the description",
+        description: subheading[props.lang],
         image: "imagePath",
         url: "theurl",
       }}
       spacer={true}
     >
-      <BannerHead
-        heading={
-          props.data.labels.childMarkdownRemark.frontmatter.articles[props.lang]
-        }
-        subheading="Sit doloremque provident fugit doloremque culpa quae consequuntur!
-      Voluptate non vel obcaecati harum sunt. Dignissimos."
-      />
+      <BannerHead heading={heading} subheading={subheading} />
 
       <Container>
         <div className="articles">
@@ -152,17 +152,17 @@ export const articlesData = graphql`
         }
       }
     }
-    dictionary: file(name: { eq: "dictionary" }) {
+    articles_content: file(name: { eq: "articles" }) {
       childMarkdownRemark {
         frontmatter {
-          show_articles_archive {
+          heading {
             en
             es
             de
             it
             fr
           }
-          no_more_articles {
+          subheading {
             en
             es
             de
