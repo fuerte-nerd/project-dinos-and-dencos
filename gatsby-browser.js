@@ -4,7 +4,9 @@ require("typeface-spartan")
 
 export const onClientEntry = () => {
   window.onload = () => {
+    const timestamp = new Date()
     console.log("we are ready to rock")
+    console.log(timestamp)
   }
 }
 
