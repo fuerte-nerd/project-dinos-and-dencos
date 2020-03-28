@@ -40,9 +40,10 @@ const LanguageModal = props => {
       <Button
         color="light"
         outline
-        className="py-1 px-3 flag-icon-selected ani"
+        className="py-1 px-3 mt-2 mt-lg-0 flag-icon-selected ani"
         style={{
           fontSize: ".6rem",
+          marginBottom: ".1rem",
         }}
         onClick={toggle}
       >
