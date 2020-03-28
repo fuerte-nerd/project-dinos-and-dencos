@@ -43,7 +43,8 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-react-leaflet`,
-    `gatsby-plugin-preload-fonts`,
+    `gatsby-plugin-netlify`,
+    `gatsby-plugin-netlify-cache`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
