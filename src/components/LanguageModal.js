@@ -38,8 +38,12 @@ const LanguageModal = props => {
   return (
     <div>
       <Button
-        color="primary"
-        className="py-0 px-1 mb-1 border-0 flag-icon-selected ani"
+        color="light"
+        outline
+        className="py-1 px-3 flag-icon-selected ani"
+        style={{
+          fontSize: ".6rem",
+        }}
         onClick={toggle}
       >
         {props.lang.toUpperCase()}
