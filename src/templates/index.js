@@ -50,6 +50,7 @@ const IndexPage = props => {
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
+        onLoad={() => console.log("loaded")}
       >
         <div className="h-100 w-100 position-absolute m-0 animated fadeInDownBig fast delay-1s hero-gradient-overlay" />
         <Container fluid>
