@@ -80,7 +80,7 @@ export const articlesData = graphql`
     articles: allFile(
       filter: { sourceInstanceName: { eq: "articles" } }
       limit: 8
-      sort: { order: DESC, fields: childMarkdownRemark___frontmatter___date }
+      sort: { order: ASC, fields: childMarkdownRemark___frontmatter___date }
     ) {
       edges {
         node {
