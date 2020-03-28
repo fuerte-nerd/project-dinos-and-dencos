@@ -182,6 +182,7 @@ function Navigation(props) {
     togglerIcon: "",
     navLink: "",
     dropdown: "",
+    language_btn: "",
   })
 
   useEffect(() => {
@@ -197,9 +198,11 @@ function Navigation(props) {
           togglerIcon: "",
           navLink: "text-dark ",
           dropdown: "small",
+          language_btn_color: "dark",
         }
         if (window.innerWidth < 992) {
           newData.collapse = "small p-2 text-center"
+          language_btn_color = "light"
         }
       } else {
         newData = {
@@ -209,6 +212,7 @@ function Navigation(props) {
           navBrandLogo: "",
           togglerIcon: "navbar-toggler-icon-zero",
           navLink: "",
+          language_btn_color: "light",
         }
         if (window.innerWidth < 992) {
           newData.collapse = "bg-dark small p-2 text-center"
