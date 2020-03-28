@@ -38,7 +38,10 @@ const Articles = props => {
       }}
       spacer={true}
     >
-      <BannerHead heading={heading} subheading={subheading} />
+      <BannerHead
+        heading={heading[props.lang]}
+        subheading={subheading[props.lang]}
+      />
 
       <Container>
         <div className="articles">
