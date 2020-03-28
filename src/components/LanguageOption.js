@@ -1,8 +1,7 @@
 import React from "react"
-import ReactCountryFlag from "react-country-flag"
 import { setLanguage, toggleLanguageModal } from "../state/actions"
 import { connect } from "react-redux"
-
+import Flag from "react-world-flags"
 import { Button } from "reactstrap"
 
 function LanguageOption(props) {
@@ -20,7 +19,7 @@ function LanguageOption(props) {
       onClick={handleClick}
     >
       <span>{props.language}</span>
-      <ReactCountryFlag code="GB" />
+      <Flag code="gb" />
       <span className={`flag-icon flag-icon-${props.flag}`}></span>
     </Button>
   )
