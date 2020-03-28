@@ -11,7 +11,7 @@ import { Container, Row, Col } from "reactstrap"
 
 import Layout from "../components/layout"
 import Link from "../components/Link"
-
+import Loader from "../components/Loader"
 import logo from "../images/logo.png"
 
 const IndexPage = props => {
@@ -43,6 +43,7 @@ const IndexPage = props => {
       spacer={false}
       animateNav={true}
     >
+      <Loader loaded={false} />
       <BackgroundImage
         className="min-vh-100 d-flex align-items-center align-items-md-end justify-content-start p-0 m-0"
         fluid={props.data.image.childImageSharp.fluid}
