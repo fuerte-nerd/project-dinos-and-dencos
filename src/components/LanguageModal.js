@@ -42,7 +42,7 @@ const LanguageModal = props => {
         className="py-0 px-1 mb-1 bg-transparent border-0 flag-icon-selected ani"
         onClick={toggle}
       >
-        <Flag code="gb" />
+        <Flag code="GB" height="16" />
         {/*        <span
           class={`flag-icon flag-icon-selected flag-icon-${props.flag}`}
           ></span>*/}
