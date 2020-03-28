@@ -19,7 +19,6 @@ const Articles = props => {
     subheading,
   } = props.data.articles_content.childMarkdownRemark.frontmatter
 
-  console.log(props.data.articles.edges)
   const featuredArticle = props.data.articles.edges[0].node
   const otherArticles = props.data.articles.edges.filter((i, ind) => {
     if (ind > 0) {
