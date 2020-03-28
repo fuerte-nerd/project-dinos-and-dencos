@@ -306,21 +306,21 @@ function Navigation(props) {
                   to="/adopt"
                   classes={`${responsiveClasses.dropdown} dropdown-item d-flex justify-content-between align-items-center`}
                 >
-                  <span>{adopt[props.lang]}</span>
+                  <span className="mr-lg-2">{adopt[props.lang]}</span>
                   <FontAwesomeIcon icon={faPaw} />
                 </Link>
                 <Link
                   to="/foster"
                   classes={`${responsiveClasses.dropdown} dropdown-item d-flex justify-content-between align-items-center`}
                 >
-                  <span>{foster[props.lang]}</span>
+                  <span className="mr-lg-3">{foster[props.lang]}</span>
                   <FontAwesomeIcon icon={faBone} />
                 </Link>
                 <Link
                   to="/donate"
                   classes={`${responsiveClasses.dropdown} dropdown-item d-flex justify-content-between align-items-center`}
                 >
-                  <span>{donate[props.lang]}</span>
+                  <span className="mr-lg-3">{donate[props.lang]}</span>
                   <FontAwesomeIcon icon={faDonate} />
                 </Link>
 
@@ -328,7 +328,7 @@ function Navigation(props) {
                   to="/volunteer"
                   classes={`${responsiveClasses.dropdown} dropdown-item d-flex justify-content-between align-items-center`}
                 >
-                  <span>{volunteer[props.lang]}</span>
+                  <span className="mr-lg-3">{volunteer[props.lang]}</span>
                   <FontAwesomeIcon icon={faHandsHelping} />
                 </Link>
               </DropdownMenu>
