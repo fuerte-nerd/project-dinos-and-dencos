@@ -182,14 +182,13 @@ function Navigation(props) {
     togglerIcon: "",
     navLink: "",
     dropdown: "",
-    language_btn: "",
+    language_btn_color: "",
   })
 
   useEffect(() => {
     const checkWindowState = () => {
       let newData = Object.assign({}, responsiveClasses)
       if (window.scrollY > 0) {
-        setAtTop(false)
         newData = {
           nav: "bg-white navbar-light shadow py-1",
           navBrand: "nav-shrink p-0",
@@ -202,7 +201,7 @@ function Navigation(props) {
         }
         if (window.innerWidth < 992) {
           newData.collapse = "small p-2 text-center"
-          language_btn_color = "light"
+          newData.language_btn_color = "light"
         }
       } else {
         newData = {
@@ -371,7 +370,7 @@ function Navigation(props) {
               {change_language_text[props.lang]}
             </small>
             <li className="nav-item mt-lg-0 d-flex align-items-center justify-content-center">
-              <LanguageModal atTop={} />
+              <LanguageModal btnColor={responsiveClasses.language_btn_color} />
             </li>
           </Nav>
         </Collapse>

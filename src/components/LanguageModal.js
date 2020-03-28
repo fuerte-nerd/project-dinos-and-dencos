@@ -38,7 +38,7 @@ const LanguageModal = props => {
   return (
     <div>
       <Button
-        color="light"
+        color={props.btnColor}
         outline
         className="py-1 px-3 mt-2 mt-lg-0 flag-icon-selected ani"
         style={{
