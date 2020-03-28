@@ -150,7 +150,7 @@ export const query = graphql`
     }
     image: file(relativePath: { eq: $background_image }) {
       childImageSharp {
-        fluid(maxWidth: 2500) {
+        fluid(maxWidth: 2500, quality: 25) {
           ...GatsbyImageSharpFluid
         }
       }
